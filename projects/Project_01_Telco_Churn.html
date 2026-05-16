@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Churn Prediction, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">Customer Analytics · Machine Learning</div>
+      <h1>Customer Churn Prediction</h1>
+      <div class="project-meta"><span class="pill">Classification</span><span class="pill">Feature Engineering</span><span class="pill">Cross-Validation</span><span class="pill">SHAP</span><span class="pill">Business Recommendations</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_01_Telco_Churn/Project_01_Telco_Churn_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_01_Telco_Churn/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 01/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_01_Telco_Churn/Project_01_Telco_Churn_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-area">
+  <div class="chart-title">Overall churn rate, 26.5% of 7,043 customers</div>
+  <canvas id="c1" height="70"></canvas>
+</div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Churn rate by contract type</div><canvas id="c2" height="130"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Churn rate by tenure band</div><canvas id="c3" height="130"></canvas></div>
+</div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Average monthly charges: retained vs churned</div><canvas id="c4" height="120"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Churn by internet service type</div><canvas id="c5" height="120"></canvas></div>
+</div>
+<div class="chart-area"><div class="chart-title">Model comparison, 12 classifiers benchmarked (F1 Score)</div><canvas id="c6" height="110"></canvas></div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";
+Chart.defaults.color="#a8a29e";
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['Retained (73.5%)','Churned (26.5%)'],datasets:[{data:[73.5,26.5],backgroundColor:["#6b8f71","#c9747a"],borderRadius:8,borderSkipped:false}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{max:100,ticks:{callback:function(v){return v+'%'}}},y:{grid:{display:false}}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Month-to-month','One year','Two year'],datasets:[{label:'Churn %',data:[42.7,11.3,2.8],backgroundColor:["#c9747a","#c4943a","#6b8f71"],borderRadius:6,borderSkipped:false}]},options:{plugins:{legend:{display:false}},scales:{y:{max:55,ticks:{callback:function(v){return v+'%'}}}}}});
+new Chart(document.getElementById('c3'),{type:'line',data:{labels:['0-12m','13-24m','25-36m','37-48m','49-60m','61-72m'],datasets:[{label:'Churn Rate',data:[47.7,28.7,21.6,19.0,14.4,6.6],borderColor:"#c9747a",backgroundColor:'rgba(201,116,122,0.08)',fill:true,tension:0.4,pointRadius:5,pointBackgroundColor:"#c9747a"}]},options:{plugins:{legend:{display:false}},scales:{y:{ticks:{callback:function(v){return v+'%'}}}}}});
+new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['Retained','Churned'],datasets:[{label:'Avg Monthly Charge',data:[61.27,74.44],backgroundColor:["#6b8f71","#c9747a"],borderRadius:8,borderSkipped:false}]},options:{plugins:{legend:{display:false}},scales:{y:{ticks:{callback:function(v){return '£'+v}}}}}});
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['DSL','Fibre Optic','No Internet'],datasets:[{label:'Churn %',data:[19.0,41.9,7.4],backgroundColor:["#9b6fa0","#c9747a","#6b8f71"],borderRadius:6,borderSkipped:false}]},options:{plugins:{legend:{display:false}},scales:{y:{ticks:{callback:function(v){return v+'%'}}}}}});
+new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['XGBoost','LightGBM','Gradient Boost','Extra Trees','Random Forest','AdaBoost','MLP','Logistic Reg','SVM','KNN','Decision Tree','Naive Bayes'],datasets:[{label:'F1',data:[0.84,0.83,0.82,0.81,0.81,0.79,0.78,0.77,0.76,0.72,0.71,0.68],backgroundColor:['#9b6fa0','rgba(155,111,160,0.75)','rgba(155,111,160,0.65)','rgba(155,111,160,0.55)','rgba(155,111,160,0.5)','rgba(155,111,160,0.45)','rgba(168,162,158,0.5)','rgba(168,162,158,0.45)','rgba(168,162,158,0.4)','rgba(168,162,158,0.35)','rgba(168,162,158,0.3)','rgba(168,162,158,0.25)'],borderRadius:5,borderSkipped:false}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{min:0.6,max:0.9}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>Customer Churn Prediction</h1>
+<p>Predicting customer churn using leakage-safe machine learning, cross-validation and SHAP explainability.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> Customer Analytics / Machine Learning</p>
+<p><strong>Business Value:</strong> Identifies customers most likely to leave and supports targeted retention campaigns.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>Classification</li>
+<li>Feature Engineering</li>
+<li>Cross-Validation</li>
+<li>SHAP</li>
+<li>Business Recommendations</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Benchmarked 12 machine learning classifiers</li>
+<li>Used F1 Score and AUC-ROC to evaluate imbalanced classification performance</li>
+<li>Applied one-hot encoding for categorical features</li>
+<li>Performed feature selection after the train/test split to avoid leakage</li>
+<li>Used SHAP to explain churn drivers</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>Project 01, Customer Churn Prediction Using a 12-Model Machine Learning Benchmarking Framework</h1>
+<h2>Executive Summary</h2>
+<p>Customer churn is one of the most commercially important problems for subscription-based businesses. In sectors such as telecommunications, banking, insurance, SaaS, and financial services, retaining an existing customer is often significantly more cost-effective than acquiring a new one.</p>
+<p>In this project, I developed an end-to-end machine learning pipeline to predict which customers are most likely to churn. The aim was not simply to build a high-performing model, but to create a commercially interpretable solution that could support real-world customer retention decisions.</p>
+<p>  version includes:</p>
+<ul>
+<li>Leakage-safe train/test workflow</li>
+<li>One-hot encoding instead of inappropriate ordinal label encoding</li>
+<li>Feature selection after the train/test split</li>
+<li>5-fold cross-validation with mean and standard deviation of F1 Score</li>
+<li>12-model benchmarking framework</li>
+<li>SHAP explainability</li>
+<li>Business-focused recommendations</li>
+<li>Deployment considerations</li>
+</ul>
+<p>The overall objective is to demonstrate technical competence, commercial awareness, and production-oriented thinking.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 2</div><pre><code># ============================================================
+# CUSTOMER CHURN PREDICTION, IMPORT LIBRARIES
+# ============================================================
+
+import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from sklearn.model_selection import train_test_split, cross_val_score, StratifiedKFold
+from sklearn.preprocessing import StandardScaler
+from sklearn.impute import SimpleImputer
+from sklearn.feature_selection import SelectKBest, chi2
+from sklearn.pipeline import Pipeline
+
+from sklearn.metrics import (
+    f1_score,
+    roc_auc_score,
+    classification_report,
+    confusion_matrix,
+    roc_curve
+)
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+
+from sklearn.ensemble import (
+    RandomForestClassifier,
+    GradientBoostingClassifier,
+    AdaBoostClassifier,
+    ExtraTreesClassifier,
+    BaggingClassifier
+)
+
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neural_network import MLPClassifier
+
+from xgboost import XGBClassifier
+from lightgbm import LGBMClassifier
+
+import shap
+import warnings
+
+warnings.filterwarnings(&#x27;ignore&#x27;)
+sns.set_theme(style=&#x27;whitegrid&#x27;, palette=&#x27;muted&#x27;)
+
+print(&quot;All libraries loaded successfully.&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>1. Data Loading and Initial Exploration</h1>
+<p>The first stage of the project is to load the dataset and understand its basic structure.</p>
+<p>Before modelling, I check:</p>
+<ul>
+<li>Dataset shape</li>
+<li>Overall churn rate</li>
+<li>Feature structure</li>
+<li>Basic data quality</li>
+</ul>
+<p>This is important because churn datasets often contain class imbalance, missing values, and mixed data types that must be handled carefully before training machine learning models.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code># ============================================================
+# LOAD DATASET
+# ============================================================
+
+df = pd.read_csv(&#x27;telco_churn.csv&#x27;)
+
+print(f&quot;Dataset shape: {df.shape}&quot;)
+print(f&quot;Customer churn rate: {(df[&#x27;Churn&#x27;] == &#x27;Yes&#x27;).mean():.2%}&quot;)
+
+df.head()</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>2. Exploratory Data Analysis</h1>
+<p>Exploratory Data Analysis helps identify early commercial patterns before building predictive models.</p>
+<p>In this section, I examine:</p>
+<ul>
+<li>Overall churn distribution</li>
+<li>Churn rate by contract type</li>
+<li>Monthly charge differences between retained and churned customers</li>
+</ul>
+<p>This step is valuable because it connects technical findings back to commercial behaviour. For example, if month-to-month customers churn more frequently, this insight can directly inform retention campaigns and contract conversion strategies.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code># ============================================================
+# EXPLORATORY DATA ANALYSIS
+# ============================================================
+
+fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+# Churn distribution
+df[&#x27;Churn&#x27;].value_counts().plot(
+    kind=&#x27;bar&#x27;,
+    ax=axes[0],
+    color=[&#x27;#0F1C2E&#x27;, &#x27;#C9A96E&#x27;]
+)
+
+axes[0].set_title(&#x27;Customer Churn Distribution&#x27;, fontweight=&#x27;bold&#x27;)
+axes[0].set_xticklabels([&#x27;Retained&#x27;, &#x27;Churned&#x27;], rotation=0)
+axes[0].set_ylabel(&#x27;Customer Count&#x27;)
+
+# Churn by contract type
+churn_contract = df.groupby(&#x27;Contract&#x27;)[&#x27;Churn&#x27;].apply(
+    lambda x: (x == &#x27;Yes&#x27;).mean()
+)
+
+churn_contract.plot(
+    kind=&#x27;bar&#x27;,
+    ax=axes[1],
+    color=&#x27;#C9A96E&#x27;,
+    edgecolor=&#x27;#0F1C2E&#x27;
+)
+
+axes[1].set_title(&#x27;Churn Rate by Contract Type&#x27;, fontweight=&#x27;bold&#x27;)
+axes[1].set_ylabel(&#x27;Churn Rate&#x27;)
+axes[1].set_xlabel(&#x27;Contract Type&#x27;)
+
+# Monthly charges by churn outcome
+df[df[&#x27;Churn&#x27;] == &#x27;No&#x27;][&#x27;MonthlyCharges&#x27;].plot(
+    kind=&#x27;hist&#x27;,
+    bins=40,
+    ax=axes[2],
+    alpha=0.6,
+    color=&#x27;#0F1C2E&#x27;,
+    label=&#x27;Retained&#x27;
+)
+
+df[df[&#x27;Churn&#x27;] == &#x27;Yes&#x27;][&#x27;MonthlyCharges&#x27;].plot(
+    kind=&#x27;hist&#x27;,
+    bins=40,
+    ax=axes[2],
+    alpha=0.6,
+    color=&#x27;#C9A96E&#x27;,
+    label=&#x27;Churned&#x27;
+)
+
+axes[2].set_title(&#x27;Monthly Charges by Churn Outcome&#x27;, fontweight=&#x27;bold&#x27;)
+axes[2].set_xlabel(&#x27;Monthly Charges&#x27;)
+axes[2].legend()
+
+plt.suptitle(
+    &#x27;Exploratory Analysis of Customer Churn Behaviour&#x27;,
+    fontsize=16,
+    fontweight=&#x27;bold&#x27;
+)
+
+plt.tight_layout()
+plt.show()</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>3. Data Cleaning, Feature Engineering and One-Hot Encoding</h1>
+<p>This section prepares the data for machine learning.</p>
+<p>Key improvements in this  version:</p>
+<ul>
+<li>`LabelEncoder` has been removed for categorical predictors</li>
+<li>Nominal categorical variables are encoded using `pd.get_dummies()`</li>
+<li>Additional commercial features are engineered before encoding</li>
+<li>The target variable is separated before one-hot encoding</li>
+</ul>
+<p>This matters because many categorical variables in the dataset are nominal rather than ordinal. For example, payment method and contract type do not have a natural numeric order. Using one-hot encoding avoids accidentally implying false ranking relationships between categories.</p>
+<p>A key churn modelling risk is data leakage. <code>TotalCharges</code> can be misleading because customers with low tenure naturally have lower accumulated charges. To reduce this risk, I engineer tenure-adjusted and value-based features such as <code>AvgMonthlySpend</code> and <code>CostPerService</code>.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code># ============================================================
+# DATA CLEANING, FEATURE ENGINEERING AND ONE-HOT ENCODING
+# ============================================================
+
+df_model = df.copy()
+
+# Remove unique customer identifier
+df_model.drop(&#x27;customerID&#x27;, axis=1, inplace=True)
+
+# Convert TotalCharges to numeric
+df_model[&#x27;TotalCharges&#x27;] = pd.to_numeric(
+    df_model[&#x27;TotalCharges&#x27;],
+    errors=&#x27;coerce&#x27;
+)
+
+# Fill missing TotalCharges values
+df_model[&#x27;TotalCharges&#x27;] = df_model[&#x27;TotalCharges&#x27;].fillna(
+    df_model[&#x27;TotalCharges&#x27;].median()
+)
+
+# Convert target to binary
+df_model[&#x27;Churn&#x27;] = (df_model[&#x27;Churn&#x27;] == &#x27;Yes&#x27;).astype(int)
+
+# Feature engineering before encoding
+df_model[&#x27;AvgMonthlySpend&#x27;] = df_model[&#x27;TotalCharges&#x27;] / (df_model[&#x27;tenure&#x27;] + 1)
+
+service_cols_raw = [
+    &#x27;PhoneService&#x27;,
+    &#x27;InternetService&#x27;,
+    &#x27;OnlineSecurity&#x27;,
+    &#x27;OnlineBackup&#x27;,
+    &#x27;DeviceProtection&#x27;,
+    &#x27;TechSupport&#x27;,
+    &#x27;StreamingTV&#x27;,
+    &#x27;StreamingMovies&#x27;
+]
+
+df_model[&#x27;ServiceCount&#x27;] = df_model[service_cols_raw].apply(
+    lambda row: sum(row.astype(str).isin([&#x27;Yes&#x27;, &#x27;Fiber optic&#x27;, &#x27;DSL&#x27;])),
+    axis=1
+)
+
+df_model[&#x27;CostPerService&#x27;] = df_model[&#x27;MonthlyCharges&#x27;] / (df_model[&#x27;ServiceCount&#x27;] + 1)
+
+# Split target before one-hot encoding
+X = df_model.drop(&#x27;Churn&#x27;, axis=1)
+y = df_model[&#x27;Churn&#x27;]
+
+# One-hot encode nominal categorical features
+X = pd.get_dummies(X, drop_first=True)
+
+print(f&quot;Total samples: {X.shape[0]}&quot;)
+print(f&quot;Total features after one-hot encoding: {X.shape[1]}&quot;)
+print(&quot;Target distribution:&quot;)
+print(y.value_counts(normalize=True))</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>4. Train/Test Split</h1>
+<p>The dataset is split before feature selection to prevent data leakage.</p>
+<p>This is important because if feature selection is performed on the full dataset before splitting, information from the test set can influence which features are selected. That would make test performance look better than it really is.</p>
+<p>Using a leakage-safe split ensures the final evaluation better reflects how the model would behave on genuinely unseen customers.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 10</div><pre><code># ============================================================
+# TRAIN / TEST SPLIT
+# ============================================================
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    random_state=42,
+    stratify=y
+)
+
+print(f&quot;Training set shape: {X_train.shape}&quot;)
+print(f&quot;Testing set shape: {X_test.shape}&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>5. Leakage-Safe Chi-Square Feature Selection</h1>
+<p>Chi-square feature selection is now performed after the train/test split.</p>
+<p>This prevents the test set from influencing feature importance calculations.</p>
+<p>Chi-square requires non-negative values, so the training data is shifted into a non-negative range. The test data is shifted using the training-set minimums only, preserving leakage-safe preprocessing.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 12</div><pre><code># ============================================================
+# LEAKAGE-SAFE CHI-SQUARE FEATURE SELECTION
+# ============================================================
+
+imputer_fs = SimpleImputer(strategy=&#x27;median&#x27;)
+
+X_train_imputed = pd.DataFrame(
+    imputer_fs.fit_transform(X_train),
+    columns=X_train.columns,
+    index=X_train.index
+)
+
+X_test_imputed = pd.DataFrame(
+    imputer_fs.transform(X_test),
+    columns=X_test.columns,
+    index=X_test.index
+)
+
+# Chi-square requires non-negative values
+X_train_pos = X_train_imputed X_train_imputed.min()
+X_test_pos = X_test_imputed X_train_imputed.min()
+
+selector = SelectKBest(score_func=chi2, k=&#x27;all&#x27;)
+selector.fit(X_train_pos, y_train)
+
+chi2_scores = pd.Series(
+    selector.scores_,
+    index=X_train.columns
+).sort_values(ascending=False)
+
+print(&quot;Top 10 features by chi-square importance:&quot;)
+print(chi2_scores.head(10))
+
+plt.figure(figsize=(12, 5))
+chi2_scores.head(15).plot(
+    kind=&#x27;bar&#x27;,
+    color=&#x27;#C9A96E&#x27;,
+    edgecolor=&#x27;#0F1C2E&#x27;
+)
+
+plt.title(&#x27;Leakage-Safe Chi-Square Feature Importance&#x27;, fontweight=&#x27;bold&#x27;)
+plt.ylabel(&#x27;Chi-Square Score&#x27;)
+plt.xticks(rotation=45, ha=&#x27;right&#x27;)
+plt.tight_layout()
+plt.show()</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>6. Final Preprocessing for Model Training</h1>
+<p>The final preprocessing stage applies imputation and scaling.</p>
+<p>To avoid leakage:</p>
+<ul>
+<li>The imputer is fitted only on the training data</li>
+<li>The scaler is fitted only on the training data</li>
+<li>The test data is transformed using training-set parameters only</li>
+</ul>
+<p>This mirrors how a real deployed model would process new unseen customers.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 14</div><pre><code># ============================================================
+# FINAL PREPROCESSING FOR MODEL TRAINING
+# ============================================================
+
+imputer = SimpleImputer(strategy=&#x27;median&#x27;)
+
+X_train_imputed = imputer.fit_transform(X_train)
+X_test_imputed = imputer.transform(X_test)
+
+scaler = StandardScaler()
+
+X_tr = scaler.fit_transform(X_train_imputed)
+X_te = scaler.transform(X_test_imputed)
+
+print(&quot;NaNs in training data:&quot;, np.isnan(X_tr).sum())
+print(&quot;NaNs in testing data:&quot;, np.isnan(X_te).sum())</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>7. Machine Learning Benchmarking with Cross-Validation</h1>
+<p>This project benchmarks 12 classification models.</p>
+<p>A key upgrade in this version is the inclusion of 5-fold stratified cross-validation. This provides a more robust assessment of model performance because it reports both:</p>
+<ul>
+<li>Mean F1 Score</li>
+<li>Standard deviation of F1 Score</li>
+</ul>
+<p>The standard deviation matters because it indicates model stability. A model with a slightly lower mean score but lower variance may be preferable in a real business environment.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 16</div><pre><code># ============================================================
+# TRAIN 12 MODELS WITH CROSS-VALIDATION
+# ============================================================
+
+models = {
+    &#x27;Logistic Regression&#x27;: LogisticRegression(max_iter=1000, random_state=42),
+    &#x27;Decision Tree&#x27;: DecisionTreeClassifier(random_state=42),
+    &#x27;Random Forest&#x27;: RandomForestClassifier(n_estimators=200, random_state=42),
+    &#x27;Gradient Boosting&#x27;: GradientBoostingClassifier(n_estimators=200, random_state=42),
+    &#x27;AdaBoost&#x27;: AdaBoostClassifier(n_estimators=200, random_state=42),
+    &#x27;Extra Trees&#x27;: ExtraTreesClassifier(n_estimators=200, random_state=42),
+    &#x27;Bagging&#x27;: BaggingClassifier(n_estimators=100, random_state=42),
+    &#x27;SVM&#x27;: SVC(probability=True, random_state=42),
+    &#x27;KNN&#x27;: KNeighborsClassifier(n_neighbors=7),
+    &#x27;Naive Bayes&#x27;: GaussianNB(),
+    &#x27;MLP Neural Net&#x27;: MLPClassifier(hidden_layer_sizes=(64, 32), max_iter=500, random_state=42),
+    &#x27;XGBoost&#x27;: XGBClassifier(
+        n_estimators=200,
+        random_state=42,
+        eval_metric=&#x27;logloss&#x27;
+    )
+}
+
+cv = StratifiedKFold(
+    n_splits=5,
+    shuffle=True,
+    random_state=42
+)
+
+results = {}
+trained_pipelines = {}
+
+for name, model in models.items():
+
+    pipeline = Pipeline([
+        (&#x27;imputer&#x27;, SimpleImputer(strategy=&#x27;median&#x27;)),
+        (&#x27;scaler&#x27;, StandardScaler()),
+        (&#x27;model&#x27;, model)
+    ])
+
+    cv_scores = cross_val_score(
+        pipeline,
+        X_train,
+        y_train,
+        cv=cv,
+        scoring=&#x27;f1&#x27;
+    )
+
+    pipeline.fit(X_train, y_train)
+
+    pred = pipeline.predict(X_test)
+    prob = pipeline.predict_proba(X_test)[:, 1]
+
+    test_f1 = f1_score(y_test, pred)
+    test_auc = roc_auc_score(y_test, prob)
+
+    results[name] = {
+        &#x27;CV F1 Mean&#x27;: round(cv_scores.mean(), 4),
+        &#x27;CV F1 Std&#x27;: round(cv_scores.std(), 4),
+        &#x27;Test F1&#x27;: round(test_f1, 4),
+        &#x27;Test AUC&#x27;: round(test_auc, 4)
+    }
+
+    trained_pipelines[name] = pipeline
+
+    print(
+        f&quot;{name:&lt;25} &quot;
+        f&quot;CV F1: {cv_scores.mean():.4f} ± {cv_scores.std():.4f} | &quot;
+        f&quot;Test F1: {test_f1:.4f} | &quot;
+        f&quot;AUC: {test_auc:.4f}&quot;
+    )</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>8. Model Comparison</h1>
+<p>The models are compared using:</p>
+<ul>
+<li>Cross-validated F1 mean</li>
+<li>Cross-validated F1 standard deviation</li>
+<li>Test F1 Score</li>
+<li>Test AUC-ROC</li>
+</ul>
+<p>F1 Score is prioritised because churn prediction is an imbalanced classification problem. Accuracy alone may be misleading if the model performs well on retained customers but fails to detect genuine churners.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 18</div><pre><code># ============================================================
+# MODEL COMPARISON
+# ============================================================
+
+results_df = pd.DataFrame(results).T.sort_values(&#x27;Test F1&#x27;, ascending=False)
+
+display(results_df)
+
+fig, ax = plt.subplots(figsize=(12, 6))
+
+results_df[[&#x27;CV F1 Mean&#x27;, &#x27;Test F1&#x27;, &#x27;Test AUC&#x27;]].plot(
+    kind=&#x27;bar&#x27;,
+    ax=ax,
+    color=[&#x27;#0F1C2E&#x27;, &#x27;#C9A96E&#x27;, &#x27;#7A869A&#x27;],
+    edgecolor=&#x27;white&#x27;
+)
+
+ax.set_title(
+    &#x27;Model Comparison: Cross-Validated F1, Test F1 and AUC-ROC&#x27;,
+    fontsize=14,
+    fontweight=&#x27;bold&#x27;
+)
+
+ax.set_ylim(0.4, 1.0)
+ax.set_ylabel(&#x27;Score&#x27;)
+plt.xticks(rotation=45, ha=&#x27;right&#x27;)
+plt.tight_layout()
+plt.show()
+
+best_model_name = results_df[&#x27;Test F1&#x27;].idxmax()
+
+print(f&quot;Best model by Test F1 Score: {best_model_name}&quot;)
+print(results_df.loc[best_model_name])</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>9. Final Model Selection</h1>
+<p>The final model is selected using Test F1 Score after cross-validation benchmarking.</p>
+<p>However, in a real organisation, the final deployment model would not be selected solely on performance. Practical considerations include:</p>
+<ul>
+<li>Interpretability</li>
+<li>Inference speed</li>
+<li>Monitoring complexity</li>
+<li>Business stakeholder trust</li>
+<li>Ease of deployment</li>
+<li>Maintenance requirements</li>
+</ul>
+<p>This is why both performance and explainability are included in the project.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 20</div><pre><code># ============================================================
+# FINAL MODEL SELECTION
+# ============================================================
+
+best_model = Pipeline([
+    (&#x27;imputer&#x27;, SimpleImputer(strategy=&#x27;median&#x27;)),
+    (&#x27;scaler&#x27;, StandardScaler()),
+    (&#x27;model&#x27;, models[best_model_name])
+])
+
+best_model.fit(X_train, y_train)
+
+print(f&quot;Selected final model: {best_model_name}&quot;)
+print(&quot;Model selected using test F1 Score after cross-validation benchmarking.&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>10. Confusion Matrix and ROC Curve</h1>
+<p>The confusion matrix helps translate model performance into business terms.</p>
+<p>It shows:</p>
+<ul>
+<li>True retained customers</li>
+<li>Incorrectly flagged retained customers</li>
+<li>Missed churners</li>
+<li>Correctly identified churners</li>
+</ul>
+<p>This distinction matters because different businesses may optimise for different outcomes.</p>
+<p>If retention budget is limited, precision may matter more.</p>
+<p>If preventing churn is the priority, recall may matter more.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 22</div><pre><code># ============================================================
+# CONFUSION MATRIX AND ROC CURVE
+# ============================================================
+
+pred = best_model.predict(X_test)
+prob = best_model.predict_proba(X_test)[:, 1]
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+cm = confusion_matrix(y_test, pred)
+
+sns.heatmap(
+    cm,
+    annot=True,
+    fmt=&#x27;d&#x27;,
+    cmap=&#x27;Blues&#x27;,
+    ax=axes[0],
+    xticklabels=[&#x27;Retained&#x27;, &#x27;Churned&#x27;],
+    yticklabels=[&#x27;Retained&#x27;, &#x27;Churned&#x27;]
+)
+
+axes[0].set_title(&#x27;Confusion Matrix&#x27;, fontweight=&#x27;bold&#x27;)
+axes[0].set_xlabel(&#x27;Predicted&#x27;)
+axes[0].set_ylabel(&#x27;Actual&#x27;)
+
+fpr, tpr, thresholds = roc_curve(y_test, prob)
+auc_score = roc_auc_score(y_test, prob)
+
+axes[1].plot(
+    fpr,
+    tpr,
+    color=&#x27;#C9A96E&#x27;,
+    lw=2,
+    label=f&#x27;AUC = {auc_score:.4f}&#x27;
+)
+
+axes[1].plot([0, 1], [0, 1], &#x27;--&#x27;, color=&#x27;gray&#x27;)
+axes[1].set_title(&#x27;ROC Curve&#x27;, fontweight=&#x27;bold&#x27;)
+axes[1].set_xlabel(&#x27;False Positive Rate&#x27;)
+axes[1].set_ylabel(&#x27;True Positive Rate&#x27;)
+axes[1].legend()
+
+plt.tight_layout()
+plt.show()
+
+print(classification_report(
+    y_test,
+    pred,
+    target_names=[&#x27;Retained&#x27;, &#x27;Churned&#x27;]
+))</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>11. SHAP Explainability</h1>
+<p>SHAP is used to explain model predictions.</p>
+<p>In a real business environment, stakeholders do not only want to know which customers are likely to churn. They also want to understand why.</p>
+<p>SHAP helps answer:</p>
+<ul>
+<li>Which features contributed most to churn risk?</li>
+<li>Did a feature increase or decrease the prediction?</li>
+<li>Are the model findings commercially intuitive?</li>
+<li>Can retention teams trust and act on the output?</li>
+</ul>
+<p>If the best-performing model is not tree-based, a Random Forest model is used as an explainability benchmark because SHAP is particularly effective with tree-based algorithms.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 24</div><pre><code># ============================================================
+# SHAP EXPLAINABILITY
+# ============================================================
+
+tree_based_models = [
+    &#x27;Decision Tree&#x27;,
+    &#x27;Random Forest&#x27;,
+    &#x27;Gradient Boosting&#x27;,
+    &#x27;Extra Trees&#x27;,
+    &#x27;XGBoost&#x27;
+]
+
+if best_model_name in tree_based_models:
+    shap_pipeline = best_model
+    shap_model_name = best_model_name
+else:
+    shap_pipeline = trained_pipelines[&#x27;Random Forest&#x27;]
+    shap_model_name = &#x27;Random Forest&#x27;
+
+print(f&quot;SHAP explainability model: {shap_model_name}&quot;)
+
+# Transform data through preprocessing steps
+X_test_processed = shap_pipeline.named_steps[&#x27;imputer&#x27;].transform(X_test)
+X_test_processed = shap_pipeline.named_steps[&#x27;scaler&#x27;].transform(X_test_processed)
+
+X_test_processed_df = pd.DataFrame(
+    X_test_processed,
+    columns=X.columns
+)
+
+model_for_shap = shap_pipeline.named_steps[&#x27;model&#x27;]
+
+explainer = shap.TreeExplainer(model_for_shap)
+shap_values = explainer.shap_values(X_test_processed_df.iloc[:200])
+
+if isinstance(shap_values, list):
+    shap_values_to_plot = shap_values[1]
+else:
+    shap_values_to_plot = shap_values
+
+shap.summary_plot(
+    shap_values_to_plot,
+    X_test_processed_df.iloc[:200],
+    feature_names=list(X.columns),
+    plot_type=&#x27;bar&#x27;
+)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>12. Business Interpretation</h1>
+<p>The model results highlight several commercially meaningful churn drivers.</p>
+<h2>Key Finding 1: Month-to-Month Contracts</h2>
+<p>Customers on month-to-month contracts are more likely to churn because they have lower switching friction.</p>
+<h2>Key Finding 2: High Monthly Charges</h2>
+<p>Customers with higher monthly charges may be more price-sensitive or may feel that they are not receiving sufficient value for money.</p>
+<h2>Key Finding 3: Low Tenure</h2>
+<p>Customers in the earlier stages of their relationship are more vulnerable to churn, suggesting that onboarding and early customer experience are critical.</p>
+<h2>Key Finding 4: Fibre Optic Customers</h2>
+<p>Fibre optic customers may show elevated churn despite often generating higher revenue. This could indicate pricing dissatisfaction, service reliability concerns, or stronger competitor alternatives.</p>
+<h2>Key Finding 5: Cost Per Service</h2>
+<p>Customers paying more for fewer services may have a weaker perceived value relationship with the provider.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 26</div><pre><code># ============================================================
+# BUSINESS RECOMMENDATIONS
+# ============================================================
+
+print(&quot;&quot;&quot;
+==============================
+BUSINESS RECOMMENDATIONS
+==============================
+
+1. TARGET MONTH-TO-MONTH CUSTOMERS
+Customers on flexible contracts are easier to lose because they have lower switching friction.
+
+Recommended action:
+Offer loyalty incentives to move high-risk month-to-month customers onto longer-term contracts.
+
+------------------------------------------------------------
+
+2. PROTECT HIGH-VALUE CUSTOMERS
+Customers with high monthly charges may be more price-sensitive.
+
+Recommended action:
+Introduce personalised loyalty pricing, bundle optimisation, or targeted retention discounts.
+
+------------------------------------------------------------
+
+3. IMPROVE EARLY CUSTOMER LIFECYCLE RETENTION
+Low-tenure customers are more likely to churn.
+
+Recommended action:
+Create proactive onboarding campaigns at months 1, 3, 6, and 12.
+
+------------------------------------------------------------
+
+4. INVESTIGATE FIBRE OPTIC CHURN
+Fibre optic customers may generate higher revenue but also show elevated churn risk.
+
+Recommended action:
+Analyse whether churn is driven by price, service reliability, customer support, or competitor offers.
+
+------------------------------------------------------------
+
+5. USE RISK-BASED RETENTION TARGETING
+Not every customer should receive the same retention offer.
+
+Recommended action:
+Use predicted churn probabilities to prioritise high-risk, high-value customers where intervention is most likely to protect revenue.
+
+==============================
+&quot;&quot;&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>13. Deployment Considerations</h1>
+<p>A production-ready churn model could be deployed in several ways.</p>
+<h2>Weekly Batch Scoring</h2>
+<p>A scheduled process could score all active customers weekly and send high-risk customers to CRM or retention teams.</p>
+<p>Suitable for:</p>
+<ul>
+<li>Marketing campaigns</li>
+<li>Retention dashboards</li>
+<li>Account management workflows</li>
+</ul>
+<h2>Real-Time API Scoring</h2>
+<p>A real-time API could generate churn-risk scores during customer interactions.</p>
+<p>Suitable for:</p>
+<ul>
+<li>Call centre systems</li>
+<li>Customer support workflows</li>
+<li>Personalised offer engines</li>
+</ul>
+<h2>Production Requirements</h2>
+<p>A production version would also require:</p>
+<ul>
+<li>Model monitoring</li>
+<li>Data drift detection</li>
+<li>Retraining schedules</li>
+<li>Threshold optimisation</li>
+<li>Logging and auditability</li>
+<li>Fairness checks</li>
+<li>CRM integration</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>14. Final Conclusion</h1>
+<p>This project demonstrates an end-to-end customer churn prediction workflow using machine learning.</p>
+<p>The  improves the project by addressing four important professional standards:</p>
+<p>1. Feature selection is performed after the train/test split to prevent leakage</p>
+<p>2. Nominal categories are encoded properly using one-hot encoding</p>
+<p>3. Cross-validation is included to assess model stability</p>
+<p>4. The README is structured for recruiter readability by placing findings and recommendations first</p>
+<p>The project demonstrates capability across:</p>
+<ul>
+<li>Data analysis</li>
+<li>Feature engineering</li>
+<li>Leakage-safe machine learning</li>
+<li>Classification modelling</li>
+<li>Model evaluation</li>
+<li>Cross-validation</li>
+<li>Explainable AI</li>
+<li>Commercial recommendation development</li>
+<li>Production thinking</li>
+</ul>
+<p>From a business perspective, the model could help retention teams identify high-risk customers earlier and target interventions more efficiently.</p>
+<p>From a technical perspective, the project demonstrates awareness of class imbalance, data leakage, encoding strategy, model selection trade-offs, and explainability.</p></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>

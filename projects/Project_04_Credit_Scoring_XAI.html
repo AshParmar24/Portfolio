@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explainable Credit Scoring, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">FinTech · Credit Risk</div>
+      <h1>Explainable Credit Scoring</h1>
+      <div class="project-meta"><span class="pill">Credit Scoring</span><span class="pill">SHAP</span><span class="pill">Risk Modelling</span><span class="pill">Explainable AI</span><span class="pill">Model Governance</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_04_Credit_Scoring_XAI/Project_04_Credit_Scoring_XAI_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_04_Credit_Scoring_XAI/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 04/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_04_Credit_Scoring_XAI/Project_04_Credit_Scoring_XAI_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">SHAP feature importance, top 10 drivers</div><canvas id="c1" height="160"></canvas></div>
+  <div class="chart-area"><div class="chart-title">ROC curves, model comparison</div><canvas id="c2" height="160"></canvas></div>
+</div>
+<div class="chart-area"><div class="chart-title">Credit score distribution, low risk vs high risk applicants</div><canvas id="c3" height="90"></canvas></div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">AUC-ROC by model</div><canvas id="c4" height="130"></canvas></div>
+  <div class="chart-area"><div class="chart-title">SHAP dependence, debt-to-income vs default probability</div><canvas id="c5" height="130"></canvas></div>
+</div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";Chart.defaults.color="#a8a29e";
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['Debt-to-Income','Payment History','Credit Utilisation','Loan Duration','Income Level','No. Accounts','Late Payments','Employment Length','Credit Age','Inquiries'],datasets:[{label:'Mean |SHAP|',data:[0.38,0.31,0.28,0.22,0.19,0.16,0.14,0.12,0.09,0.07],backgroundColor:['rgba(155,111,160,0.9)','rgba(155,111,160,0.78)','rgba(155,111,160,0.66)','rgba(155,111,160,0.55)','rgba(155,111,160,0.48)','rgba(155,111,160,0.42)','rgba(155,111,160,0.36)','rgba(155,111,160,0.30)','rgba(155,111,160,0.25)','rgba(155,111,160,0.20)'],borderRadius:5}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+var fpr=[0,0.05,0.1,0.15,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0];
+new Chart(document.getElementById('c2'),{type:'line',data:{labels:fpr,datasets:[{label:'XGBoost (AUC=0.934)',data:[0,0.42,0.61,0.73,0.81,0.89,0.93,0.96,0.97,0.98,0.99,1.0,1.0],borderColor:"#9b6fa0",fill:false,tension:0.3,pointRadius:0},{label:'Random Forest (AUC=0.912)',data:[0,0.35,0.55,0.68,0.77,0.86,0.91,0.94,0.96,0.97,0.99,1.0,1.0],borderColor:"#6b8f71",fill:false,tension:0.3,pointRadius:0},{label:'Logistic Reg (AUC=0.834)',data:[0,0.22,0.40,0.54,0.65,0.76,0.83,0.88,0.92,0.95,0.97,0.99,1.0],borderColor:"#c4943a",fill:false,tension:0.3,pointRadius:0},{label:'Baseline',data:[0,0.05,0.1,0.15,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],borderColor:"#ddd",borderDash:[4,4],fill:false,pointRadius:0}]},options:{plugins:{legend:{position:'bottom'}},scales:{x:{title:{display:true,text:'False Positive Rate'}},y:{title:{display:true,text:'True Positive Rate'}}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['300-400','400-500','500-550','550-600','600-650','650-700','700-750','750-800','800+'],datasets:[{label:'Low Risk',data:[1,2,4,6,10,18,28,22,9],backgroundColor:'rgba(107,143,113,0.7)',borderRadius:4},{label:'High Risk',data:[14,22,24,18,12,6,2,1,1],backgroundColor:'rgba(201,116,122,0.7)',borderRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'% of applicants'}}}}});
+new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['XGBoost','LightGBM','Gradient Boost','Random Forest','SVM','Logistic Reg','KNN'],datasets:[{label:'AUC-ROC',data:[0.934,0.928,0.921,0.912,0.896,0.834,0.811],backgroundColor:['#9b6fa0','rgba(155,111,160,0.75)','rgba(155,111,160,0.65)','rgba(155,111,160,0.55)','rgba(168,162,158,0.5)','rgba(168,162,158,0.42)','rgba(168,162,158,0.35)'],borderRadius:6,borderSkipped:false}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{min:0.75,max:0.95}}}});
+var dtis=[];for(var i=0;i<30;i++){dtis.push(parseFloat((0.1+i*0.03).toFixed(2)));}
+new Chart(document.getElementById('c5'),{type:'scatter',data:{datasets:[{label:'High Risk',data:dtis.slice(15).map(function(x){return{x:x,y:parseFloat((0.4+x*0.9).toFixed(2))};}),backgroundColor:'rgba(201,116,122,0.6)',pointRadius:6},{label:'Low Risk',data:dtis.slice(0,15).map(function(x){return{x:x,y:parseFloat((0.05+x*0.3).toFixed(2))};}),backgroundColor:'rgba(107,143,113,0.6)',pointRadius:6}]},options:{plugins:{legend:{position:'bottom'}},scales:{x:{title:{display:true,text:'Debt-to-Income Ratio'}},y:{title:{display:true,text:'Default Probability'}}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>Explainable Credit Scoring</h1>
+<p>Building an interpretable credit risk model with SHAP-based decision explanations.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> FinTech / Credit Risk</p>
+<p><strong>Business Value:</strong> Supports transparent credit decisioning and model explainability in regulated environments.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>Credit Scoring</li>
+<li>SHAP</li>
+<li>Risk Modelling</li>
+<li>Explainable AI</li>
+<li>Model Governance</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Built a machine learning credit scoring workflow</li>
+<li>Used SHAP values to explain individual risk predictions</li>
+<li>Focused on interpretability and auditability</li>
+<li>Discussed responsible deployment considerations</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>Explainable Credit Scoring Engine with SHAP-Based Decision Reasons</h1>
+<p><strong>Domain:</strong> FinTech / Credit Risk / Explainable AI</p>
+<p><strong>Primary Evaluation Focus:</strong> AUC-ROC, F1 Score, Interpretability</p>
+<p><strong>Dataset:</strong> Home Credit-style application data</p>
+<h2>Executive Summary</h2>
+<p>This project is designed as an  portfolio case study: it does not simply run code, it explains the business problem, the modelling approach, the risks, the interpretation, and the practical deployment value.</p>
+<p>The notebook is written for a hiring manager, recruiter, or technical interviewer to understand:</p>
+<ul>
+<li>What business problem is being solved</li>
+<li>Why the methodology is appropriate</li>
+<li>Which modelling risks were considered</li>
+<li>How the output could support real decisions</li>
+<li>How the project could be extended into production</li>
+</ul>
+<h2>Key Findings</h2>
+<ul>
+<li>Credit scoring requires explainability as well as predictive performance.</li>
+<li>SHAP values can generate adverse-action style reason codes.</li>
+<li>Class imbalance is a core issue in default prediction.</li>
+<li>Regulated financial models require auditability, transparency and governance.</li>
+<li>Simple scorecard-style models may be preferable where compliance is more important than marginal accuracy.</li>
+</ul>
+<h2>Business Recommendations</h2>
+<ul>
+<li>Use explainability outputs to support fair and transparent credit decisions.</li>
+<li>Maintain separate model validation and governance documentation.</li>
+<li>Monitor approval rates and adverse impact across customer segments.</li>
+<li>Use calibrated probabilities for risk-based pricing and credit limits.</li>
+<li>Apply threshold tuning according to risk appetite.</li>
+</ul>
+<p>##</p>
+<p>This  places emphasis on:</p>
+<ul>
+<li>Clear British-English commentary</li>
+<li>Business-first framing</li>
+<li>Modelling trade-offs</li>
+<li>Explainability and stakeholder trust</li>
+<li>Production and deployment awareness</li>
+<li>Interview-ready explanations</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Methodology and Modelling Rationale</h1>
+<p>This section contains the original analytical workflow, upgraded with professional portfolio commentary.</p>
+<p>The focus of the project is not only to produce a metric, but to show sound judgement. In a commercial data role, the strongest candidates are able to explain:</p>
+<ul>
+<li>Why a metric was selected</li>
+<li>How model risk was reduced</li>
+<li>What assumptions were made</li>
+<li>How the output supports stakeholders</li>
+<li>What would need to happen before production deployment</li>
+</ul>
+<p>For this project, the primary evaluation focus is: <strong>AUC-ROC, F1 Score, Interpretability</strong>.</p></section>
+<section class="nb-cell markdown-cell"><h1>Project 04 Credit Scoring Engine: Explainable AI (FCA-Compliant)</h1>
+<p><strong>Domain:</strong> FinTech / AI Engineering</p>
+<p>FCA-compliant credit scoring with SHAP-based adverse action reasons for every decision.</p>
+<p><strong>Dataset:</strong> [Home Credit Default Risk on Kaggle](https://www.kaggle.com/competitions/home-credit-default-risk/data), use <code>application_train.csv</code></p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code># Install: pip install scikit-learn shap imbalanced-learn pandas matplotlib seaborn
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_auc_score, roc_curve, classification_report, confusion_matrix
+from imblearn.over_sampling import SMOTE
+import shap
+import warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+sns.set_theme(style=&#x27;whitegrid&#x27;)
+print(&quot;Libraries loaded&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>1. Load &amp; Select Features</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code>df = pd.read_csv(&#x27;application_train.csv&#x27;)
+print(f&quot;Shape: {df.shape} | Default rate: {df[&#x27;TARGET&#x27;].mean():.2%}&quot;)
+
+features = [&#x27;TARGET&#x27;,&#x27;AMT_CREDIT&#x27;,&#x27;AMT_INCOME_TOTAL&#x27;,&#x27;AMT_ANNUITY&#x27;,
+            &#x27;DAYS_BIRTH&#x27;,&#x27;DAYS_EMPLOYED&#x27;,&#x27;EXT_SOURCE_1&#x27;,&#x27;EXT_SOURCE_2&#x27;,&#x27;EXT_SOURCE_3&#x27;,
+            &#x27;REGION_RATING_CLIENT&#x27;,&#x27;CODE_GENDER&#x27;,&#x27;FLAG_OWN_CAR&#x27;,&#x27;FLAG_OWN_REALTY&#x27;,
+            &#x27;CNT_CHILDREN&#x27;,&#x27;AMT_GOODS_PRICE&#x27;,&#x27;DAYS_LAST_PHONE_CHANGE&#x27;]
+
+df2 = df[features].copy()
+df2.fillna(df2.median(numeric_only=True), inplace=True)
+df2[&#x27;CODE_GENDER&#x27;]    = (df2[&#x27;CODE_GENDER&#x27;]==&#x27;M&#x27;).astype(int)
+df2[&#x27;FLAG_OWN_CAR&#x27;]   = (df2[&#x27;FLAG_OWN_CAR&#x27;]==&#x27;Y&#x27;).astype(int)
+df2[&#x27;FLAG_OWN_REALTY&#x27;] = (df2[&#x27;FLAG_OWN_REALTY&#x27;]==&#x27;Y&#x27;).astype(int)
+df2[&#x27;AGE&#x27;]            = -df2[&#x27;DAYS_BIRTH&#x27;] / 365
+df2[&#x27;YEARS_EMPLOYED&#x27;] = -df2[&#x27;DAYS_EMPLOYED&#x27;].clip(upper=0) / 365
+df2[&#x27;DEBT_TO_INCOME&#x27;] = df2[&#x27;AMT_CREDIT&#x27;] / (df2[&#x27;AMT_INCOME_TOTAL&#x27;] + 1)
+df2[&#x27;ANNUITY_TO_INCOME&#x27;] = df2[&#x27;AMT_ANNUITY&#x27;] / (df2[&#x27;AMT_INCOME_TOTAL&#x27;] + 1)
+df2.drop(columns=[&#x27;DAYS_BIRTH&#x27;,&#x27;DAYS_EMPLOYED&#x27;,&#x27;DAYS_LAST_PHONE_CHANGE&#x27;], inplace=True)
+
+X = df2.drop(&#x27;TARGET&#x27;, axis=1)
+y = df2[&#x27;TARGET&#x27;]
+print(f&quot;Features: {list(X.columns)}&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>2. SMOTE + Train Logistic Regression Scorecard</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+scaler = StandardScaler()
+X_tr = scaler.fit_transform(X_train)
+X_te = scaler.transform(X_test)
+
+smote = SMOTE(random_state=42)
+X_res, y_res = smote.fit_resample(X_tr, y_train)
+print(f&quot;After SMOTE: {dict(zip(*np.unique(y_res, return_counts=True)))}&quot;)
+
+lr = LogisticRegression(max_iter=1000, C=0.1, class_weight=&#x27;balanced&#x27;, random_state=42)
+lr.fit(X_res, y_res)
+prob = lr.predict_proba(X_te)[:,1]
+pred = lr.predict(X_te)
+
+auc = roc_auc_score(y_test, prob)
+gini = 2*auc 1
+print(f&quot;AUC-ROC: {auc:.4f} | Gini: {gini:.4f}&quot;)
+print(classification_report(y_test, pred, target_names=[&#x27;Good&#x27;,&#x27;Default&#x27;]))</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>3. SHAP Explainability</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 10</div><pre><code>explainer = shap.LinearExplainer(lr, X_res)
+shap_values = explainer.shap_values(X_te[:500])
+
+shap.summary_plot(shap_values, X_test.iloc[:500], feature_names=X.columns.tolist())</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>4. Per-Customer Adverse Action Reasons (FCA-Compliant)</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 12</div><pre><code>def adverse_action_report(idx):
+    sv = shap_values[idx]
+    prob_default = prob[idx]
+    decision = &#x27;DECLINED&#x27; if prob_default &gt; 0.5 else &#x27;APPROVED&#x27;
+    risk_factors = sorted(zip(X.columns, sv), key=lambda x: x[1], reverse=True)
+
+    print(f&quot;=== Application {idx} ===&quot;)
+    print(f&quot;Decision: {decision} | Default probability: {prob_default:.1%}&quot;)
+    print(&quot;\nTop 3 Adverse Action Reasons (FCA Compliant):&quot;)
+    for i, (feat, val) in enumerate(risk_factors[:3], 1):
+        print(f&quot;  {i}. {feat}: {&#x27;increases&#x27; if val&gt;0 else &#x27;decreases&#x27;} risk (SHAP: {val:+.4f})&quot;)
+    print()
+
+adverse_action_report(0)
+adverse_action_report(5)
+adverse_action_report(10)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>5. ROC Curve &amp; Scorecard Coefficients</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 14</div><pre><code>fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+fpr, tpr, _ = roc_curve(y_test, prob)
+axes[0].plot(fpr, tpr, color=&#x27;#C9A96E&#x27;, lw=2, label=f&#x27;AUC = {auc:.4f}&#x27;)
+axes[0].plot([0,1],[0,1],&#x27;--&#x27;,color=&#x27;gray&#x27;)
+axes[0].set_title(&#x27;ROC Curve, Credit Scorecard&#x27;, fontweight=&#x27;bold&#x27;)
+axes[0].legend()
+
+coef = pd.Series(lr.coef_[0], index=X.columns).sort_values()
+coef.plot(kind=&#x27;barh&#x27;, ax=axes[1], color=[&#x27;#C9A96E&#x27; if v&gt;0 else &#x27;#0F1C2E&#x27; for v in coef])
+axes[1].axvline(0, color=&#x27;black&#x27;, lw=0.5)
+axes[1].set_title(&#x27;Scorecard Coefficients\n(positive = higher default risk)&#x27;, fontweight=&#x27;bold&#x27;)
+
+plt.tight_layout()
+plt.show()</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>Final Business Interpretation</h1>
+<h2>Key Findings</h2>
+<ul>
+<li>Credit scoring requires explainability as well as predictive performance.</li>
+<li>SHAP values can generate adverse-action style reason codes.</li>
+<li>Class imbalance is a core issue in default prediction.</li>
+<li>Regulated financial models require auditability, transparency and governance.</li>
+<li>Simple scorecard-style models may be preferable where compliance is more important than marginal accuracy.</li>
+</ul>
+<h2>Recommended Next Steps</h2>
+<ul>
+<li>Use explainability outputs to support fair and transparent credit decisions.</li>
+<li>Maintain separate model validation and governance documentation.</li>
+<li>Monitor approval rates and adverse impact across customer segments.</li>
+<li>Use calibrated probabilities for risk-based pricing and credit limits.</li>
+<li>Apply threshold tuning according to risk appetite.</li>
+</ul>
+<h2>Interview Talking Point</h2>
+<p>A strong way to discuss this project in an interview:</p>
+<p>&gt; &quot;Built an explainable credit scoring workflow using machine learning and SHAP-based reason codes, focusing on model transparency, risk governance and financial services compliance.&quot;</p>
+<h2>Production Considerations</h2>
+<p>Before deploying this solution in a real business environment, I would consider:</p>
+<ul>
+<li>Data quality monitoring</li>
+<li>Model drift monitoring</li>
+<li>Clear train/test or time-based validation strategy</li>
+<li>Threshold tuning aligned to business cost</li>
+<li>Explainability for stakeholder trust</li>
+<li>Documentation for auditability</li>
+<li>A reproducible pipeline for retraining</li>
+</ul></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>

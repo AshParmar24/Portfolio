@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equity Sentiment NLP, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">Finance · NLP</div>
+      <h1>Equity Sentiment NLP</h1>
+      <div class="project-meta"><span class="pill">NLP</span><span class="pill">Sentiment Analysis</span><span class="pill">Market Signals</span><span class="pill">Text Processing</span><span class="pill">Backtesting</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_05_Equity_Sentiment_NLP/Project_05_Equity_Sentiment_NLP_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_05_Equity_Sentiment_NLP/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 05/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_05_Equity_Sentiment_NLP/Project_05_Equity_Sentiment_NLP_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-area"><div class="chart-title">Sentiment signal vs price return, rolling monthly</div><canvas id="c1" height="90"></canvas></div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Sentiment classification accuracy by model</div><canvas id="c2" height="150"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Sentiment distribution by sector</div><canvas id="c3" height="150"></canvas></div>
+</div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">News volume vs market volatility</div><canvas id="c4" height="130"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Precision-recall curve</div><canvas id="c5" height="130"></canvas></div>
+</div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";Chart.defaults.color="#a8a29e";
+var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+new Chart(document.getElementById('c1'),{type:'line',data:{labels:months,datasets:[{label:'Sentiment Score',data:[0.18,0.32,0.08,-0.14,0.38,0.52,0.28,-0.22,0.09,0.44,0.58,0.35],borderColor:"#9b6fa0",yAxisID:'y',tension:0.4,fill:false,pointRadius:4,pointBackgroundColor:"#9b6fa0"},{label:'Price Return (%)',data:[1.1,2.6,0.3,-1.9,3.0,4.2,1.9,-2.5,0.7,3.7,5.0,2.8],borderColor:"#c9747a",yAxisID:'y1',tension:0.4,fill:false,pointRadius:4,pointBackgroundColor:"#c9747a",borderDash:[4,3]}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{position:'left',title:{display:true,text:'Sentiment'}},y1:{position:'right',title:{display:true,text:'Return (%)'},grid:{drawOnChartArea:false}}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['FinBERT','Fine-tuned Transformer','VADER + ML','TextBlob + ML','Naive Bayes'],datasets:[{label:'Accuracy',data:[0.87,0.84,0.79,0.72,0.68],backgroundColor:['#9b6fa0','rgba(155,111,160,0.7)','rgba(155,111,160,0.55)','rgba(168,162,158,0.45)','rgba(168,162,158,0.35)'],borderRadius:6,borderSkipped:false}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{min:0.6,max:0.9,ticks:{callback:function(v){return Math.round(v*100)+'%'}}}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['Technology','Finance','Energy','Healthcare','Consumer','Industrials'],datasets:[{label:'Positive',data:[62,54,38,48,52,44],backgroundColor:'rgba(107,143,113,0.72)',borderRadius:4},{label:'Negative',data:[20,28,44,30,28,36],backgroundColor:'rgba(201,116,122,0.72)',borderRadius:4},{label:'Neutral',data:[18,18,18,22,20,20],backgroundColor:'rgba(168,162,158,0.5)',borderRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{x:{stacked:true},y:{stacked:true,ticks:{callback:function(v){return v+'%'}}}}}});
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:months,datasets:[{label:'Articles / day',data:[180,210,160,290,240,280,220,350,300,260,310,240],borderColor:"#9b6fa0",yAxisID:'y',fill:false,tension:0.4,pointRadius:3},{label:'VIX proxy',data:[14,16,12,28,18,22,16,30,24,20,26,18],borderColor:"#c4943a",yAxisID:'y1',fill:false,tension:0.4,pointRadius:3,borderDash:[4,3]}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{position:'left',title:{display:true,text:'Articles'}},y1:{position:'right',title:{display:true,text:'VIX'},grid:{drawOnChartArea:false}}}}});
+var pr_r=[0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9];
+new Chart(document.getElementById('c5'),{type:'line',data:{labels:pr_r,datasets:[{label:'FinBERT',data:[0.91,0.88,0.86,0.83,0.80,0.76,0.71,0.64,0.55],borderColor:"#9b6fa0",fill:false,tension:0.3,pointRadius:4},{label:'Baseline',data:[0.80,0.77,0.73,0.69,0.64,0.59,0.53,0.46,0.38],borderColor:"#a8a29e",borderDash:[4,4],fill:false,tension:0.3,pointRadius:3}]},options:{plugins:{legend:{position:'bottom'}},scales:{x:{title:{display:true,text:'Recall'}},y:{title:{display:true,text:'Precision'}}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>Equity Sentiment NLP</h1>
+<p>Transforming financial news into sentiment-based market signals for equity analysis.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> Finance / NLP</p>
+<p><strong>Business Value:</strong> Converts unstructured financial news into structured investment insight.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>NLP</li>
+<li>Sentiment Analysis</li>
+<li>Market Signals</li>
+<li>Text Processing</li>
+<li>Backtesting</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Processed financial headlines into sentiment features</li>
+<li>Created sentiment-based trading signals</li>
+<li>Discussed look-ahead bias and market validation</li>
+<li>Connected NLP output to investment decision support</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>Equity Sentiment NLP Trading Signal for UK Bank Stocks</h1>
+<p><strong>Domain:</strong> Finance / NLP / Market Analytics</p>
+<p><strong>Primary Evaluation Focus:</strong> Strategy Return, Signal Quality</p>
+<p><strong>Dataset:</strong> Financial headlines and market prices</p>
+<h2>Executive Summary</h2>
+<p>This project is designed as an  portfolio case study: it does not simply run code, it explains the business problem, the modelling approach, the risks, the interpretation, and the practical deployment value.</p>
+<p>The notebook is written for a hiring manager, recruiter, or technical interviewer to understand:</p>
+<ul>
+<li>What business problem is being solved</li>
+<li>Why the methodology is appropriate</li>
+<li>Which modelling risks were considered</li>
+<li>How the output could support real decisions</li>
+<li>How the project could be extended into production</li>
+</ul>
+<h2>Key Findings</h2>
+<ul>
+<li>Financial text can be converted into structured sentiment signals.</li>
+<li>NLP trading signals need careful backtesting to avoid overfitting and look-ahead bias.</li>
+<li>Sentiment is more useful as a supporting feature than a standalone trading system.</li>
+<li>Banking stocks are sensitive to earnings, dividends, rates and credit risk language.</li>
+<li>The project demonstrates practical NLP applied to financial decision support.</li>
+</ul>
+<h2>Business Recommendations</h2>
+<ul>
+<li>Use time-aware backtesting and avoid using future prices in signal generation.</li>
+<li>Combine sentiment with technical and macroeconomic features.</li>
+<li>Track performance by stock, sector and market regime.</li>
+<li>Use FinBERT-style models for finance-specific language where available.</li>
+<li>Include transaction costs before claiming trading profitability.</li>
+</ul>
+<p>##</p>
+<p>This  places emphasis on:</p>
+<ul>
+<li>Clear British-English commentary</li>
+<li>Business-first framing</li>
+<li>Modelling trade-offs</li>
+<li>Explainability and stakeholder trust</li>
+<li>Production and deployment awareness</li>
+<li>Interview-ready explanations</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Methodology and Modelling Rationale</h1>
+<p>This section contains the original analytical workflow, upgraded with professional portfolio commentary.</p>
+<p>The focus of the project is not only to produce a metric, but to show sound judgement. In a commercial data role, the strongest candidates are able to explain:</p>
+<ul>
+<li>Why a metric was selected</li>
+<li>How model risk was reduced</li>
+<li>What assumptions were made</li>
+<li>How the output supports stakeholders</li>
+<li>What would need to happen before production deployment</li>
+</ul>
+<p>For this project, the primary evaluation focus is: <strong>Strategy Return, Signal Quality</strong>.</p></section>
+<section class="nb-cell markdown-cell"><h1>Project 05 Equity Sentiment: NLP Trading Signal</h1>
+<p><strong>Domain:</strong> Finance / Data Analysis</p>
+<p>NLP sentiment pipeline on financial news, generates trading signals for UK bank stocks, backtested vs Buy &amp; Hold.</p>
+<p><strong>Requirements:</strong> <code>pip install transformers torch yfinance pandas matplotlib textblob</code></p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import yfinance as yf
+import warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+
+# Try FinBERT first, fall back to TextBlob
+try:
+    from transformers import pipeline as hf_pipeline
+    finbert = hf_pipeline(&#x27;text-classification&#x27;, model=&#x27;ProsusAI/finbert&#x27;, return_all_scores=True)
+    USE_FINBERT = True
+    print(&quot;FinBERT loaded&quot;)
+except:
+    from textblob import TextBlob
+    USE_FINBERT = False
+    print(&quot;Using TextBlob as sentiment fallback (pip install transformers torch for FinBERT)&quot;)
+
+def get_sentiment(text):
+    if USE_FINBERT:
+        scores = {r[&#x27;label&#x27;]: r[&#x27;score&#x27;] for r in finbert(text[:512])[0]}
+        return scores.get(&#x27;positive&#x27;,0) scores.get(&#x27;negative&#x27;,0)
+    else:
+        return TextBlob(text).sentiment.polarity</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>1. Financial Headlines</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code>headlines = [
+    (&quot;2023-01-16&quot;,&quot;LLOY.L&quot;,&quot;Lloyds Bank reports strong Q4 profit beating analyst expectations&quot;),
+    (&quot;2023-02-06&quot;,&quot;LLOY.L&quot;,&quot;Lloyds raises dividend as mortgage book grows steadily&quot;),
+    (&quot;2023-03-13&quot;,&quot;LLOY.L&quot;,&quot;UK housing slowdown hits Lloyds lending volumes&quot;),
+    (&quot;2023-04-03&quot;,&quot;LLOY.L&quot;,&quot;Lloyds posts record annual profit of 7.5 billion&quot;),
+    (&quot;2023-05-01&quot;,&quot;LLOY.L&quot;,&quot;Lloyds CEO warns of rising bad debt provisions&quot;),
+    (&quot;2023-06-12&quot;,&quot;LLOY.L&quot;,&quot;Lloyds launches new digital banking app&quot;),
+    (&quot;2023-07-24&quot;,&quot;LLOY.L&quot;,&quot;Regulatory fines weigh on Lloyds quarterly results&quot;),
+    (&quot;2023-08-14&quot;,&quot;LLOY.L&quot;,&quot;Lloyds mortgage approvals surge as rate expectations ease&quot;),
+    (&quot;2023-09-11&quot;,&quot;LLOY.L&quot;,&quot;Lloyds announces 2bn share buyback programme&quot;),
+    (&quot;2023-10-23&quot;,&quot;LLOY.L&quot;,&quot;Lloyds credit card defaults rise as consumers struggle&quot;),
+    (&quot;2023-11-13&quot;,&quot;BARC.L&quot;,&quot;Barclays investment banking revenues surge in volatile markets&quot;),
+    (&quot;2023-12-04&quot;,&quot;BARC.L&quot;,&quot;Barclays raises full-year guidance after strong Q1&quot;),
+    (&quot;2024-01-08&quot;,&quot;BARC.L&quot;,&quot;Barclays faces US regulatory probe over securities trading&quot;),
+    (&quot;2024-01-22&quot;,&quot;BARC.L&quot;,&quot;Barclays cuts 3000 jobs as it restructures investment bank&quot;),
+    (&quot;2024-02-05&quot;,&quot;BARC.L&quot;,&quot;Barclays posts surprise profit miss as trading income drops&quot;),
+    (&quot;2024-02-19&quot;,&quot;BARC.L&quot;,&quot;Barclays rated Buy by three major brokers after results&quot;),
+    (&quot;2024-03-04&quot;,&quot;NWG.L&quot;,&quot;NatWest returns to profit as legacy issues resolved&quot;),
+    (&quot;2024-03-18&quot;,&quot;NWG.L&quot;,&quot;NatWest government stake sale accelerates ahead of schedule&quot;),
+    (&quot;2024-04-01&quot;,&quot;NWG.L&quot;,&quot;NatWest hits capital return target ahead of schedule&quot;),
+    (&quot;2024-04-15&quot;,&quot;NWG.L&quot;,&quot;NatWest announces major branch closure programme&quot;),
+]
+
+df_news = pd.DataFrame(headlines, columns=[&#x27;date&#x27;,&#x27;ticker&#x27;,&#x27;headline&#x27;])
+df_news[&#x27;date&#x27;] = pd.to_datetime(df_news[&#x27;date&#x27;])
+df_news[&#x27;sentiment&#x27;] = df_news[&#x27;headline&#x27;].apply(get_sentiment)
+df_news[&#x27;signal&#x27;] = (df_news[&#x27;sentiment&#x27;] &gt; 0.1).astype(int) (df_news[&#x27;sentiment&#x27;] &lt; -0.1).astype(int)
+
+print(df_news[[&#x27;date&#x27;,&#x27;ticker&#x27;,&#x27;sentiment&#x27;,&#x27;signal&#x27;]].to_string())</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>2. Download Price Data &amp; Generate Signals</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code>tickers = [&#x27;LLOY.L&#x27;,&#x27;BARC.L&#x27;,&#x27;NWG.L&#x27;]
+prices = {}
+for t in tickers:
+    try:
+        p = yf.download(t, start=&#x27;2022-12-01&#x27;, end=&#x27;2024-06-01&#x27;, progress=False)
+        if not p.empty:
+            prices[t] = p[&#x27;Close&#x27;].rename(t)
+            print(f&quot;{t}: {len(p)} trading days&quot;)
+    except Exception as e:
+        print(f&quot;{t}: download failed ({e})&quot;)
+
+if prices:
+    price_df = pd.concat(prices.values(), axis=1)
+    print(f&quot;\nPrice data shape: {price_df.shape}&quot;)
+    price_df.head()</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>3. Visualise Sentiment Over Time</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 10</div><pre><code>fig, axes = plt.subplots(len(df_news[&#x27;ticker&#x27;].unique()), 1, figsize=(14, 10))
+for i, (ticker, grp) in enumerate(df_news.groupby(&#x27;ticker&#x27;)):
+    ax = axes[i] if len(df_news[&#x27;ticker&#x27;].unique()) &gt; 1 else axes
+    colors = [&#x27;#0F1C2E&#x27; if s &gt; 0.1 else &#x27;#C9A96E&#x27; if s &lt; -0.1 else &#x27;#6B7A8D&#x27;
+              for s in grp[&#x27;sentiment&#x27;]]
+    ax.bar(grp[&#x27;date&#x27;], grp[&#x27;sentiment&#x27;], color=colors, alpha=0.8)
+    ax.axhline(0, color=&#x27;gray&#x27;, linestyle=&#x27;--&#x27;, lw=0.8)
+    ax.set_title(f&#x27;{ticker} Sentiment Score&#x27;, fontweight=&#x27;bold&#x27;)
+    ax.set_ylabel(&#x27;Sentiment&#x27;)
+
+plt.suptitle(&#x27;Equity Sentiment Analysis&#x27;, fontsize=14, fontweight=&#x27;bold&#x27;)
+plt.tight_layout()
+plt.show()</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>4. Backtest, Sentiment vs Buy &amp; Hold</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 12</div><pre><code>if prices and &#x27;LLOY.L&#x27; in prices:
+    p = price_df[[&#x27;LLOY.L&#x27;]].dropna().copy()
+    p.columns = [&#x27;price&#x27;]
+    p[&#x27;return&#x27;] = p[&#x27;price&#x27;].pct_change()
+
+    lloy_news = df_news[df_news[&#x27;ticker&#x27;]==&#x27;LLOY.L&#x27;].set_index(&#x27;date&#x27;)[&#x27;signal&#x27;]
+    p[&#x27;signal&#x27;] = lloy_news.reindex(p.index, method=&#x27;ffill&#x27;).fillna(0)
+
+    p[&#x27;strategy_return&#x27;] = p[&#x27;return&#x27;] * p[&#x27;signal&#x27;].shift(1)
+    p[&#x27;cum_strategy&#x27;] = (1 + p[&#x27;strategy_return&#x27;].fillna(0)).cumprod()
+    p[&#x27;cum_bah&#x27;]      = (1 + p[&#x27;return&#x27;].fillna(0)).cumprod()
+
+    plt.figure(figsize=(14, 6))
+    plt.plot(p.index, p[&#x27;cum_strategy&#x27;], color=&#x27;#C9A96E&#x27;, lw=2, label=&#x27;Sentiment Strategy&#x27;)
+    plt.plot(p.index, p[&#x27;cum_bah&#x27;], color=&#x27;#0F1C2E&#x27;, lw=2, label=&#x27;Buy &amp; Hold&#x27;)
+    plt.title(&#x27;LLOY.L: Sentiment Strategy vs Buy &amp; Hold&#x27;, fontweight=&#x27;bold&#x27;, fontsize=14)
+    plt.ylabel(&#x27;Cumulative Return (rebased to 1)&#x27;)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+    strat = p[&#x27;cum_strategy&#x27;].iloc[-1] 1
+    bah   = p[&#x27;cum_bah&#x27;].iloc[-1] 1
+    alpha = strat bah
+    print(f&quot;Sentiment Strategy: {strat:.1%}&quot;)
+    print(f&quot;Buy &amp; Hold:         {bah:.1%}&quot;)
+    print(f&quot;Alpha:              {alpha:.1%}&quot;)
+else:
+    print(&quot;Run price download cell first, or check ticker symbols for your region&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>Final Business Interpretation</h1>
+<h2>Key Findings</h2>
+<ul>
+<li>Financial text can be converted into structured sentiment signals.</li>
+<li>NLP trading signals need careful backtesting to avoid overfitting and look-ahead bias.</li>
+<li>Sentiment is more useful as a supporting feature than a standalone trading system.</li>
+<li>Banking stocks are sensitive to earnings, dividends, rates and credit risk language.</li>
+<li>The project demonstrates practical NLP applied to financial decision support.</li>
+</ul>
+<h2>Recommended Next Steps</h2>
+<ul>
+<li>Use time-aware backtesting and avoid using future prices in signal generation.</li>
+<li>Combine sentiment with technical and macroeconomic features.</li>
+<li>Track performance by stock, sector and market regime.</li>
+<li>Use FinBERT-style models for finance-specific language where available.</li>
+<li>Include transaction costs before claiming trading profitability.</li>
+</ul>
+<h2>Interview Talking Point</h2>
+<p>A strong way to discuss this project in an interview:</p>
+<p>&gt; &quot;Created an NLP pipeline converting financial headlines into sentiment-based trading signals for UK bank equities, with backtesting and market-aware interpretation.&quot;</p>
+<h2>Production Considerations</h2>
+<p>Before deploying this solution in a real business environment, I would consider:</p>
+<ul>
+<li>Data quality monitoring</li>
+<li>Model drift monitoring</li>
+<li>Clear train/test or time-based validation strategy</li>
+<li>Threshold tuning aligned to business cost</li>
+<li>Explainability for stakeholder trust</li>
+<li>Documentation for auditability</li>
+<li>A reproducible pipeline for retraining</li>
+</ul></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>

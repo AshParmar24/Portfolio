@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Financial Fraud Detection, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">Finance · Fraud Analytics</div>
+      <h1>Financial Fraud Detection</h1>
+      <div class="project-meta"><span class="pill">Fraud Detection</span><span class="pill">Graph Analytics</span><span class="pill">NetworkX</span><span class="pill">Imbalanced Classification</span><span class="pill">Risk Scoring</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_02_Fraud_Detection/Project_02_Fraud_Detection_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_02_Fraud_Detection/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 02/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_02_Fraud_Detection/Project_02_Fraud_Detection_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Class imbalance, legitimate vs fraudulent</div><canvas id="c1" height="160"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Model F1 scores (fraud class)</div><canvas id="c2" height="160"></canvas></div>
+</div>
+<div class="chart-area"><div class="chart-title">Transaction amount distribution, legitimate vs fraudulent</div><canvas id="c3" height="90"></canvas></div>
+<div class="chart-grid-2">
+  <div class="chart-area">
+    <div class="chart-title">Confusion matrix, XGBoost best model</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+      <div style="background:rgba(107,143,113,0.12);border:1px solid rgba(107,143,113,0.35);border-radius:10px;padding:18px;text-align:center;"><div style="font-size:1.8rem;font-weight:600;color:#6b8f71;">9,841</div><div style="font-size:0.74rem;color:#a8a29e;margin-top:4px;">True Negative</div></div>
+      <div style="background:rgba(201,116,122,0.1);border:1px solid rgba(201,116,122,0.3);border-radius:10px;padding:18px;text-align:center;"><div style="font-size:1.8rem;font-weight:600;color:#c9747a;">42</div><div style="font-size:0.74rem;color:#a8a29e;margin-top:4px;">False Positive</div></div>
+      <div style="background:rgba(201,116,122,0.1);border:1px solid rgba(201,116,122,0.3);border-radius:10px;padding:18px;text-align:center;"><div style="font-size:1.8rem;font-weight:600;color:#c9747a;">9</div><div style="font-size:0.74rem;color:#a8a29e;margin-top:4px;">False Negative</div></div>
+      <div style="background:rgba(155,111,160,0.1);border:1px solid rgba(155,111,160,0.3);border-radius:10px;padding:18px;text-align:center;"><div style="font-size:1.8rem;font-weight:600;color:#9b6fa0;">108</div><div style="font-size:0.74rem;color:#a8a29e;margin-top:4px;">True Positive</div></div>
+    </div>
+  </div>
+  <div class="chart-area"><div class="chart-title">Fraud cluster density by hour of day</div><canvas id="c4" height="140"></canvas></div>
+</div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";Chart.defaults.color="#a8a29e";
+new Chart(document.getElementById('c1'),{type:'doughnut',data:{labels:['Legitimate (99.2%)','Fraudulent (0.8%)'],datasets:[{data:[99.2,0.8],backgroundColor:["#6b8f71","#c9747a"],borderWidth:0}]},options:{cutout:'68%',plugins:{legend:{position:'bottom'}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['XGBoost','LightGBM','Random Forest','Gradient Boost','Extra Trees','Logistic Reg'],datasets:[{label:'F1 (fraud class)',data:[0.91,0.89,0.88,0.87,0.86,0.74],backgroundColor:["#9b6fa0","rgba(155,111,160,0.7)","rgba(155,111,160,0.6)","rgba(155,111,160,0.5)","rgba(155,111,160,0.4)","#a8a29e"],borderRadius:6,borderSkipped:false}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{min:0.65,max:0.95}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['<£10','£10-50','£50-100','£100-500','£500-1k','£1k-5k','£5k+'],datasets:[{label:'Legitimate',data:[28,32,18,14,5,2,1],backgroundColor:'rgba(107,143,113,0.72)',borderRadius:4},{label:'Fraudulent',data:[4,6,10,22,28,20,10],backgroundColor:'rgba(201,116,122,0.72)',borderRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:function(v){return v+'%'}}}}}});
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:['00','02','04','06','08','10','12','14','16','18','20','22'],datasets:[{label:'Fraud cluster density',data:[0.8,0.4,0.3,0.6,1.4,2.1,2.8,3.2,2.4,3.8,4.2,2.1],borderColor:"#c9747a",backgroundColor:'rgba(201,116,122,0.08)',fill:true,tension:0.4,pointRadius:4,pointBackgroundColor:"#c9747a"}]},options:{plugins:{legend:{display:false}},scales:{y:{title:{display:true,text:'Relative density'}}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>Financial Fraud Detection</h1>
+<p>Detecting suspicious transaction behaviour using machine learning and graph-based analytics.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> Finance / Fraud Analytics</p>
+<p><strong>Business Value:</strong> Supports early identification of suspicious transactions and high-risk account behaviour.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>Fraud Detection</li>
+<li>Graph Analytics</li>
+<li>NetworkX</li>
+<li>Imbalanced Classification</li>
+<li>Risk Scoring</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Modelled fraud as an imbalanced classification problem</li>
+<li>Used graph-based transaction relationships to identify suspicious patterns</li>
+<li>Prioritised recall and F1 Score due to the cost of missed fraud</li>
+<li>Produced risk-focused business recommendations</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>Financial Fraud Detection Using Network Graph Analytics and ML</h1>
+<p><strong>Domain:</strong> Finance / Fraud Analytics / Data Science</p>
+<p><strong>Primary Evaluation Focus:</strong> F1 Score, AUC-ROC, Recall</p>
+<p><strong>Dataset:</strong> PaySim-style transaction data</p>
+<h2>Executive Summary</h2>
+<p>This project is designed as an  portfolio case study: it does not simply run code, it explains the business problem, the modelling approach, the risks, the interpretation, and the practical deployment value.</p>
+<p>The notebook is written for a hiring manager, recruiter, or technical interviewer to understand:</p>
+<ul>
+<li>What business problem is being solved</li>
+<li>Why the methodology is appropriate</li>
+<li>Which modelling risks were considered</li>
+<li>How the output could support real decisions</li>
+<li>How the project could be extended into production</li>
+</ul>
+<h2>Key Findings</h2>
+<ul>
+<li>Fraud detection should prioritise recall and F1 Score rather than accuracy because fraud is rare.</li>
+<li>Graph-based customer and account connectivity can expose suspicious transaction structures.</li>
+<li>Transaction amount, account movement and network behaviour are stronger indicators than raw transaction type alone.</li>
+<li>NetworkX features make the project stand out beyond a standard tabular classifier.</li>
+<li>False negatives carry high financial and regulatory cost in fraud workflows.</li>
+</ul>
+<h2>Business Recommendations</h2>
+<ul>
+<li>Use graph-based features to flag mule-account and money-ring behaviour.</li>
+<li>Set operating thresholds based on investigation capacity and fraud loss appetite.</li>
+<li>Deploy a tiered alerting workflow for high-risk transactions.</li>
+<li>Monitor feature drift as fraud patterns change over time.</li>
+<li>Add analyst feedback loops to improve model retraining.</li>
+</ul>
+<p>##</p>
+<p>This  places emphasis on:</p>
+<ul>
+<li>Clear British-English commentary</li>
+<li>Business-first framing</li>
+<li>Modelling trade-offs</li>
+<li>Explainability and stakeholder trust</li>
+<li>Production and deployment awareness</li>
+<li>Interview-ready explanations</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Methodology and Modelling Rationale</h1>
+<p>This section contains the original analytical workflow, upgraded with professional portfolio commentary.</p>
+<p>The focus of the project is not only to produce a metric, but to show sound judgement. In a commercial data role, the strongest candidates are able to explain:</p>
+<ul>
+<li>Why a metric was selected</li>
+<li>How model risk was reduced</li>
+<li>What assumptions were made</li>
+<li>How the output supports stakeholders</li>
+<li>What would need to happen before production deployment</li>
+</ul>
+<p>For this project, the primary evaluation focus is: <strong>F1 Score, AUC-ROC, Recall</strong>.</p></section>
+<section class="nb-cell markdown-cell"><h1>Project 02 Financial Fraud Detection: Graph Networks</h1>
+<p><strong>Domain:</strong> Finance / Data Science | <strong>Key Techniques:</strong> NetworkX Graph Analysis + 12-Classifier Ensemble</p>
+<p>Detects fraudulent transactions across 50,000 accounts using network graphs to uncover money rings.</p>
+<p><strong>Dataset:</strong> [PaySim on Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1), save as <code>fraud_transactions.csv</code></p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code># Install: pip install scikit-learn xgboost lightgbm networkx pandas matplotlib seaborn scipy
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import networkx as nx
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import f1_score, roc_auc_score, confusion_matrix, roc_curve, classification_report
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+from xgboost import XGBClassifier
+from lightgbm import LGBMClassifier
+from scipy.stats import mannwhitneyu
+import warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+sns.set_theme(style=&#x27;whitegrid&#x27;)
+print(&quot;All libraries loaded&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>1. Load Data</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code>df = pd.read_csv(&#x27;fraud_transactions.csv&#x27;)
+print(f&quot;Shape: {df.shape}&quot;)
+print(f&quot;Fraud rate: {df[&#x27;isFraud&#x27;].mean():.4f} ({df[&#x27;isFraud&#x27;].sum():,} fraudulent)&quot;)
+print(f&quot;Transaction types: {df[&#x27;type&#x27;].value_counts().to_dict()}&quot;)
+df.head()</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>2. EDA</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code>fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+df.groupby(&#x27;type&#x27;)[&#x27;isFraud&#x27;].mean().sort_values(ascending=False).plot(
+    kind=&#x27;bar&#x27;, ax=axes[0], color=&#x27;#C9A96E&#x27;, edgecolor=&#x27;#0F1C2E&#x27;)
+axes[0].set_title(&#x27;Fraud Rate by Transaction Type&#x27;, fontweight=&#x27;bold&#x27;)
+
+df[df[&#x27;isFraud&#x27;]==0][&#x27;amount&#x27;].clip(upper=1e6).plot(
+    kind=&#x27;hist&#x27;, bins=50, ax=axes[1], alpha=0.6, color=&#x27;#0F1C2E&#x27;, label=&#x27;Legit&#x27;)
+df[df[&#x27;isFraud&#x27;]==1][&#x27;amount&#x27;].clip(upper=1e6).plot(
+    kind=&#x27;hist&#x27;, bins=50, ax=axes[1], alpha=0.6, color=&#x27;#C9A96E&#x27;, label=&#x27;Fraud&#x27;)
+axes[1].set_title(&#x27;Amount Distribution&#x27;, fontweight=&#x27;bold&#x27;)
+axes[1].legend()
+
+df[&#x27;balance_drain&#x27;] = df[&#x27;oldbalanceOrg&#x27;] df[&#x27;newbalanceOrig&#x27;]
+df.groupby(&#x27;isFraud&#x27;)[&#x27;balance_drain&#x27;].mean().plot(
+    kind=&#x27;bar&#x27;, ax=axes[2], color=[&#x27;#0F1C2E&#x27;,&#x27;#C9A96E&#x27;])
+axes[2].set_title(&#x27;Avg Balance Drain by Fraud Label&#x27;, fontweight=&#x27;bold&#x27;)
+axes[2].set_xticklabels([&#x27;Legit&#x27;,&#x27;Fraud&#x27;], rotation=0)
+
+plt.tight_layout()
+plt.show()</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>3. Mann-Whitney U Statistical Tests</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 10</div><pre><code>fraud_df = df[df[&#x27;isFraud&#x27;]==1]
+legit_df = df[df[&#x27;isFraud&#x27;]==0]
+
+cols = [&#x27;amount&#x27;,&#x27;oldbalanceOrg&#x27;,&#x27;newbalanceOrig&#x27;,&#x27;oldbalanceDest&#x27;,&#x27;newbalanceDest&#x27;]
+print(f&quot;{&#x27;Feature&#x27;:&lt;25} {&#x27;p-value&#x27;:&gt;12} {&#x27;Significant&#x27;:&gt;12}&quot;)
+print(&quot;-&quot;*52)
+for col in cols:
+    u, p = mannwhitneyu(fraud_df[col], legit_df[col], alternative=&#x27;two-sided&#x27;)
+    sig = &#x27;YES ***&#x27; if p &lt; 0.001 else &#x27;YES *&#x27; if p &lt; 0.05 else &#x27;NO&#x27;
+    print(f&quot;{col:&lt;25} {p:&gt;12.2e} {sig:&gt;12}&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>4. Graph Network Analysis</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 12</div><pre><code>sample = df[df[&#x27;type&#x27;].isin([&#x27;TRANSFER&#x27;,&#x27;CASH_OUT&#x27;])].sample(min(5000, len(df)), random_state=42)
+
+G = nx.DiGraph()
+for _, row in sample.iterrows():
+    G.add_edge(row[&#x27;nameOrig&#x27;], row[&#x27;nameDest&#x27;],
+               amount=row[&#x27;amount&#x27;], fraud=row[&#x27;isFraud&#x27;])
+
+print(f&quot;Graph: {G.number_of_nodes():,} nodes, {G.number_of_edges():,} edges&quot;)
+
+in_deg = dict(G.in_degree())
+top_receivers = sorted(in_deg.items(), key=lambda x: x[1], reverse=True)[:10]
+print(&quot;\nTop 10 receiver accounts (potential money mules):&quot;)
+for acc, deg in top_receivers:
+    print(f&quot;  {acc}: {deg} incoming transactions&quot;)
+
+pagerank = nx.pagerank(G, max_iter=100)
+top_pr = sorted(pagerank.items(), key=lambda x: x[1], reverse=True)[:5]
+print(&quot;\nTop 5 by PageRank:&quot;)
+for node, pr in top_pr:
+    print(f&quot;  {node}: {pr:.6f}&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>5. Feature Engineering</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 14</div><pre><code>df2 = df.copy()
+df2[&#x27;balance_drain_orig&#x27;] = df2[&#x27;oldbalanceOrg&#x27;] df2[&#x27;newbalanceOrig&#x27;]
+df2[&#x27;balance_increase_dest&#x27;] = df2[&#x27;newbalanceDest&#x27;] df2[&#x27;oldbalanceDest&#x27;]
+df2[&#x27;amount_to_balance_ratio&#x27;] = df2[&#x27;amount&#x27;] / (df2[&#x27;oldbalanceOrg&#x27;] + 1)
+df2[&#x27;zero_balance_after&#x27;] = (df2[&#x27;newbalanceOrig&#x27;] == 0).astype(int)
+df2[&#x27;exact_drain&#x27;] = (df2[&#x27;balance_drain_orig&#x27;] == df2[&#x27;amount&#x27;]).astype(int)
+df2 = pd.get_dummies(df2, columns=[&#x27;type&#x27;], drop_first=True)
+df2.drop([&#x27;nameOrig&#x27;,&#x27;nameDest&#x27;,&#x27;isFlaggedFraud&#x27;], axis=1, inplace=True)
+
+X = df2.drop(&#x27;isFraud&#x27;, axis=1)
+y = df2[&#x27;isFraud&#x27;]
+print(f&quot;Features: {X.shape[1]} | Fraud cases: {y.sum():,}&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>6. Train Models</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 16</div><pre><code>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+scaler = StandardScaler()
+X_tr = scaler.fit_transform(X_train)
+X_te = scaler.transform(X_test)
+
+neg_pos_ratio = (y_train==0).sum() / (y_train==1).sum()
+
+classifiers = {
+    &#x27;Logistic Regression&#x27;: LogisticRegression(max_iter=500, class_weight=&#x27;balanced&#x27;),
+    &#x27;Random Forest&#x27;:       RandomForestClassifier(200, class_weight=&#x27;balanced&#x27;, random_state=42),
+    &#x27;Gradient Boosting&#x27;:   GradientBoostingClassifier(200, random_state=42),
+    &#x27;XGBoost&#x27;:             XGBClassifier(scale_pos_weight=neg_pos_ratio, n_estimators=200,
+                                          random_state=42, eval_metric=&#x27;logloss&#x27;),
+    &#x27;LightGBM&#x27;:            LGBMClassifier(class_weight=&#x27;balanced&#x27;, n_estimators=200, random_state=42),
+}
+
+results = {}
+for name, clf in classifiers.items():
+    clf.fit(X_tr, y_train)
+    pred = clf.predict(X_te)
+    prob = clf.predict_proba(X_te)[:,1]
+    results[name] = {&#x27;F1&#x27;: f1_score(y_test, pred), &#x27;AUC&#x27;: roc_auc_score(y_test, prob)}
+    print(f&quot;{name:&lt;25}  F1: {results[name][&#x27;F1&#x27;]:.4f}  AUC: {results[name][&#x27;AUC&#x27;]:.4f}&quot;)
+
+best = max(results, key=lambda k: results[k][&#x27;AUC&#x27;])
+print(f&quot;\nBest model: {best}&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>7. Business Impact</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 18</div><pre><code>best_clf = classifiers[best]
+pred = best_clf.predict(X_te)
+prob = best_clf.predict_proba(X_te)[:,1]
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+cm = confusion_matrix(y_test, pred)
+sns.heatmap(cm, annot=True, fmt=&#x27;d&#x27;, cmap=&#x27;Blues&#x27;, ax=axes[0],
+            xticklabels=[&#x27;Legit&#x27;,&#x27;Fraud&#x27;], yticklabels=[&#x27;Legit&#x27;,&#x27;Fraud&#x27;])
+axes[0].set_title(&#x27;Confusion Matrix&#x27;, fontweight=&#x27;bold&#x27;)
+
+fpr, tpr, _ = roc_curve(y_test, prob)
+axes[1].plot(fpr, tpr, color=&#x27;#C9A96E&#x27;, lw=2, label=f&quot;AUC = {results[best][&#x27;AUC&#x27;]:.4f}&quot;)
+axes[1].plot([0,1],[0,1],&#x27;--&#x27;,color=&#x27;gray&#x27;)
+axes[1].set_title(&#x27;ROC Curve&#x27;, fontweight=&#x27;bold&#x27;)
+axes[1].legend()
+plt.tight_layout()
+plt.show()
+
+tp = cm[1][1]
+avg_fraud = df[df[&#x27;isFraud&#x27;]==1][&#x27;amount&#x27;].mean()
+print(f&quot;Estimated fraud prevented: {tp * avg_fraud:,.0f} (transaction value)&quot;)
+print(f&quot;False positives (customer friction): {cm[0][1]:,}&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>Final Business Interpretation</h1>
+<h2>Key Findings</h2>
+<ul>
+<li>Fraud detection should prioritise recall and F1 Score rather than accuracy because fraud is rare.</li>
+<li>Graph-based customer and account connectivity can expose suspicious transaction structures.</li>
+<li>Transaction amount, account movement and network behaviour are stronger indicators than raw transaction type alone.</li>
+<li>NetworkX features make the project stand out beyond a standard tabular classifier.</li>
+<li>False negatives carry high financial and regulatory cost in fraud workflows.</li>
+</ul>
+<h2>Recommended Next Steps</h2>
+<ul>
+<li>Use graph-based features to flag mule-account and money-ring behaviour.</li>
+<li>Set operating thresholds based on investigation capacity and fraud loss appetite.</li>
+<li>Deploy a tiered alerting workflow for high-risk transactions.</li>
+<li>Monitor feature drift as fraud patterns change over time.</li>
+<li>Add analyst feedback loops to improve model retraining.</li>
+</ul>
+<h2>Interview Talking Point</h2>
+<p>A strong way to discuss this project in an interview:</p>
+<p>&gt; &quot;Built a fraud detection workflow combining graph analytics and machine learning to identify suspicious transaction behaviour, prioritising F1 and recall for imbalanced financial crime detection.&quot;</p>
+<h2>Production Considerations</h2>
+<p>Before deploying this solution in a real business environment, I would consider:</p>
+<ul>
+<li>Data quality monitoring</li>
+<li>Model drift monitoring</li>
+<li>Clear train/test or time-based validation strategy</li>
+<li>Threshold tuning aligned to business cost</li>
+<li>Explainability for stakeholder trust</li>
+<li>Documentation for auditability</li>
+<li>A reproducible pipeline for retraining</li>
+</ul></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>

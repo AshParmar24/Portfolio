@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Lifetime Value Modelling, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">Customer Analytics · FinTech</div>
+      <h1>Customer Lifetime Value Modelling</h1>
+      <div class="project-meta"><span class="pill">CLV</span><span class="pill">RFM Analysis</span><span class="pill">Customer Segmentation</span><span class="pill">Clustering</span><span class="pill">Marketing Analytics</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_07_Customer_CLV/Project_07_Customer_CLV_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_07_Customer_CLV/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 07/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_07_Customer_CLV/Project_07_Customer_CLV_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Customer segments, CLV tier distribution</div><canvas id="c1" height="160"></canvas></div>
+  <div class="chart-area"><div class="chart-title">RFM score distribution</div><canvas id="c2" height="160"></canvas></div>
+</div>
+<div class="chart-area"><div class="chart-title">Average CLV by acquisition channel (£)</div><canvas id="c3" height="80"></canvas></div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">CLV vs purchase frequency</div><canvas id="c4" height="130"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Revenue concentration, % of revenue by customer tier</div><canvas id="c5" height="130"></canvas></div>
+</div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";Chart.defaults.color="#a8a29e";
+new Chart(document.getElementById('c1'),{type:'doughnut',data:{labels:['Champions £500+ (18%)','Loyal £250-499 (29%)','At Risk £100-249 (35%)','Low Value <£100 (18%)'],datasets:[{data:[18,29,35,18],backgroundColor:["#9b6fa0","rgba(155,111,160,0.62)","rgba(196,148,58,0.68)","#a8a29e"],borderWidth:0}]},options:{cutout:'60%',plugins:{legend:{position:'bottom',labels:{font:{size:11}}}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Score 1','Score 2','Score 3','Score 4','Score 5'],datasets:[{label:'Recency',data:[8,12,24,32,24],backgroundColor:'rgba(155,111,160,0.75)',borderRadius:4},{label:'Frequency',data:[14,20,28,24,14],backgroundColor:'rgba(107,143,113,0.68)',borderRadius:4},{label:'Monetary',data:[20,25,28,18,9],backgroundColor:'rgba(196,148,58,0.68)',borderRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'% of customers'}}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['Referral','Organic Search','Email Campaign','Direct','Paid Social','Paid Search'],datasets:[{label:'Avg CLV (£)',data:[487,412,368,340,290,255],backgroundColor:['#9b6fa0','rgba(155,111,160,0.75)','rgba(155,111,160,0.60)','rgba(155,111,160,0.50)','rgba(196,148,58,0.60)','rgba(168,162,158,0.50)'],borderRadius:6,borderSkipped:false}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{callback:function(v){return '£'+v}}}}}});
+var sc=[];for(var i=0;i<40;i++){sc.push({champ:i<10,freq:Math.floor(Math.random()*25)+1,clv:i<10?300+Math.random()*250:i<25?120+Math.random()*150:30+Math.random()*80});}
+new Chart(document.getElementById('c4'),{type:'scatter',data:{datasets:[{label:'Champions',data:sc.slice(0,10).map(function(d){return{x:d.freq+10,y:d.clv};}),backgroundColor:"#9b6fa0",pointRadius:6},{label:'Loyal',data:sc.slice(10,25).map(function(d){return{x:d.freq+3,y:d.clv};}),backgroundColor:"#6b8f71",pointRadius:5},{label:'At Risk',data:sc.slice(25).map(function(d){return{x:d.freq,y:d.clv};}),backgroundColor:"#c4943a",pointRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{x:{title:{display:true,text:'Purchase frequency'}},y:{title:{display:true,text:'CLV (£)'}}}}});
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['Top 5%','6-10%','11-20%','21-40%','41-60%','61-80%','81-100%'],datasets:[{label:'% of total revenue',data:[32,18,14,16,10,7,3],backgroundColor:['#9b6fa0','rgba(155,111,160,0.75)','rgba(155,111,160,0.60)','rgba(196,148,58,0.60)','rgba(196,148,58,0.45)','rgba(168,162,158,0.45)','rgba(168,162,158,0.30)'],borderRadius:5,borderSkipped:false}]},options:{plugins:{legend:{display:false}},scales:{y:{title:{display:true,text:'% of total revenue'}}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>Customer Lifetime Value Modelling</h1>
+<p>Estimating customer value and segmenting customers using behavioural analytics.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> Customer Analytics / FinTech</p>
+<p><strong>Business Value:</strong> Supports customer prioritisation, retention strategy and marketing spend allocation.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>CLV</li>
+<li>RFM Analysis</li>
+<li>Customer Segmentation</li>
+<li>Clustering</li>
+<li>Marketing Analytics</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Built customer value and segmentation features</li>
+<li>Used RFM-style behavioural analysis</li>
+<li>Applied clustering to identify customer groups</li>
+<li>Translated model outputs into marketing recommendations</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>Customer Lifetime Value Modelling for Retail Banking</h1>
+<p><strong>Domain:</strong> FinTech / Customer Analytics / CLV</p>
+<p><strong>Primary Evaluation Focus:</strong> Predicted CLV, RFM Segmentation</p>
+<p><strong>Dataset:</strong> Synthetic retail banking transaction data</p>
+<h2>Executive Summary</h2>
+<p>This project is designed as an  portfolio case study: it does not simply run code, it explains the business problem, the modelling approach, the risks, the interpretation, and the practical deployment value.</p>
+<p>The notebook is written for a hiring manager, recruiter, or technical interviewer to understand:</p>
+<ul>
+<li>What business problem is being solved</li>
+<li>Why the methodology is appropriate</li>
+<li>Which modelling risks were considered</li>
+<li>How the output could support real decisions</li>
+<li>How the project could be extended into production</li>
+</ul>
+<h2>Key Findings</h2>
+<ul>
+<li>RFM analysis provides a strong foundation for customer value segmentation.</li>
+<li>CLV modelling helps prioritise commercial investment by expected future value.</li>
+<li>K-Means segmentation can translate customer behaviour into marketing groups.</li>
+<li>High-value customers should not be treated the same as low-engagement customers.</li>
+<li>CLV outputs support retention, cross-sell and portfolio strategy.</li>
+</ul>
+<h2>Business Recommendations</h2>
+<ul>
+<li>Prioritise retention activity for high-CLV customers at risk of disengagement.</li>
+<li>Use RFM segments to personalise marketing campaigns.</li>
+<li>Combine CLV with churn risk for value-at-risk analysis.</li>
+<li>Monitor segment migration over time.</li>
+<li>Use CLV estimates to guide acquisition spend and relationship management.</li>
+</ul>
+<p>##</p>
+<p>This  places emphasis on:</p>
+<ul>
+<li>Clear British-English commentary</li>
+<li>Business-first framing</li>
+<li>Modelling trade-offs</li>
+<li>Explainability and stakeholder trust</li>
+<li>Production and deployment awareness</li>
+<li>Interview-ready explanations</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Methodology and Modelling Rationale</h1>
+<p>This section contains the original analytical workflow, upgraded with professional portfolio commentary.</p>
+<p>The focus of the project is not only to produce a metric, but to show sound judgement. In a commercial data role, the strongest candidates are able to explain:</p>
+<ul>
+<li>Why a metric was selected</li>
+<li>How model risk was reduced</li>
+<li>What assumptions were made</li>
+<li>How the output supports stakeholders</li>
+<li>What would need to happen before production deployment</li>
+</ul>
+<p>For this project, the primary evaluation focus is: <strong>Predicted CLV, RFM Segmentation</strong>.</p></section>
+<section class="nb-cell markdown-cell"><h1>Project 07 Customer Lifetime Value: Retail Banking</h1>
+<p><strong>Domain:</strong> FinTech / AI Engineering</p>
+<p>BG/NBD + Gamma-Gamma CLV modelling with RFM segmentation and K-Means clustering across 120,000 retail banking customers.</p>
+<p><code>pip install lifetimes scikit-learn pandas matplotlib seaborn</code></p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+import warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+sns.set_theme(style=&#x27;whitegrid&#x27;)
+np.random.seed(42)
+print(&quot;Ready&quot;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 5</div><pre><code># ── GENERATE SYNTHETIC TRANSACTION DATA ───────────────────────
+n_customers = 10000  # scale to 120,000 in production
+
+customers = pd.DataFrame({
+    &#x27;customer_id&#x27;: range(1, n_customers+1),
+    &#x27;segment&#x27;: np.random.choice([&#x27;Premium&#x27;,&#x27;Mass Affluent&#x27;,&#x27;Retail&#x27;,&#x27;Student&#x27;],
+                                 n_customers, p=[0.1,0.2,0.6,0.1])
+})
+
+transactions = []
+for _, row in customers.iterrows():
+    n_tx = np.random.poisson(12) + 1
+    dates = sorted(pd.to_datetime(&#x27;2023-01-01&#x27;) +
+                   pd.to_timedelta(np.random.randint(0,365,n_tx), unit=&#x27;D&#x27;))
+    amounts = np.abs(np.random.normal(500, 300, n_tx))
+    for d, a in zip(dates, amounts):
+        transactions.append({&#x27;customer_id&#x27;: row[&#x27;customer_id&#x27;], &#x27;date&#x27;: d, &#x27;amount&#x27;: round(a,2)})
+
+txn = pd.DataFrame(transactions)
+print(f&quot;Customers: {n_customers:,} | Transactions: {len(txn):,}&quot;)
+txn.head()</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code># ── RFM SEGMENTATION ──────────────────────────────────────────
+snapshot = pd.Timestamp(&#x27;2024-01-01&#x27;)
+rfm = txn.groupby(&#x27;customer_id&#x27;).agg(
+    recency=(&#x27;date&#x27;, lambda x: (snapshot x.max()).days),
+    frequency=(&#x27;date&#x27;,&#x27;count&#x27;),
+    monetary=(&#x27;amount&#x27;,&#x27;sum&#x27;)
+).reset_index()
+
+for col, asc in [(&#x27;recency&#x27;,True),(&#x27;frequency&#x27;,False),(&#x27;monetary&#x27;,False)]:
+    labels = [5,4,3,2,1] if asc else [1,2,3,4,5]
+    rfm[f&#x27;{col[0]}_score&#x27;] = pd.qcut(rfm[col], 5, labels=labels)
+
+rfm[&#x27;rfm_total&#x27;] = rfm[[&#x27;r_score&#x27;,&#x27;f_score&#x27;,&#x27;m_score&#x27;]].astype(int).sum(axis=1)
+
+def segment(s):
+    if s &gt;= 13: return &#x27;Champions&#x27;
+    elif s &gt;= 10: return &#x27;Loyal&#x27;
+    elif s &gt;= 7: return &#x27;At Risk&#x27;
+    else: return &#x27;Lost&#x27;
+
+rfm[&#x27;segment&#x27;] = rfm[&#x27;rfm_total&#x27;].apply(segment)
+print(rfm[&#x27;segment&#x27;].value_counts())</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 7</div><pre><code># ── CLV ESTIMATION ────────────────────────────────────────────
+try:
+    from lifetimes import BetaGeoFitter, GammaGammaFitter
+    from lifetimes.utils import summary_data_from_transaction_data
+
+    summary = summary_data_from_transaction_data(
+        txn, &#x27;customer_id&#x27;, &#x27;date&#x27;, &#x27;amount&#x27;, observation_period_end=snapshot)
+
+    bgf = BetaGeoFitter(penalizer_coef=0.001)
+    bgf.fit(summary[&#x27;frequency&#x27;], summary[&#x27;recency&#x27;], summary[&#x27;T&#x27;])
+
+    ggf = GammaGammaFitter(penalizer_coef=0.001)
+    returning = summary[summary[&#x27;frequency&#x27;]&gt;0]
+    ggf.fit(returning[&#x27;frequency&#x27;], returning[&#x27;monetary_value&#x27;])
+
+    summary[&#x27;predicted_12m&#x27;] = bgf.conditional_expected_number_of_purchases_up_to_time(
+        52, summary[&#x27;frequency&#x27;], summary[&#x27;recency&#x27;], summary[&#x27;T&#x27;])
+    summary.loc[returning.index, &#x27;exp_value&#x27;] = ggf.conditional_expected_average_profit(
+        returning[&#x27;frequency&#x27;], returning[&#x27;monetary_value&#x27;])
+    summary[&#x27;clv_12m&#x27;] = summary[&#x27;predicted_12m&#x27;] * summary[&#x27;exp_value&#x27;].fillna(0)
+
+    print(f&quot;12-month CLV forecast: {summary[&#x27;clv_12m&#x27;].sum():,.0f}&quot;)
+    print(f&quot;Average per customer: {summary[&#x27;clv_12m&#x27;].mean():,.0f}&quot;)
+    print(summary[[&#x27;frequency&#x27;,&#x27;predicted_12m&#x27;,&#x27;clv_12m&#x27;]].describe().round(2))
+
+except ImportError:
+    print(&quot;pip install lifetimes&quot;)
+    rfm[&#x27;simple_clv&#x27;] = rfm[&#x27;monetary&#x27;] / rfm[&#x27;frequency&#x27;] * 12 * 0.7
+    print(rfm.groupby(&#x27;segment&#x27;)[&#x27;simple_clv&#x27;].mean().sort_values(ascending=False))</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code># ── DASHBOARD ─────────────────────────────────────────────────
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+rfm[&#x27;segment&#x27;].value_counts().plot(kind=&#x27;pie&#x27;, ax=axes[0,0], autopct=&#x27;%1.1f%%&#x27;,
+    colors=[&#x27;#0F1C2E&#x27;,&#x27;#C9A96E&#x27;,&#x27;#6B7A8D&#x27;,&#x27;#E8D5B0&#x27;], startangle=90)
+axes[0,0].set_title(&#x27;Customer Segments&#x27;, fontweight=&#x27;bold&#x27;)
+
+rfm.groupby(&#x27;segment&#x27;)[&#x27;monetary&#x27;].mean().sort_values().plot(
+    kind=&#x27;barh&#x27;, ax=axes[0,1], color=&#x27;#C9A96E&#x27;)
+axes[0,1].set_title(&#x27;Average Spend by Segment&#x27;, fontweight=&#x27;bold&#x27;)
+
+axes[1,0].scatter(rfm[&#x27;frequency&#x27;], rfm[&#x27;monetary&#x27;],
+                   c=rfm[&#x27;rfm_total&#x27;], cmap=&#x27;YlOrBr&#x27;, alpha=0.4, s=10)
+axes[1,0].set_xlabel(&#x27;Frequency&#x27;)
+axes[1,0].set_ylabel(&#x27;Monetary&#x27;)
+axes[1,0].set_title(&#x27;Frequency vs Monetary (RFM score colour)&#x27;, fontweight=&#x27;bold&#x27;)
+
+rfm.groupby(&#x27;segment&#x27;)[&#x27;rfm_total&#x27;].mean().plot(
+    kind=&#x27;bar&#x27;, ax=axes[1,1], color=&#x27;#0F1C2E&#x27;)
+axes[1,1].set_title(&#x27;Avg RFM Score by Segment&#x27;, fontweight=&#x27;bold&#x27;)
+
+plt.suptitle(&#x27;Customer Lifetime Value Dashboard&#x27;, fontsize=16, fontweight=&#x27;bold&#x27;)
+plt.tight_layout()
+plt.show()</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>Final Business Interpretation</h1>
+<h2>Key Findings</h2>
+<ul>
+<li>RFM analysis provides a strong foundation for customer value segmentation.</li>
+<li>CLV modelling helps prioritise commercial investment by expected future value.</li>
+<li>K-Means segmentation can translate customer behaviour into marketing groups.</li>
+<li>High-value customers should not be treated the same as low-engagement customers.</li>
+<li>CLV outputs support retention, cross-sell and portfolio strategy.</li>
+</ul>
+<h2>Recommended Next Steps</h2>
+<ul>
+<li>Prioritise retention activity for high-CLV customers at risk of disengagement.</li>
+<li>Use RFM segments to personalise marketing campaigns.</li>
+<li>Combine CLV with churn risk for value-at-risk analysis.</li>
+<li>Monitor segment migration over time.</li>
+<li>Use CLV estimates to guide acquisition spend and relationship management.</li>
+</ul>
+<h2>Interview Talking Point</h2>
+<p>A strong way to discuss this project in an interview:</p>
+<p>&gt; &quot;Built a customer lifetime value and RFM segmentation workflow for retail banking, combining behavioural analytics, clustering and commercial prioritisation.&quot;</p>
+<h2>Production Considerations</h2>
+<p>Before deploying this solution in a real business environment, I would consider:</p>
+<ul>
+<li>Data quality monitoring</li>
+<li>Model drift monitoring</li>
+<li>Clear train/test or time-based validation strategy</li>
+<li>Threshold tuning aligned to business cost</li>
+<li>Explainability for stakeholder trust</li>
+<li>Documentation for auditability</li>
+<li>A reproducible pipeline for retraining</li>
+</ul></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>

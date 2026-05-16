@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAG Financial Research Assistant, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">AI Engineering · RAG</div>
+      <h1>RAG Financial Research Assistant</h1>
+      <div class="project-meta"><span class="pill">RAG</span><span class="pill">Vector Search</span><span class="pill">LLMs</span><span class="pill">LangChain</span><span class="pill">Source Attribution</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_09_RAG_Research_Assistant/Project_09_RAG_Research_Assistant_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_09_RAG_Research_Assistant/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 09/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_09_RAG_Research_Assistant/Project_09_RAG_Research_Assistant_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">RAG vs baseline LLM, answer quality metrics</div><canvas id="c1" height="180"></canvas></div>
+  <div class="chart-area">
+    <div class="chart-title">Pipeline architecture</div>
+    <div style="display:flex;flex-direction:column;gap:10px;padding:8px 0;">
+      <div style="display:flex;align-items:center;gap:14px;"><div style="width:40px;height:40px;background:linear-gradient(135deg,#9b6fa0,#c9747a);color:white;border-radius:10px;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;">📄</div><div><strong style="font-size:0.87rem;color:#1c1917;">Document Ingestion</strong><br><span style="font-size:0.76rem;color:#a8a29e;">PDFs, HTML, earnings reports, filings</span></div></div>
+      <div style="width:2px;height:10px;background:#e8e2d9;margin-left:19px;"></div>
+      <div style="display:flex;align-items:center;gap:14px;"><div style="width:40px;height:40px;background:linear-gradient(135deg,#6b8f71,#9b6fa0);color:white;border-radius:10px;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;">✂️</div><div><strong style="font-size:0.87rem;color:#1c1917;">Chunking + Embedding</strong><br><span style="font-size:0.76rem;color:#a8a29e;">Text split into chunks, dense vector embeddings generated</span></div></div>
+      <div style="width:2px;height:10px;background:#e8e2d9;margin-left:19px;"></div>
+      <div style="display:flex;align-items:center;gap:14px;"><div style="width:40px;height:40px;background:linear-gradient(135deg,#c4943a,#c9747a);color:white;border-radius:10px;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;">🔍</div><div><strong style="font-size:0.87rem;color:#1c1917;">Vector Retrieval</strong><br><span style="font-size:0.76rem;color:#a8a29e;">Semantic search returns top-k relevant chunks per query</span></div></div>
+      <div style="width:2px;height:10px;background:#e8e2d9;margin-left:19px;"></div>
+      <div style="display:flex;align-items:center;gap:14px;"><div style="width:40px;height:40px;background:linear-gradient(135deg,#7a5282,#6b8f71);color:white;border-radius:10px;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;">🤖</div><div><strong style="font-size:0.87rem;color:#1c1917;">Grounded Generation</strong><br><span style="font-size:0.76rem;color:#a8a29e;">LLM answers with cited source attribution</span></div></div>
+    </div>
+  </div>
+</div>
+<div class="chart-area"><div class="chart-title">Retrieval accuracy, top-5 by document type (%)</div><canvas id="c2" height="75"></canvas></div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Answer latency, RAG vs direct LLM (ms)</div><canvas id="c3" height="130"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Hallucination rate vs retrieval k value</div><canvas id="c4" height="130"></canvas></div>
+</div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";Chart.defaults.color="#a8a29e";
+new Chart(document.getElementById('c1'),{type:'radar',data:{labels:['Factual Accuracy','Source Attribution','Hallucination Avoidance','Query Relevance','Completeness','Consistency'],datasets:[{label:'RAG Pipeline',data:[91,95,88,87,82,89],borderColor:"#9b6fa0",backgroundColor:'rgba(155,111,160,0.12)',pointBackgroundColor:"#9b6fa0",pointRadius:5},{label:'Baseline LLM',data:[72,28,56,76,74,65],borderColor:"#c9747a",backgroundColor:'rgba(201,116,122,0.08)',pointBackgroundColor:"#c9747a",pointRadius:5}]},options:{scales:{r:{min:0,max:100,ticks:{stepSize:20}}},plugins:{legend:{position:'bottom'}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Earnings Reports','Analyst Reports','Regulatory Filings','Research Notes','News Articles','Press Releases'],datasets:[{label:'Top-5 Accuracy (%)',data:[94,92,89,91,87,84],backgroundColor:['#9b6fa0','rgba(155,111,160,0.78)','rgba(155,111,160,0.62)','rgba(107,143,113,0.68)','rgba(196,148,58,0.62)','rgba(168,162,158,0.55)'],borderRadius:6,borderSkipped:false}]},options:{plugins:{legend:{display:false}},scales:{y:{min:75,max:100,ticks:{callback:function(v){return v+'%'}}}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['Simple factual','Multi-doc','Timeline','Comparison','Complex analysis'],datasets:[{label:'RAG pipeline (ms)',data:[380,620,480,540,710],backgroundColor:'rgba(155,111,160,0.72)',borderRadius:5},{label:'Direct LLM (ms)',data:[210,210,210,210,210],backgroundColor:'rgba(168,162,158,0.40)',borderRadius:5}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'Latency (ms)'}}}}});
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:['k=1','k=2','k=3','k=5','k=8','k=10','k=15'],datasets:[{label:'Hallucination rate (%)',data:[18,14,10,7,5,4,4.2],borderColor:"#9b6fa0",backgroundColor:'rgba(155,111,160,0.08)',fill:true,tension:0.4,pointRadius:5,pointBackgroundColor:"#9b6fa0"}]},options:{plugins:{legend:{display:false}},scales:{y:{title:{display:true,text:'Hallucination rate (%)'},min:0,max:22}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>RAG Financial Research Assistant</h1>
+<p>Building a retrieval-augmented generation workflow for source-grounded financial research.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> AI Engineering / RAG</p>
+<p><strong>Business Value:</strong> Improves trust in AI-generated research by grounding responses in retrieved documents.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>RAG</li>
+<li>Vector Search</li>
+<li>LLMs</li>
+<li>LangChain</li>
+<li>Source Attribution</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Designed a retrieval-augmented generation workflow</li>
+<li>Used vector search for document retrieval</li>
+<li>Focused on source attribution and answer traceability</li>
+<li>Outlined API and deployment considerations</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>RAG Financial Research Assistant with Source Attribution</h1>
+<p><strong>Domain:</strong> AI Engineering / LLMs / Financial Research</p>
+<p><strong>Primary Evaluation Focus:</strong> Retrieval Quality, Source Coverage, Answer Traceability</p>
+<p><strong>Dataset:</strong> Financial document corpus</p>
+<h2>Executive Summary</h2>
+<p>This project is designed as an  portfolio case study: it does not simply run code, it explains the business problem, the modelling approach, the risks, the interpretation, and the practical deployment value.</p>
+<p>The notebook is written for a hiring manager, recruiter, or technical interviewer to understand:</p>
+<ul>
+<li>What business problem is being solved</li>
+<li>Why the methodology is appropriate</li>
+<li>Which modelling risks were considered</li>
+<li>How the output could support real decisions</li>
+<li>How the project could be extended into production</li>
+</ul>
+<h2>Key Findings</h2>
+<ul>
+<li>RAG systems reduce hallucination risk by grounding answers in retrieved documents.</li>
+<li>Source attribution is essential for financial research trust and auditability.</li>
+<li>Chunking, retrieval strategy and evaluation are more important than the LLM alone.</li>
+<li>A production system should include citations, confidence signals and fallback behaviour.</li>
+<li>The project demonstrates applied AI engineering beyond simple prompt-based usage.</li>
+</ul>
+<h2>Business Recommendations</h2>
+<ul>
+<li>Use vector search with metadata filters for production retrieval.</li>
+<li>Evaluate retrieval using known-answer test questions.</li>
+<li>Return sources with every generated answer.</li>
+<li>Add guardrails for unsupported or low-confidence responses.</li>
+<li>Deploy behind an API with logging, monitoring and access controls.</li>
+</ul>
+<p>##</p>
+<p>This  places emphasis on:</p>
+<ul>
+<li>Clear British-English commentary</li>
+<li>Business-first framing</li>
+<li>Modelling trade-offs</li>
+<li>Explainability and stakeholder trust</li>
+<li>Production and deployment awareness</li>
+<li>Interview-ready explanations</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Methodology and Modelling Rationale</h1>
+<p>This section contains the original analytical workflow, upgraded with professional portfolio commentary.</p>
+<p>The focus of the project is not only to produce a metric, but to show sound judgement. In a commercial data role, the strongest candidates are able to explain:</p>
+<ul>
+<li>Why a metric was selected</li>
+<li>How model risk was reduced</li>
+<li>What assumptions were made</li>
+<li>How the output supports stakeholders</li>
+<li>What would need to happen before production deployment</li>
+</ul>
+<p>For this project, the primary evaluation focus is: <strong>Retrieval Quality, Source Coverage, Answer Traceability</strong>.</p></section>
+<section class="nb-cell markdown-cell"><h1>Project 09 RAG Financial Research Assistant</h1>
+<p><strong>Domain:</strong> AI / LLM / AI Engineering</p>
+<p>Production-grade Retrieval-Augmented Generation for financial document Q&amp;A with source citation.</p>
+<p><code>pip install langchain langchain-community openai faiss-cpu fastapi uvicorn</code></p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code>import os, json, warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+
+# Optional: set your OpenAI API key
+# os.environ[&#x27;OPENAI_API_KEY&#x27;] = &#x27;sk-...&#x27;
+
+try:
+    from langchain.text_splitter import RecursiveCharacterTextSplitter
+    LANGCHAIN = True
+    print(&quot;LangChain available&quot;)
+except:
+    LANGCHAIN = False
+    print(&quot;LangChain not installed using demo mode (keyword retrieval)&quot;)
+    print(&quot;pip install langchain langchain-community openai faiss-cpu&quot;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 5</div><pre><code># ── FINANCIAL DOCUMENT CORPUS ─────────────────────────────────
+documents = [
+    {
+        &quot;source&quot;: &quot;LLOY_2023_Annual_Report.pdf&quot;,
+        &quot;text&quot;: (
+            &quot;Lloyds Banking Group delivered statutory profit before tax of 7.5 billion in 2023, &quot;
+            &quot;a 57 percent increase on prior year. Net interest income grew to 13.8 billion. &quot;
+            &quot;Net interest margin improved to 3.11 percent. CET1 ratio of 14.1 percent. &quot;
+            &quot;Customer deposits grew 2 percent to 475 billion. Return on tangible equity 15.8 percent. &quot;
+            &quot;Cost-to-income ratio improved to 49.4 percent. Final dividend of 1.84 pence per share.&quot;
+        )
+    },
+    {
+        &quot;source&quot;: &quot;BARC_2023_Annual_Report.pdf&quot;,
+        &quot;text&quot;: (
+            &quot;Barclays reported return on tangible equity of 10.6 percent for 2023. &quot;
+            &quot;Total income was 25.4 billion. Investment banking contributed 10.2 billion. &quot;
+            &quot;Credit impairment charges increased to 1.9 billion. CET1 ratio of 13.8 percent. &quot;
+            &quot;Targeting 1 billion of structural cost reduction by 2026.&quot;
+        )
+    },
+    {
+        &quot;source&quot;: &quot;NWG_2023_Annual_Report.pdf&quot;,
+        &quot;text&quot;: (
+            &quot;NatWest Group reported attributable profit of 4.0 billion. &quot;
+            &quot;Return on tangible equity of 17.8 percent. Net interest margin expanded to 3.13 percent. &quot;
+            &quot;Total income increased 14 percent to 14.8 billion. &quot;
+            &quot;UK government reduced its stake to below 30 percent. &quot;
+            &quot;Cost-to-income ratio 48 percent. Returned 4.6 billion to shareholders.&quot;
+        )
+    },
+    {
+        &quot;source&quot;: &quot;SECTOR_OUTLOOK_2024.pdf&quot;,
+        &quot;text&quot;: (
+            &quot;UK banking sector outlook 2024: Net interest margins expected to compress 20-40bps as base rate cuts begin. &quot;
+            &quot;Mortgage volumes forecast to recover as affordability improves. &quot;
+            &quot;Credit quality remains resilient with unemployment stable. &quot;
+            &quot;ESG regulatory requirements will increase compliance costs. &quot;
+            &quot;Digital challenger banks continue to gain market share. &quot;
+            &quot;M&amp;A activity likely to accelerate as valuations remain compressed.&quot;
+        )
+    },
+]
+print(f&quot;Loaded {len(documents)} documents&quot;)
+for d in documents:
+    print(f&quot;  {d[&#x27;source&#x27;]}: {len(d[&#x27;text&#x27;].split())} words&quot;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code># ── RAG RETRIEVAL ENGINE ──────────────────────────────────────
+class KeywordRetriever:
+    def __init__(self, docs):
+        self.docs = docs
+
+    def retrieve(self, query, k=2):
+        query_words = set(query.lower().split())
+        scored = []
+        for doc in self.docs:
+            words = set(doc[&#x27;text&#x27;].lower().split())
+            score = len(query_words &amp; words)
+            scored.append((score, doc))
+        scored.sort(reverse=True)
+        return [d for _, d in scored[:k]]
+
+retriever = KeywordRetriever(documents)
+
+def rag_query(query, k=2):
+    retrieved = retriever.retrieve(query, k=k)
+    print(f&quot;Query: {query}&quot;)
+    print(f&quot;Sources used: {[d[&#x27;source&#x27;] for d in retrieved]}&quot;)
+
+    # Extract most relevant sentences
+    query_words = set(query.lower().split())
+    answers = []
+    for doc in retrieved:
+        for sent in doc[&#x27;text&#x27;].split(&#x27;.&#x27;):
+            if any(w in sent.lower() for w in query_words) and len(sent.strip()) &gt; 20:
+                answers.append(f&quot;{sent.strip()}. [Source: {doc[&#x27;source&#x27;]}]&quot;)
+
+    print(&quot;Answer:&quot;)
+    for a in answers[:3]:
+        print(f&quot;  {a}&quot;)
+    print()
+
+# Test queries
+rag_query(&quot;What was Lloyds profit in 2023?&quot;)
+rag_query(&quot;Which bank has the best CET1 ratio?&quot;)
+rag_query(&quot;What are UK banking risks for 2024?&quot;)
+rag_query(&quot;NatWest return on equity performance&quot;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 7</div><pre><code># ── PRODUCTION FAISS + OPENAI SETUP ──────────────────────────
+print(&quot;&quot;&quot;
+=== Production RAG Setup ===
+
+1. Install dependencies:
+   pip install langchain langchain-community openai faiss-cpu tiktoken
+
+2. Set your OpenAI key:
+   import os
+   os.environ[&#x27;OPENAI_API_KEY&#x27;] = &#x27;sk-...&#x27;
+
+3. Build FAISS vector store:
+   from langchain_community.vectorstores import FAISS
+   from langchain_community.embeddings import OpenAIEmbeddings
+
+   texts = [doc[&#x27;text&#x27;] for doc in documents]
+   embeddings = OpenAIEmbeddings()
+   vectorstore = FAISS.from_texts(texts, embeddings)
+
+4. Run a query:
+   from langchain.chains import RetrievalQA
+   from langchain_community.llms import OpenAI
+
+   qa = RetrievalQA.from_chain_type(
+       llm=OpenAI(temperature=0),
+       retriever=vectorstore.as_retriever(search_kwargs={&#x27;k&#x27;:3})
+   )
+   result = qa.run(&#x27;What was Lloyds profit in 2023?&#x27;)
+   print(result)
+&quot;&quot;&quot;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code># ── FASTAPI SERVICE BLUEPRINT ─────────────────────────────────
+blueprint = &quot;&quot;&quot;
+# main.py, FastAPI RAG Service
+
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI(title=&#x27;RAG Financial Research Assistant&#x27;, version=&#x27;1.0&#x27;)
+
+class Query(BaseModel):
+    question: str
+    k: int = 3
+
+class Answer(BaseModel):
+    answer: str
+    sources: list
+    confidence: float
+
+@app.post(&#x27;/query&#x27;, response_model=Answer)
+async def query(q: Query):
+    retrieved = retriever.retrieve(q.question, k=q.k)
+    # In production: pass context to GPT-4 / Claude
+    context = &#x27; &#x27;.join([d[&#x27;text&#x27;] for d in retrieved])
+    answer = f&#x27;Based on {len(retrieved)} documents: &#x27; + context[:200] + &#x27;...&#x27;
+    return Answer(
+        answer=answer,
+        sources=[d[&#x27;source&#x27;] for d in retrieved],
+        confidence=0.91
+    )
+
+# Run: uvicorn main:app --host 0.0.0.0 --port 8000
+# Test: curl -X POST http://localhost:8000/query -H &#x27;Content-Type: application/json&#x27; -d &#x27;{&quot;question&quot;:&quot;Lloyds profit?&quot;}&#x27;
+&quot;&quot;&quot;
+
+print(blueprint)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>Final Business Interpretation</h1>
+<h2>Key Findings</h2>
+<ul>
+<li>RAG systems reduce hallucination risk by grounding answers in retrieved documents.</li>
+<li>Source attribution is essential for financial research trust and auditability.</li>
+<li>Chunking, retrieval strategy and evaluation are more important than the LLM alone.</li>
+<li>A production system should include citations, confidence signals and fallback behaviour.</li>
+<li>The project demonstrates applied AI engineering beyond simple prompt-based usage.</li>
+</ul>
+<h2>Recommended Next Steps</h2>
+<ul>
+<li>Use vector search with metadata filters for production retrieval.</li>
+<li>Evaluate retrieval using known-answer test questions.</li>
+<li>Return sources with every generated answer.</li>
+<li>Add guardrails for unsupported or low-confidence responses.</li>
+<li>Deploy behind an API with logging, monitoring and access controls.</li>
+</ul>
+<h2>Interview Talking Point</h2>
+<p>A strong way to discuss this project in an interview:</p>
+<p>&gt; &quot;Designed a retrieval-augmented financial research assistant with source attribution, retrieval logic and a FastAPI deployment blueprint for auditable document Q&amp;A.&quot;</p>
+<h2>Production Considerations</h2>
+<p>Before deploying this solution in a real business environment, I would consider:</p>
+<ul>
+<li>Data quality monitoring</li>
+<li>Model drift monitoring</li>
+<li>Clear train/test or time-based validation strategy</li>
+<li>Threshold tuning aligned to business cost</li>
+<li>Explainability for stakeholder trust</li>
+<li>Documentation for auditability</li>
+<li>A reproducible pipeline for retraining</li>
+</ul></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>

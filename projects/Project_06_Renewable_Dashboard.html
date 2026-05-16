@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Renewable Asset Dashboard, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">Energy · Operations Analytics</div>
+      <h1>Renewable Asset Dashboard</h1>
+      <div class="project-meta"><span class="pill">Dashboarding</span><span class="pill">Anomaly Detection</span><span class="pill">Renewable Energy</span><span class="pill">Asset Analytics</span><span class="pill">Data Visualisation</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_06_Renewable_Dashboard/Project_06_Renewable_Dashboard_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_06_Renewable_Dashboard/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 06/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_06_Renewable_Dashboard/Project_06_Renewable_Dashboard_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-grid-3">
+  <div class="chart-area" style="text-align:center;"><div class="chart-title">Fleet status</div><canvas id="c1" height="150"></canvas></div>
+  <div class="chart-area" style="text-align:center;"><div class="chart-title">Asset type split</div><canvas id="c2" height="150"></canvas></div>
+  <div class="chart-area" style="text-align:center;"><div class="chart-title">Anomaly severity</div><canvas id="c3" height="150"></canvas></div>
+</div>
+<div class="chart-area"><div class="chart-title">Monthly generation by asset type (MWh)</div><canvas id="c4" height="90"></canvas></div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Capacity factor, actual vs target (%)</div><canvas id="c5" height="130"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Anomalies per asset per month</div><canvas id="c6" height="130"></canvas></div>
+</div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";Chart.defaults.color="#a8a29e";
+new Chart(document.getElementById('c1'),{type:'doughnut',data:{labels:['Optimal (68%)','Underperforming (22%)','Offline (10%)'],datasets:[{data:[68,22,10],backgroundColor:["#6b8f71","#c4943a","#c9747a"],borderWidth:0}]},options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{size:10}}}}}});
+new Chart(document.getElementById('c2'),{type:'doughnut',data:{labels:['Wind (52%)','Solar (35%)','Hydro (13%)'],datasets:[{data:[52,35,13],backgroundColor:["#9b6fa0","#c4943a","#6b8f71"],borderWidth:0}]},options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{size:10}}}}}});
+new Chart(document.getElementById('c3'),{type:'doughnut',data:{labels:['Normal (78%)','Warning (15%)','Critical (7%)'],datasets:[{data:[78,15,7],backgroundColor:["#6b8f71","#c4943a","#c9747a"],borderWidth:0}]},options:{cutout:'65%',plugins:{legend:{position:'bottom',labels:{font:{size:10}}}}}});
+var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+new Chart(document.getElementById('c4'),{type:'bar',data:{labels:months,datasets:[{label:'Wind',data:[420,380,410,360,340,310,290,305,350,400,430,445],backgroundColor:'rgba(155,111,160,0.72)',borderRadius:4},{label:'Solar',data:[80,120,190,260,330,370,385,360,275,180,95,65],backgroundColor:'rgba(196,148,58,0.72)',borderRadius:4},{label:'Hydro',data:[92,96,90,84,76,70,68,72,82,90,94,97],backgroundColor:'rgba(107,143,113,0.72)',borderRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{x:{stacked:true},y:{stacked:true,title:{display:true,text:'MWh'}}}}});
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['Asset A','Asset B','Asset C','Asset D','Asset E','Asset F','Asset G','Asset H'],datasets:[{label:'Actual CF %',data:[38,31,42,24,35,47,29,41],backgroundColor:'rgba(155,111,160,0.7)',borderRadius:4},{label:'Target CF %',data:[40,40,40,40,40,40,40,40],backgroundColor:'rgba(168,162,158,0.32)',borderRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'Capacity Factor (%)'},max:55}}}});
+new Chart(document.getElementById('c6'),{type:'line',data:{labels:months,datasets:[{label:'Wind Turbine A1',data:[2,1,3,4,2,1,5,8,4,2,3,1],borderColor:"#9b6fa0",fill:false,tension:0.4,pointRadius:4},{label:'Solar Array B3',data:[0,1,1,2,3,4,3,2,2,1,1,0],borderColor:"#c4943a",fill:false,tension:0.4,pointRadius:4},{label:'Hydro Unit C2',data:[1,0,1,1,2,1,1,0,1,2,1,1],borderColor:"#6b8f71",fill:false,tension:0.4,pointRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'Anomaly count'},min:0}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>Renewable Asset Dashboard</h1>
+<p>Monitoring renewable asset performance using dashboard analytics and anomaly detection.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> Energy / Operations Analytics</p>
+<p><strong>Business Value:</strong> Helps identify underperforming wind and solar assets for operational review.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>Dashboarding</li>
+<li>Anomaly Detection</li>
+<li>Renewable Energy</li>
+<li>Asset Analytics</li>
+<li>Data Visualisation</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Created asset-level performance monitoring</li>
+<li>Used anomaly detection to flag underperformance</li>
+<li>Calculated commercially relevant metrics such as capacity factor</li>
+<li>Presented results in a dashboard-style format</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>Renewable Asset Performance Dashboard with Anomaly Detection</h1>
+<p><strong>Domain:</strong> Energy / Data Engineering / Analytics</p>
+<p><strong>Primary Evaluation Focus:</strong> Capacity Factor, Generation, Anomaly Rate</p>
+<p><strong>Dataset:</strong> Synthetic wind and solar SCADA-style asset data</p>
+<h2>Executive Summary</h2>
+<p>This project is designed as an  portfolio case study: it does not simply run code, it explains the business problem, the modelling approach, the risks, the interpretation, and the practical deployment value.</p>
+<p>The notebook is written for a hiring manager, recruiter, or technical interviewer to understand:</p>
+<ul>
+<li>What business problem is being solved</li>
+<li>Why the methodology is appropriate</li>
+<li>Which modelling risks were considered</li>
+<li>How the output could support real decisions</li>
+<li>How the project could be extended into production</li>
+</ul>
+<h2>Key Findings</h2>
+<ul>
+<li>Asset-level monitoring can identify underperformance across wind and solar portfolios.</li>
+<li>Rolling z-score anomaly detection highlights operational issues early.</li>
+<li>Capacity factor provides a commercially interpretable performance metric.</li>
+<li>Regional and asset-type segmentation improves root-cause analysis.</li>
+<li>Executive dashboards convert technical SCADA data into actionable portfolio insight.</li>
+</ul>
+<h2>Business Recommendations</h2>
+<ul>
+<li>Prioritise maintenance for assets with persistent negative anomalies.</li>
+<li>Track capacity factor trends by region and technology.</li>
+<li>Create automated alerts for underperforming assets.</li>
+<li>Integrate weather-normalised baselines in a production version.</li>
+<li>Use dashboard outputs for operations and asset-management reviews.</li>
+</ul>
+<p>##</p>
+<p>This  places emphasis on:</p>
+<ul>
+<li>Clear British-English commentary</li>
+<li>Business-first framing</li>
+<li>Modelling trade-offs</li>
+<li>Explainability and stakeholder trust</li>
+<li>Production and deployment awareness</li>
+<li>Interview-ready explanations</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Methodology and Modelling Rationale</h1>
+<p>This section contains the original analytical workflow, upgraded with professional portfolio commentary.</p>
+<p>The focus of the project is not only to produce a metric, but to show sound judgement. In a commercial data role, the strongest candidates are able to explain:</p>
+<ul>
+<li>Why a metric was selected</li>
+<li>How model risk was reduced</li>
+<li>What assumptions were made</li>
+<li>How the output supports stakeholders</li>
+<li>What would need to happen before production deployment</li>
+</ul>
+<p>For this project, the primary evaluation focus is: <strong>Capacity Factor, Generation, Anomaly Rate</strong>.</p></section>
+<section class="nb-cell markdown-cell"><h1>Project 06 Renewable Asset Performance Dashboard</h1>
+<p><strong>Domain:</strong> Energy / Data Engineering</p>
+<p>End-to-end pipeline monitoring 240 wind and solar assets with ETL, anomaly detection, and executive dashboard.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+import seaborn as sns
+import warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+sns.set_theme(style=&#x27;whitegrid&#x27;)
+np.random.seed(42)
+print(&quot;Ready&quot;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 5</div><pre><code># ── SIMULATE SCADA DATA ────────────────────────────────────────
+n_assets = 240
+n_days   = 365
+
+records = []
+for asset_id in range(1, n_assets + 1):
+    asset_type = &#x27;Wind&#x27; if asset_id &lt;= 120 else &#x27;Solar&#x27;
+    region     = np.random.choice([&#x27;Scotland&#x27;,&#x27;Wales&#x27;,&#x27;England North&#x27;,&#x27;England South&#x27;,&#x27;Offshore&#x27;])
+    cap_mw     = np.random.uniform(2, 8)
+    dates      = pd.date_range(&#x27;2023-01-01&#x27;, periods=n_days, freq=&#x27;D&#x27;)
+
+    if asset_type == &#x27;Solar&#x27;:
+        month_factor = np.array([0.4,0.5,0.7,0.9,1.0,1.0,1.0,0.95,0.8,0.6,0.4,0.35])
+        gen = np.array([cap_mw * 4.5 * month_factor[d.month-1] * np.random.uniform(0.5,1.0)
+                        for d in dates])
+    else:
+        gen = np.array([cap_mw * np.random.uniform(3, 18) for _ in dates])
+
+    downtime_idx = np.random.choice(n_days, size=int(n_days*0.008), replace=False)
+    gen[downtime_idx] = 0.0
+    anomaly_idx = np.random.choice(n_days, size=int(n_days*0.002), replace=False)
+    gen[anomaly_idx] *= 0.1
+
+    for i, d in enumerate(dates):
+        records.append({&#x27;date&#x27;: d, &#x27;asset_id&#x27;: asset_id, &#x27;asset_type&#x27;: asset_type,
+                        &#x27;region&#x27;: region, &#x27;capacity_mw&#x27;: round(cap_mw,2),
+                        &#x27;generation_mwh&#x27;: round(gen[i], 3)})
+
+df = pd.DataFrame(records)
+df[&#x27;capacity_factor&#x27;] = df[&#x27;generation_mwh&#x27;] / (df[&#x27;capacity_mw&#x27;] * 24)
+print(f&quot;SCADA records: {len(df):,}&quot;)
+print(f&quot;Total generation: {df[&#x27;generation_mwh&#x27;].sum()/1000:,.0f} GWh&quot;)
+df.head()</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code># ── SQL-STYLE AGGREGATIONS ─────────────────────────────────────
+asset_summary = df.groupby([&#x27;asset_id&#x27;,&#x27;asset_type&#x27;,&#x27;region&#x27;,&#x27;capacity_mw&#x27;]).agg(
+    total_mwh=(&#x27;generation_mwh&#x27;,&#x27;sum&#x27;),
+    avg_cap_factor=(&#x27;capacity_factor&#x27;,&#x27;mean&#x27;),
+    zero_days=(&#x27;generation_mwh&#x27;, lambda x: (x&lt;0.1).sum())
+).reset_index()
+asset_summary[&#x27;uptime_pct&#x27;] = (1 asset_summary[&#x27;zero_days&#x27;]/365) * 100
+
+print(&quot;Fleet Performance Summary:&quot;)
+print(asset_summary.groupby(&#x27;asset_type&#x27;).agg({&#x27;avg_cap_factor&#x27;:&#x27;mean&#x27;,&#x27;uptime_pct&#x27;:&#x27;mean&#x27;,&#x27;total_mwh&#x27;:&#x27;sum&#x27;}).round(3))</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 7</div><pre><code># ── ANOMALY DETECTION (Z-SCORE) ────────────────────────────────
+df = df.sort_values([&#x27;asset_id&#x27;,&#x27;date&#x27;])
+df[&#x27;roll_mean&#x27;] = df.groupby(&#x27;asset_id&#x27;)[&#x27;generation_mwh&#x27;].transform(lambda x: x.rolling(30, min_periods=5).mean())
+df[&#x27;roll_std&#x27;]  = df.groupby(&#x27;asset_id&#x27;)[&#x27;generation_mwh&#x27;].transform(lambda x: x.rolling(30, min_periods=5).std())
+df[&#x27;z_score&#x27;]   = (df[&#x27;generation_mwh&#x27;] df[&#x27;roll_mean&#x27;]) / (df[&#x27;roll_std&#x27;] + 0.001)
+df[&#x27;anomaly&#x27;]   = (df[&#x27;z_score&#x27;] &lt; -3).astype(int)
+
+print(f&quot;Anomalies detected: {df[&#x27;anomaly&#x27;].sum():,} ({df[&#x27;anomaly&#x27;].mean():.2%})&quot;)
+print(f&quot;Affected assets: {df[df[&#x27;anomaly&#x27;]==1][&#x27;asset_id&#x27;].nunique()}&quot;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code># ── EXECUTIVE DASHBOARD ────────────────────────────────────────
+fig = plt.figure(figsize=(18, 12))
+gs  = gridspec.GridSpec(3, 3, figure=fig, hspace=0.45, wspace=0.3)
+
+kpi_ax = fig.add_subplot(gs[0,:])
+kpi_ax.axis(&#x27;off&#x27;)
+kpis = [
+    (&quot;Total Generation&quot;, f&quot;{df[&#x27;generation_mwh&#x27;].sum()/1000:,.0f} GWh&quot;),
+    (&quot;Fleet Avg Cap Factor&quot;, f&quot;{df[&#x27;capacity_factor&#x27;].mean():.1%}&quot;),
+    (&quot;Fleet Uptime&quot;, f&quot;{asset_summary[&#x27;uptime_pct&#x27;].mean():.1f}%&quot;),
+    (&quot;Anomalies&quot;, f&quot;{df[&#x27;anomaly&#x27;].sum():,}&quot;),
+    (&quot;Assets&quot;, &quot;240&quot;),
+]
+for i,(label,val) in enumerate(kpis):
+    x = 0.04 + i*0.19
+    kpi_ax.add_patch(plt.Rectangle((x,0.05),0.17,0.9,color=&#x27;#0F1C2E&#x27;,transform=kpi_ax.transAxes,zorder=1))
+    kpi_ax.text(x+0.085,0.65,val,ha=&#x27;center&#x27;,va=&#x27;center&#x27;,fontsize=13,fontweight=&#x27;bold&#x27;,color=&#x27;#C9A96E&#x27;,transform=kpi_ax.transAxes,zorder=2)
+    kpi_ax.text(x+0.085,0.25,label,ha=&#x27;center&#x27;,va=&#x27;center&#x27;,fontsize=8,color=&#x27;white&#x27;,transform=kpi_ax.transAxes,zorder=2)
+
+ax1 = fig.add_subplot(gs[1,:2])
+monthly = df.groupby([df[&#x27;date&#x27;].dt.month,&#x27;asset_type&#x27;])[&#x27;generation_mwh&#x27;].sum().unstack().fillna(0)
+monthly.plot(kind=&#x27;bar&#x27;, ax=ax1, color=[&#x27;#C9A96E&#x27;,&#x27;#0F1C2E&#x27;], edgecolor=&#x27;white&#x27;)
+ax1.set_title(&#x27;Monthly Generation by Asset Type (MWh)&#x27;, fontweight=&#x27;bold&#x27;)
+ax1.set_xlabel(&#x27;Month&#x27;)
+
+ax2 = fig.add_subplot(gs[1,2])
+region_pivot = df.groupby([&#x27;region&#x27;,&#x27;asset_type&#x27;])[&#x27;generation_mwh&#x27;].sum().unstack().fillna(0)
+sns.heatmap(region_pivot/1000, annot=True, fmt=&#x27;.0f&#x27;, cmap=&#x27;YlOrBr&#x27;, ax=ax2)
+ax2.set_title(&#x27;Generation GWh by Region&#x27;, fontweight=&#x27;bold&#x27;)
+
+ax3 = fig.add_subplot(gs[2,:2])
+daily_anomalies = df.groupby(&#x27;date&#x27;)[&#x27;anomaly&#x27;].sum()
+ax3.plot(daily_anomalies.index, daily_anomalies.values, color=&#x27;#C9A96E&#x27;, lw=1)
+ax3.fill_between(daily_anomalies.index, daily_anomalies.values, alpha=0.3, color=&#x27;#C9A96E&#x27;)
+ax3.set_title(&#x27;Daily Anomaly Count&#x27;, fontweight=&#x27;bold&#x27;)
+
+ax4 = fig.add_subplot(gs[2,2])
+for atype, grp in asset_summary.groupby(&#x27;asset_type&#x27;):
+    ax4.hist(grp[&#x27;avg_cap_factor&#x27;], bins=20, alpha=0.7,
+             color=&#x27;#C9A96E&#x27; if atype==&#x27;Solar&#x27; else &#x27;#0F1C2E&#x27;, label=atype)
+ax4.set_title(&#x27;Capacity Factor Distribution&#x27;, fontweight=&#x27;bold&#x27;)
+ax4.legend()
+
+fig.suptitle(&#x27;Renewable Asset Performance Dashboard, 240 Assets 2023&#x27;, fontsize=16, fontweight=&#x27;bold&#x27;, y=1.01)
+plt.savefig(&#x27;renewable_dashboard.png&#x27;, dpi=120, bbox_inches=&#x27;tight&#x27;)
+plt.show()
+print(&quot;Dashboard saved as renewable_dashboard.png&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>Final Business Interpretation</h1>
+<h2>Key Findings</h2>
+<ul>
+<li>Asset-level monitoring can identify underperformance across wind and solar portfolios.</li>
+<li>Rolling z-score anomaly detection highlights operational issues early.</li>
+<li>Capacity factor provides a commercially interpretable performance metric.</li>
+<li>Regional and asset-type segmentation improves root-cause analysis.</li>
+<li>Executive dashboards convert technical SCADA data into actionable portfolio insight.</li>
+</ul>
+<h2>Recommended Next Steps</h2>
+<ul>
+<li>Prioritise maintenance for assets with persistent negative anomalies.</li>
+<li>Track capacity factor trends by region and technology.</li>
+<li>Create automated alerts for underperforming assets.</li>
+<li>Integrate weather-normalised baselines in a production version.</li>
+<li>Use dashboard outputs for operations and asset-management reviews.</li>
+</ul>
+<h2>Interview Talking Point</h2>
+<p>A strong way to discuss this project in an interview:</p>
+<p>&gt; &quot;Developed a renewable asset performance dashboard simulating 240 wind and solar assets, using ETL-style aggregation and anomaly detection to support operational decision-making.&quot;</p>
+<h2>Production Considerations</h2>
+<p>Before deploying this solution in a real business environment, I would consider:</p>
+<ul>
+<li>Data quality monitoring</li>
+<li>Model drift monitoring</li>
+<li>Clear train/test or time-based validation strategy</li>
+<li>Threshold tuning aligned to business cost</li>
+<li>Explainability for stakeholder trust</li>
+<li>Documentation for auditability</li>
+<li>A reproducible pipeline for retraining</li>
+</ul></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>

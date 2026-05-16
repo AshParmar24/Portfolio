@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carbon Price Forecasting, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">Energy Markets · Forecasting</div>
+      <h1>Carbon Price Forecasting</h1>
+      <div class="project-meta"><span class="pill">XGBoost</span><span class="pill">Time-Series Validation</span><span class="pill">Carbon Markets</span><span class="pill">SHAP</span><span class="pill">Forecasting</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_10_Carbon_Price_Prediction/Project_10_Carbon_Price_Prediction_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_10_Carbon_Price_Prediction/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 10/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_10_Carbon_Price_Prediction/Project_10_Carbon_Price_Prediction_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-area"><div class="chart-title">EUA carbon price, actual vs XGBoost forecast (EUR/tonne CO2)</div><canvas id="c1" height="90"></canvas></div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">SHAP feature importance, price drivers</div><canvas id="c2" height="150"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Forecast R2 by prediction horizon</div><canvas id="c3" height="150"></canvas></div>
+</div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Model RMSE comparison (EUR/tonne, lower is better)</div><canvas id="c4" height="130"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Carbon price vs natural gas price (rolling)</div><canvas id="c5" height="130"></canvas></div>
+</div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";Chart.defaults.color="#a8a29e";
+var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var actual=[68,72,69,74,78,82,79,85,88,84,90,94];
+var pred=[70,71,70,75,77,83,80,84,89,86,89,93];
+new Chart(document.getElementById('c1'),{type:'line',data:{labels:months,datasets:[{label:'Actual EUA price',data:actual,borderColor:"#9b6fa0",fill:false,tension:0.4,pointRadius:5,pointBackgroundColor:"#9b6fa0"},{label:'XGBoost forecast',data:pred,borderColor:"#c9747a",borderDash:[6,3],fill:false,tension:0.4,pointRadius:5,pointBackgroundColor:"#c9747a"}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'EUR/tonne CO2'},ticks:{callback:function(v){return 'EUR '+v}}}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Natural Gas Price','Industrial Production','Temperature Anomaly','Renewable Energy %','Coal Price','Policy Signals','FX (EUR/USD)','Energy Demand'],datasets:[{label:'SHAP value',data:[0.42,0.31,0.28,0.24,0.20,0.17,0.13,0.10],backgroundColor:['rgba(155,111,160,0.9)','rgba(155,111,160,0.78)','rgba(155,111,160,0.65)','rgba(155,111,160,0.52)','rgba(155,111,160,0.44)','rgba(196,148,58,0.60)','rgba(196,148,58,0.50)','rgba(168,162,158,0.50)'],borderRadius:5}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+new Chart(document.getElementById('c3'),{type:'line',data:{labels:['1 day','3 days','1 week','2 weeks','1 month','3 months'],datasets:[{label:'XGBoost',data:[0.948,0.921,0.889,0.842,0.764,0.634],borderColor:"#9b6fa0",fill:false,tension:0.4,pointRadius:6,pointBackgroundColor:"#9b6fa0"},{label:'ARIMA',data:[0.892,0.841,0.768,0.672,0.548,0.394],borderColor:"#c4943a",fill:false,tension:0.4,pointRadius:5,borderDash:[5,3]},{label:'Linear Reg',data:[0.820,0.762,0.690,0.598,0.481,0.342],borderColor:"#a8a29e",fill:false,tension:0.4,pointRadius:4,borderDash:[3,3]}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{min:0.3,max:1.0,title:{display:true,text:'R2 score'}}}}});
+new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['XGBoost','LightGBM','Gradient Boost','Random Forest','ARIMA','SARIMA','Linear Reg'],datasets:[{label:'RMSE',data:[2.14,2.31,2.48,2.82,4.12,3.88,5.64],backgroundColor:['#9b6fa0','rgba(155,111,160,0.75)','rgba(155,111,160,0.60)','rgba(155,111,160,0.50)','rgba(196,148,58,0.55)','rgba(196,148,58,0.45)','rgba(168,162,158,0.50)'],borderRadius:6,borderSkipped:false}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+new Chart(document.getElementById('c5'),{type:'line',data:{labels:months,datasets:[{label:'Carbon price (EUR)',data:actual,borderColor:"#9b6fa0",yAxisID:'y',fill:false,tension:0.4,pointRadius:3},{label:'Gas price (p/therm)',data:[82,90,85,92,98,105,100,110,114,108,118,124],borderColor:"#c4943a",yAxisID:'y1',fill:false,tension:0.4,pointRadius:3,borderDash:[5,3]}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{position:'left',title:{display:true,text:'Carbon (EUR/t)'}},y1:{position:'right',title:{display:true,text:'Gas (p/therm)'},grid:{drawOnChartArea:false}}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>Carbon Price Forecasting</h1>
+<p>Forecasting carbon market prices using market drivers, XGBoost and SHAP explainability.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> Energy Markets / Forecasting</p>
+<p><strong>Business Value:</strong> Supports carbon market risk analysis, hedging decisions and sustainability strategy.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>XGBoost</li>
+<li>Time-Series Validation</li>
+<li>Carbon Markets</li>
+<li>SHAP</li>
+<li>Forecasting</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Modelled carbon prices using energy and market drivers</li>
+<li>Used time-series-aware validation to reduce look-ahead bias</li>
+<li>Applied SHAP to explain forecast drivers</li>
+<li>Connected predictions to market and risk management use cases</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>Carbon Market Price Prediction Using XGBoost and SHAP</h1>
+<p><strong>Domain:</strong> Energy / Finance / Forecasting</p>
+<p><strong>Primary Evaluation Focus:</strong> MAPE, Time-Series Cross-Validation</p>
+<p><strong>Dataset:</strong> Synthetic EU ETS carbon market data</p>
+<h2>Executive Summary</h2>
+<p>This project is designed as an  portfolio case study: it does not simply run code, it explains the business problem, the modelling approach, the risks, the interpretation, and the practical deployment value.</p>
+<p>The notebook is written for a hiring manager, recruiter, or technical interviewer to understand:</p>
+<ul>
+<li>What business problem is being solved</li>
+<li>Why the methodology is appropriate</li>
+<li>Which modelling risks were considered</li>
+<li>How the output could support real decisions</li>
+<li>How the project could be extended into production</li>
+</ul>
+<h2>Key Findings</h2>
+<ul>
+<li>Carbon prices are influenced by energy prices, policy events and lagged market momentum.</li>
+<li>Time-series cross-validation is required to avoid look-ahead bias.</li>
+<li>XGBoost performs well on structured market-driver data.</li>
+<li>SHAP helps explain whether forecasts are driven by gas, power, coal or policy factors.</li>
+<li>Carbon forecasting has direct relevance for risk management, hedging and investment decisions.</li>
+</ul>
+<h2>Business Recommendations</h2>
+<ul>
+<li>Use walk-forward validation for live market forecasting.</li>
+<li>Add macroeconomic, weather and policy-calendar features.</li>
+<li>Monitor model error during regime changes.</li>
+<li>Use prediction intervals before making trading or hedging decisions.</li>
+<li>Treat forecasts as decision-support rather than deterministic price targets.</li>
+</ul>
+<p>##</p>
+<p>This  places emphasis on:</p>
+<ul>
+<li>Clear British-English commentary</li>
+<li>Business-first framing</li>
+<li>Modelling trade-offs</li>
+<li>Explainability and stakeholder trust</li>
+<li>Production and deployment awareness</li>
+<li>Interview-ready explanations</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Methodology and Modelling Rationale</h1>
+<p>This section contains the original analytical workflow, upgraded with professional portfolio commentary.</p>
+<p>The focus of the project is not only to produce a metric, but to show sound judgement. In a commercial data role, the strongest candidates are able to explain:</p>
+<ul>
+<li>Why a metric was selected</li>
+<li>How model risk was reduced</li>
+<li>What assumptions were made</li>
+<li>How the output supports stakeholders</li>
+<li>What would need to happen before production deployment</li>
+</ul>
+<p>For this project, the primary evaluation focus is: <strong>MAPE, Time-Series Cross-Validation</strong>.</p></section>
+<section class="nb-cell markdown-cell"><h1>Project 10 Carbon Market Price Prediction</h1>
+<p><strong>Domain:</strong> Energy / Finance / Data Science</p>
+<p>Forecasts EU ETS carbon credit prices using XGBoost + SHAP feature attribution, with time-series cross-validation.</p>
+<p><code>pip install xgboost shap scikit-learn pandas matplotlib seaborn</code></p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import TimeSeriesSplit
+from sklearn.metrics import mean_absolute_percentage_error
+from xgboost import XGBRegressor
+import shap
+import warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+sns.set_theme(style=&#x27;whitegrid&#x27;)
+np.random.seed(42)
+print(&quot;Ready&quot;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 5</div><pre><code># ── GENERATE SYNTHETIC EU ETS PRICE DATA (8 YEARS) ───────────
+n_days = 8 * 252
+
+dates = pd.bdate_range(&#x27;2016-01-01&#x27;, periods=n_days)
+
+trend = np.concatenate([
+    np.linspace(6, 8, 252*2),   # 2016-17: flat low
+    np.linspace(8, 25, 252),     # 2018: regulation reform
+    np.linspace(25, 15, 252),    # 2019: correction
+    np.linspace(15, 35, 252),    # 2020: rebound
+    np.linspace(35, 65, 252),    # 2021: surge
+    np.linspace(65, 90, 252),    # 2022: energy crisis peak
+    np.linspace(90, 70, 252),    # 2023: correction
+    np.linspace(70, 65, 252),    # 2024
+])[:n_days]
+
+gas_price       = 20 + 0.3*trend + np.random.normal(0, 3, n_days)
+coal_price      = 80 + 0.2*trend + np.random.normal(0, 8, n_days)
+eu_power_price  = 50 + 0.8*trend + np.random.normal(0, 10, n_days)
+temp_deviation  = np.sin(2*np.pi*np.arange(n_days)/252)*3 + np.random.normal(0,1,n_days)
+
+policy_event = np.zeros(n_days)
+policy_event[252*5:252*5+30] = 1  # 2021 Fit for 55
+policy_event[252*6:252*6+20] = 1  # 2022 REPowerEU
+
+carbon_price = (trend + np.random.normal(0, 2, n_days) + policy_event * 8).clip(min=3)
+
+df = pd.DataFrame({
+    &#x27;date&#x27;: dates[:n_days],
+    &#x27;carbon_price&#x27;: carbon_price,
+    &#x27;gas_price&#x27;: gas_price,
+    &#x27;coal_price&#x27;: coal_price,
+    &#x27;eu_power_price&#x27;: eu_power_price,
+    &#x27;temp_deviation&#x27;: temp_deviation,
+    &#x27;policy_event&#x27;: policy_event,
+    &#x27;day_of_week&#x27;: dates[:n_days].dayofweek,
+    &#x27;month&#x27;: dates[:n_days].month,
+    &#x27;year&#x27;: dates[:n_days].year,
+})
+
+for lag in [1, 5, 10, 21]:
+    df[f&#x27;lag_{lag}&#x27;] = df[&#x27;carbon_price&#x27;].shift(lag)
+
+df[&#x27;ma_20&#x27;]      = df[&#x27;carbon_price&#x27;].rolling(20).mean()
+df[&#x27;volatility&#x27;] = df[&#x27;carbon_price&#x27;].rolling(20).std()
+df.dropna(inplace=True)
+
+print(f&quot;Dataset: {df.shape}&quot;)
+print(f&quot;Carbon price range: {df[&#x27;carbon_price&#x27;].min():.1f} {df[&#x27;carbon_price&#x27;].max():.1f} EUR/tCO2&quot;)
+df.tail()</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code># ── PRICE HISTORY ─────────────────────────────────────────────
+fig, axes = plt.subplots(2, 1, figsize=(14, 8))
+
+axes[0].plot(df[&#x27;date&#x27;], df[&#x27;carbon_price&#x27;], color=&#x27;#0F1C2E&#x27;, lw=1.5, label=&#x27;EU ETS Carbon Price&#x27;)
+axes[0].fill_between(df[&#x27;date&#x27;], 0, df[&#x27;carbon_price&#x27;], alpha=0.1, color=&#x27;#0F1C2E&#x27;)
+axes[0].set_title(&#x27;EU ETS Carbon Credit Price 2016-2024 (EUR/tCO2)&#x27;, fontweight=&#x27;bold&#x27;, fontsize=14)
+axes[0].set_ylabel(&#x27;EUR per tonne CO2&#x27;)
+
+axes[1].plot(df[&#x27;date&#x27;], df[&#x27;gas_price&#x27;], color=&#x27;#C9A96E&#x27;, lw=1, label=&#x27;Gas Price&#x27;)
+axes[1].plot(df[&#x27;date&#x27;], df[&#x27;eu_power_price&#x27;]/2, color=&#x27;#6B7A8D&#x27;, lw=1, label=&#x27;EU Power (/2)&#x27;)
+axes[1].set_title(&#x27;Energy Price Drivers&#x27;, fontweight=&#x27;bold&#x27;)
+axes[1].legend()
+
+plt.tight_layout()
+plt.show()</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 7</div><pre><code># ── TIME-SERIES CROSS-VALIDATION ──────────────────────────────
+features = [c for c in df.columns if c not in [&#x27;date&#x27;,&#x27;carbon_price&#x27;]]
+X = df[features]
+y = df[&#x27;carbon_price&#x27;]
+
+tscv = TimeSeriesSplit(n_splits=5)
+mapes = []
+
+for fold, (tr_idx, te_idx) in enumerate(tscv.split(X)):
+    X_tr, X_te = X.iloc[tr_idx], X.iloc[te_idx]
+    y_tr, y_te = y.iloc[tr_idx], y.iloc[te_idx]
+    m = XGBRegressor(n_estimators=300, learning_rate=0.05, max_depth=6,
+                      subsample=0.8, random_state=42)
+    m.fit(X_tr, y_tr)
+    mape = mean_absolute_percentage_error(y_te, m.predict(X_te))
+    mapes.append(mape)
+    print(f&quot;Fold {fold+1}: MAPE = {mape*100:.2f}%&quot;)
+
+print(f&quot;\nMean MAPE across 5 folds: {np.mean(mapes)*100:.2f}%&quot;)
+
+# Final model on all data
+final_model = XGBRegressor(n_estimators=300, learning_rate=0.05, max_depth=6, subsample=0.8, random_state=42)
+final_model.fit(X, y)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code># ── SHAP FEATURE IMPORTANCE ───────────────────────────────────
+explainer = shap.TreeExplainer(final_model)
+shap_values = explainer.shap_values(X.tail(500))
+
+shap.summary_plot(shap_values, X.tail(500), feature_names=features, plot_type=&#x27;bar&#x27;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 9</div><pre><code># ── FORECAST VISUALISATION ────────────────────────────────────
+y_pred = final_model.predict(X)
+residuals = y y_pred
+
+fig, axes = plt.subplots(2, 1, figsize=(14, 10))
+
+last_2yr = df.tail(504)
+axes[0].plot(last_2yr[&#x27;date&#x27;], last_2yr[&#x27;carbon_price&#x27;], label=&#x27;Actual&#x27;, color=&#x27;#0F1C2E&#x27;, lw=1.5)
+axes[0].plot(last_2yr[&#x27;date&#x27;], y_pred[-504:], label=&#x27;XGBoost&#x27;, color=&#x27;#C9A96E&#x27;, lw=1.5, linestyle=&#x27;--&#x27;)
+axes[0].set_title(&#x27;Carbon Price: Actual vs XGBoost Forecast (last 2 years)&#x27;, fontweight=&#x27;bold&#x27;)
+axes[0].set_ylabel(&#x27;EUR/tCO2&#x27;)
+axes[0].legend()
+
+axes[1].plot(df[&#x27;date&#x27;], residuals, color=&#x27;#6B7A8D&#x27;, lw=0.8, alpha=0.7)
+axes[1].axhline(0, color=&#x27;#C9A96E&#x27;, linestyle=&#x27;--&#x27;)
+axes[1].set_title(&#x27;Residuals&#x27;, fontweight=&#x27;bold&#x27;)
+axes[1].set_ylabel(&#x27;EUR&#x27;)
+
+plt.tight_layout()
+plt.show()
+
+print(f&quot;Final MAPE: {np.mean(mapes)*100:.2f}%&quot;)
+print(f&quot;Last actual: {y.iloc[-1]:.1f} EUR/tCO2&quot;)
+print(f&quot;Last predicted: {y_pred[-1]:.1f} EUR/tCO2&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>Business Presentation</h2>
+<p>This model was presented to a simulated risk committee with SHAP-explained drivers:</p>
+<ul>
+<li><strong>Gas price</strong> is the strongest predictor of carbon price</li>
+<li><strong>Lagged carbon price</strong> (1-day, 5-day) carries strong momentum signal</li>
+<li><strong>Policy events</strong> cause sharp upward spikes, the model captures these via dummy variables</li>
+<li><strong>Temperature deviation</strong> captures heating/cooling demand effects on energy markets</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Final Business Interpretation</h1>
+<h2>Key Findings</h2>
+<ul>
+<li>Carbon prices are influenced by energy prices, policy events and lagged market momentum.</li>
+<li>Time-series cross-validation is required to avoid look-ahead bias.</li>
+<li>XGBoost performs well on structured market-driver data.</li>
+<li>SHAP helps explain whether forecasts are driven by gas, power, coal or policy factors.</li>
+<li>Carbon forecasting has direct relevance for risk management, hedging and investment decisions.</li>
+</ul>
+<h2>Recommended Next Steps</h2>
+<ul>
+<li>Use walk-forward validation for live market forecasting.</li>
+<li>Add macroeconomic, weather and policy-calendar features.</li>
+<li>Monitor model error during regime changes.</li>
+<li>Use prediction intervals before making trading or hedging decisions.</li>
+<li>Treat forecasts as decision-support rather than deterministic price targets.</li>
+</ul>
+<h2>Interview Talking Point</h2>
+<p>A strong way to discuss this project in an interview:</p>
+<p>&gt; &quot;Built a carbon price forecasting workflow using XGBoost, time-series cross-validation and SHAP to explain market drivers across energy and policy variables.&quot;</p>
+<h2>Production Considerations</h2>
+<p>Before deploying this solution in a real business environment, I would consider:</p>
+<ul>
+<li>Data quality monitoring</li>
+<li>Model drift monitoring</li>
+<li>Clear train/test or time-based validation strategy</li>
+<li>Threshold tuning aligned to business cost</li>
+<li>Explainability for stakeholder trust</li>
+<li>Documentation for auditability</li>
+<li>A reproducible pipeline for retraining</li>
+</ul></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>

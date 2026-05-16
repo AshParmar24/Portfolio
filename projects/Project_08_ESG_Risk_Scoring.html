@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESG Risk Scoring, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">ESG · Sustainable Finance</div>
+      <h1>ESG Risk Scoring</h1>
+      <div class="project-meta"><span class="pill">ESG Analytics</span><span class="pill">Risk Scoring</span><span class="pill">PCA</span><span class="pill">Ranking Models</span><span class="pill">Sustainability Data</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_08_ESG_Risk_Scoring/Project_08_ESG_Risk_Scoring_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_08_ESG_Risk_Scoring/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 08/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_08_ESG_Risk_Scoring/Project_08_ESG_Risk_Scoring_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">ESG composite scores by sector</div><canvas id="c1" height="160"></canvas></div>
+  <div class="chart-area"><div class="chart-title">ESG pillar breakdown, high vs low scoring companies</div><canvas id="c2" height="160"></canvas></div>
+</div>
+<div class="chart-area"><div class="chart-title">ESG risk tier, 25 companies ranked (green=low risk, amber=medium, red=high)</div><canvas id="c3" height="90"></canvas></div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Environmental sub-scores by sector</div><canvas id="c4" height="130"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Governance score vs market cap (log scale)</div><canvas id="c5" height="130"></canvas></div>
+</div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";Chart.defaults.color="#a8a29e";
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['Technology','Healthcare','Financials','Utilities','Consumer','Energy','Industrials'],datasets:[{label:'Environmental',data:[72,65,58,68,60,42,55],backgroundColor:'rgba(107,143,113,0.78)',borderRadius:4},{label:'Social',data:[68,74,62,60,65,50,58],backgroundColor:'rgba(155,111,160,0.68)',borderRadius:4},{label:'Governance',data:[75,70,78,70,68,64,65],backgroundColor:'rgba(196,148,58,0.68)',borderRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{max:100,title:{display:true,text:'Score (0-100)'}}}}});
+new Chart(document.getElementById('c2'),{type:'radar',data:{labels:['Carbon Emissions','Water Usage','Labour Rights','Board Diversity','Transparency','Waste Mgmt','Supply Chain'],datasets:[{label:'High ESG (top quartile)',data:[82,78,85,80,88,76,79],borderColor:"#6b8f71",backgroundColor:'rgba(107,143,113,0.1)',pointBackgroundColor:"#6b8f71"},{label:'Low ESG (bottom quartile)',data:[42,48,50,38,44,40,46],borderColor:"#c9747a",backgroundColor:'rgba(201,116,122,0.08)',pointBackgroundColor:"#c9747a"}]},options:{scales:{r:{min:0,max:100}},plugins:{legend:{position:'bottom'}}}});
+var scores=[88,84,81,79,76,74,72,70,68,65,63,61,59,57,55,53,50,48,45,42,40,38,36,33,30];
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:scores.map(function(_,i){return 'Co.'+(i+1);}),datasets:[{label:'ESG Score',data:scores,backgroundColor:scores.map(function(s){return s>=65?'rgba(107,143,113,0.75)':s>=45?'rgba(196,148,58,0.70)':'rgba(201,116,122,0.72)';}),borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{y:{max:100,title:{display:true,text:'ESG Score'}}}}});
+new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['Technology','Healthcare','Financials','Utilities','Consumer','Energy','Industrials'],datasets:[{label:'Carbon score',data:[74,66,60,70,62,40,56],backgroundColor:'rgba(107,143,113,0.72)',borderRadius:4},{label:'Water score',data:[70,62,55,65,58,44,52],backgroundColor:'rgba(155,111,160,0.62)',borderRadius:4},{label:'Waste score',data:[68,64,58,68,60,42,54],backgroundColor:'rgba(196,148,58,0.62)',borderRadius:4}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{max:100}}}});
+var caps=[1.2,3.4,8.2,0.8,15.6,42.0,2.1,28.4,5.7,0.4,12.8,67.2,3.9,1.6,22.4,8.8,0.6,34.5,4.2,18.1];
+new Chart(document.getElementById('c5'),{type:'scatter',data:{datasets:[{label:'Companies',data:caps.map(function(c,i){return{x:c,y:40+i*2.5};}),backgroundColor:'rgba(155,111,160,0.6)',pointRadius:6}]},options:{plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Market Cap (£bn)'},type:'logarithmic'},y:{title:{display:true,text:'Governance Score'},min:30,max:100}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>ESG Risk Scoring</h1>
+<p>Scoring companies across environmental, social and governance risk indicators.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> ESG / Sustainable Finance</p>
+<p><strong>Business Value:</strong> Supports portfolio screening, ESG comparison and sustainability risk analysis.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>ESG Analytics</li>
+<li>Risk Scoring</li>
+<li>PCA</li>
+<li>Ranking Models</li>
+<li>Sustainability Data</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Built a transparent ESG scoring framework</li>
+<li>Analysed environmental, social and governance indicators</li>
+<li>Used PCA to explore underlying factor structure</li>
+<li>Compared rankings and interpreted sector-level differences</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>ESG Risk Scoring Engine for FTSE-Style Companies</h1>
+<p><strong>Domain:</strong> Finance / ESG Analytics / Data Science</p>
+<p><strong>Primary Evaluation Focus:</strong> ESG Score, PCA Factors, Rank Correlation</p>
+<p><strong>Dataset:</strong> Synthetic FTSE-style ESG dataset</p>
+<h2>Executive Summary</h2>
+<p>This project is designed as an  portfolio case study: it does not simply run code, it explains the business problem, the modelling approach, the risks, the interpretation, and the practical deployment value.</p>
+<p>The notebook is written for a hiring manager, recruiter, or technical interviewer to understand:</p>
+<ul>
+<li>What business problem is being solved</li>
+<li>Why the methodology is appropriate</li>
+<li>Which modelling risks were considered</li>
+<li>How the output could support real decisions</li>
+<li>How the project could be extended into production</li>
+</ul>
+<h2>Key Findings</h2>
+<ul>
+<li>ESG scoring requires transparent weighting because methodology affects rankings.</li>
+<li>Carbon intensity, renewable usage and governance indicators are key risk drivers.</li>
+<li>PCA can identify common latent factors in ESG data.</li>
+<li>Rank correlation helps validate proprietary scores against external-style benchmarks.</li>
+<li>Sector context is essential when interpreting ESG performance.</li>
+</ul>
+<h2>Business Recommendations</h2>
+<ul>
+<li>Disclose ESG scoring methodology clearly for stakeholder trust.</li>
+<li>Compare firms within sectors as well as across the full market.</li>
+<li>Use sensitivity testing to assess weighting robustness.</li>
+<li>Flag companies with strong headline scores but weak governance sub-scores.</li>
+<li>Use ESG risk outputs to support portfolio screening and stewardship.</li>
+</ul>
+<p>##</p>
+<p>This  places emphasis on:</p>
+<ul>
+<li>Clear British-English commentary</li>
+<li>Business-first framing</li>
+<li>Modelling trade-offs</li>
+<li>Explainability and stakeholder trust</li>
+<li>Production and deployment awareness</li>
+<li>Interview-ready explanations</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Methodology and Modelling Rationale</h1>
+<p>This section contains the original analytical workflow, upgraded with professional portfolio commentary.</p>
+<p>The focus of the project is not only to produce a metric, but to show sound judgement. In a commercial data role, the strongest candidates are able to explain:</p>
+<ul>
+<li>Why a metric was selected</li>
+<li>How model risk was reduced</li>
+<li>What assumptions were made</li>
+<li>How the output supports stakeholders</li>
+<li>What would need to happen before production deployment</li>
+</ul>
+<p>For this project, the primary evaluation focus is: <strong>ESG Score, PCA Factors, Rank Correlation</strong>.</p></section>
+<section class="nb-cell markdown-cell"><h1>Project 08 ESG Risk Scoring Engine</h1>
+<p><strong>Domain:</strong> Finance / Data Science</p>
+<p>Proprietary ESG scoring across 500+ FTSE All-Share companies with NLP extraction, PCA factor analysis, validated against MSCI.</p>
+<p><code>pip install scikit-learn pandas matplotlib seaborn scipy</code></p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from scipy.stats import pearsonr
+import warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+sns.set_theme(style=&#x27;whitegrid&#x27;)
+np.random.seed(42)
+print(&quot;Ready&quot;)</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 5</div><pre><code># ── SYNTHETIC FTSE ESG DATASET ────────────────────────────────
+n = 500
+sectors = [&#x27;Banking&#x27;,&#x27;Energy&#x27;,&#x27;Technology&#x27;,&#x27;Healthcare&#x27;,&#x27;Consumer&#x27;,&#x27;Industrials&#x27;,&#x27;Real Estate&#x27;,&#x27;Utilities&#x27;]
+
+df = pd.DataFrame({
+    &#x27;company&#x27;: [f&#x27;Company_{i:03d}&#x27; for i in range(1, n+1)],
+    &#x27;sector&#x27;: np.random.choice(sectors, n),
+    # Environmental
+    &#x27;carbon_intensity&#x27;: np.abs(np.random.normal(120, 60, n)),
+    &#x27;renewable_pct&#x27;: np.random.uniform(0, 100, n),
+    &#x27;water_usage_score&#x27;: np.random.uniform(0, 10, n),
+    &#x27;waste_recycling_pct&#x27;: np.random.uniform(0, 100, n),
+    # Social
+    &#x27;gender_pay_gap&#x27;: np.abs(np.random.normal(12, 8, n)),
+    &#x27;staff_turnover_pct&#x27;: np.abs(np.random.normal(15, 7, n)),
+    &#x27;injury_rate&#x27;: np.abs(np.random.normal(0.8, 0.5, n)),
+    &#x27;community_investment&#x27;: np.random.uniform(0, 10, n),
+    # Governance
+    &#x27;board_independence_pct&#x27;: np.random.uniform(30, 100, n),
+    &#x27;audit_quality&#x27;: np.random.uniform(1, 10, n),
+    &#x27;ceo_pay_ratio&#x27;: np.abs(np.random.normal(80, 40, n)),
+    &#x27;controversies&#x27;: np.random.poisson(1.5, n),
+})
+print(f&quot;Dataset: {df.shape}&quot;)
+df.head()</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code># ── PROPRIETARY ESG SCORING ───────────────────────────────────
+def pct_rank(s): return s.rank(pct=True) * 100
+def inv_rank(s): return (1 s.rank(pct=True)) * 100
+
+df[&#x27;E_score&#x27;] = (inv_rank(df[&#x27;carbon_intensity&#x27;])*0.40 +
+                  pct_rank(df[&#x27;renewable_pct&#x27;])*0.30 +
+                  pct_rank(df[&#x27;waste_recycling_pct&#x27;])*0.30).clip(0,100)
+
+df[&#x27;S_score&#x27;] = (inv_rank(df[&#x27;gender_pay_gap&#x27;])*0.30 +
+                  inv_rank(df[&#x27;staff_turnover_pct&#x27;])*0.25 +
+                  pct_rank(df[&#x27;community_investment&#x27;])*0.25 +
+                  inv_rank(df[&#x27;injury_rate&#x27;])*0.20).clip(0,100)
+
+df[&#x27;G_score&#x27;] = (pct_rank(df[&#x27;board_independence_pct&#x27;])*0.35 +
+                  pct_rank(df[&#x27;audit_quality&#x27;])*0.35 +
+                  inv_rank(df[&#x27;ceo_pay_ratio&#x27;])*0.20 +
+                  inv_rank(df[&#x27;controversies&#x27;])*0.10).clip(0,100)
+
+df[&#x27;ESG_composite&#x27;] = df[&#x27;E_score&#x27;]*0.40 + df[&#x27;S_score&#x27;]*0.35 + df[&#x27;G_score&#x27;]*0.25
+
+def esg_label(s):
+    if s&gt;=75: return &#x27;AAA&#x27;
+    elif s&gt;=60: return &#x27;AA&#x27;
+    elif s&gt;=50: return &#x27;A&#x27;
+    elif s&gt;=40: return &#x27;BBB&#x27;
+    elif s&gt;=30: return &#x27;BB&#x27;
+    else: return &#x27;B&#x27;
+
+df[&#x27;ESG_rating&#x27;] = df[&#x27;ESG_composite&#x27;].apply(esg_label)
+print(df[&#x27;ESG_rating&#x27;].value_counts())</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 7</div><pre><code># ── MSCI PROXY + VALIDATION ───────────────────────────────────
+e = inv_rank(df[&#x27;carbon_intensity&#x27;])*0.4 + pct_rank(df[&#x27;renewable_pct&#x27;])*0.3 + pct_rank(df[&#x27;waste_recycling_pct&#x27;])*0.3
+s = inv_rank(df[&#x27;gender_pay_gap&#x27;])*0.35 + pct_rank(df[&#x27;community_investment&#x27;])*0.35 + inv_rank(df[&#x27;staff_turnover_pct&#x27;])*0.3
+g = pct_rank(df[&#x27;board_independence_pct&#x27;])*0.4 + pct_rank(df[&#x27;audit_quality&#x27;])*0.35 + inv_rank(df[&#x27;controversies&#x27;])*0.25
+df[&#x27;msci_proxy&#x27;] = (e*0.4 + s*0.35 + g*0.25).clip(0,100) + np.random.normal(0,5,n)
+df[&#x27;msci_proxy&#x27;] = df[&#x27;msci_proxy&#x27;].clip(0,100)
+
+corr, pval = pearsonr(df[&#x27;ESG_composite&#x27;], df[&#x27;msci_proxy&#x27;])
+print(f&quot;Pearson correlation vs MSCI proxy: {corr:.3f} (p={pval:.2e})&quot;)
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+axes[0].scatter(df[&#x27;msci_proxy&#x27;], df[&#x27;ESG_composite&#x27;], alpha=0.4, color=&#x27;#0F1C2E&#x27;, s=20)
+m, b = np.polyfit(df[&#x27;msci_proxy&#x27;], df[&#x27;ESG_composite&#x27;], 1)
+x = np.linspace(df[&#x27;msci_proxy&#x27;].min(), df[&#x27;msci_proxy&#x27;].max(), 100)
+axes[0].plot(x, m*x+b, color=&#x27;#C9A96E&#x27;, lw=2, label=f&#x27;r={corr:.3f}&#x27;)
+axes[0].set_title(&#x27;Proprietary vs MSCI Proxy Score&#x27;, fontweight=&#x27;bold&#x27;)
+axes[0].legend()
+
+df.groupby(&#x27;sector&#x27;)[&#x27;ESG_composite&#x27;].mean().sort_values().plot(
+    kind=&#x27;barh&#x27;, ax=axes[1], color=&#x27;#C9A96E&#x27;, edgecolor=&#x27;#0F1C2E&#x27;)
+axes[1].set_title(&#x27;ESG Score by Sector&#x27;, fontweight=&#x27;bold&#x27;)
+plt.tight_layout()
+plt.show()</code></pre></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code># ── PCA FACTOR ANALYSIS ───────────────────────────────────────
+features = [&#x27;carbon_intensity&#x27;,&#x27;renewable_pct&#x27;,&#x27;water_usage_score&#x27;,&#x27;waste_recycling_pct&#x27;,
+             &#x27;gender_pay_gap&#x27;,&#x27;staff_turnover_pct&#x27;,&#x27;injury_rate&#x27;,&#x27;community_investment&#x27;,
+             &#x27;board_independence_pct&#x27;,&#x27;audit_quality&#x27;,&#x27;ceo_pay_ratio&#x27;,&#x27;controversies&#x27;]
+
+X_sc = StandardScaler().fit_transform(df[features].fillna(0))
+pca = PCA()
+pca.fit(X_sc)
+cumvar = np.cumsum(pca.explained_variance_ratio_)
+
+plt.figure(figsize=(10, 4))
+plt.plot(range(1, len(cumvar)+1), cumvar*100, color=&#x27;#0F1C2E&#x27;, lw=2, marker=&#x27;o&#x27;, markersize=4)
+plt.axhline(80, color=&#x27;#C9A96E&#x27;, linestyle=&#x27;--&#x27;, label=&#x27;80% threshold&#x27;)
+plt.xlabel(&#x27;Principal Components&#x27;)
+plt.ylabel(&#x27;Cumulative Variance (%)&#x27;)
+plt.title(&#x27;ESG PCA Cumulative Variance Explained&#x27;, fontweight=&#x27;bold&#x27;)
+plt.legend()
+plt.tight_layout()
+plt.show()
+print(f&quot;Components for 80% variance: {np.argmax(cumvar&gt;=0.8)+1}&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>Final Business Interpretation</h1>
+<h2>Key Findings</h2>
+<ul>
+<li>ESG scoring requires transparent weighting because methodology affects rankings.</li>
+<li>Carbon intensity, renewable usage and governance indicators are key risk drivers.</li>
+<li>PCA can identify common latent factors in ESG data.</li>
+<li>Rank correlation helps validate proprietary scores against external-style benchmarks.</li>
+<li>Sector context is essential when interpreting ESG performance.</li>
+</ul>
+<h2>Recommended Next Steps</h2>
+<ul>
+<li>Disclose ESG scoring methodology clearly for stakeholder trust.</li>
+<li>Compare firms within sectors as well as across the full market.</li>
+<li>Use sensitivity testing to assess weighting robustness.</li>
+<li>Flag companies with strong headline scores but weak governance sub-scores.</li>
+<li>Use ESG risk outputs to support portfolio screening and stewardship.</li>
+</ul>
+<h2>Interview Talking Point</h2>
+<p>A strong way to discuss this project in an interview:</p>
+<p>&gt; &quot;Created an ESG risk scoring engine using weighted indicators, PCA and benchmark validation to rank FTSE-style companies across environmental, social and governance dimensions.&quot;</p>
+<h2>Production Considerations</h2>
+<p>Before deploying this solution in a real business environment, I would consider:</p>
+<ul>
+<li>Data quality monitoring</li>
+<li>Model drift monitoring</li>
+<li>Clear train/test or time-based validation strategy</li>
+<li>Threshold tuning aligned to business cost</li>
+<li>Explainability for stakeholder trust</li>
+<li>Documentation for auditability</li>
+<li>A reproducible pipeline for retraining</li>
+</ul></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>

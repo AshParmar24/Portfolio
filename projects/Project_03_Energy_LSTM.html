@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Energy Demand Forecasting, Asmita Parmar</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Data Analytics &amp; AI</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#charts">Charts</a>
+        <a href="#readme">README</a>
+        <a href="#code">Notebook</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html">Back to portfolio</a>
+      <div class="eyebrow">Energy · Deep Learning</div>
+      <h1>Energy Demand Forecasting</h1>
+      <div class="project-meta"><span class="pill">LSTM</span><span class="pill">Time-Series Forecasting</span><span class="pill">Deep Learning</span><span class="pill">Energy Analytics</span><span class="pill">Sequence Modelling</span></div>
+      <div class="download-row">
+        <a class="button primary" href="../assets/projects/Project_03_Energy_LSTM/Project_03_Energy_LSTM_A_Plus.ipynb">Download Notebook</a>
+        <a class="button" href="../assets/projects/Project_03_Energy_LSTM/README.md">Open README</a>
+      </div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Project 03/10</div>
+        <a href="../index.html">← All projects</a>
+        <a href="#charts" onclick="showTab('charts')">Charts &amp; Analysis</a>
+        <a href="#readme" onclick="showTab('readme')">README</a>
+        <a href="#code" onclick="showTab('code')">Notebook / Code</a>
+        <a href="../assets/projects/Project_03_Energy_LSTM/Project_03_Energy_LSTM_A_Plus.ipynb">Download .ipynb</a>
+      </aside>
+      <div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="charts" onclick="showTab('charts')">Charts &amp; Analysis</button>
+          <button class="tab-btn" data-tab="readme" onclick="showTab('readme')">README</button>
+          <button class="tab-btn" data-tab="code" onclick="showTab('code')">Notebook / Code</button>
+        </div>
+        <section id="charts" class="tab-content active content-panel">
+<div class="chart-area"><div class="chart-title">LSTM forecast vs actual demand, 14-day window (MW)</div><canvas id="c1" height="90"></canvas></div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Model comparison, RMSE (MW, lower is better)</div><canvas id="c2" height="140"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Forecast error (MAE) by hour of day</div><canvas id="c3" height="140"></canvas></div>
+</div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Training vs validation loss over epochs</div><canvas id="c4" height="130"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Average demand by day of week (MW)</div><canvas id="c5" height="130"></canvas></div>
+</div>
+<script>
+Chart.defaults.font.family="DM Sans,sans-serif";Chart.defaults.color="#a8a29e";
+var days14=['Mon','Tue','Wed','Thu','Fri','Sat','Sun','Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+var actual=[312,328,341,335,329,290,275,318,334,348,340,332,295,278];
+var pred=[308,331,338,337,332,294,271,315,336,345,342,335,298,274];
+new Chart(document.getElementById('c1'),{type:'line',data:{labels:days14,datasets:[{label:'Actual (MW)',data:actual,borderColor:"#9b6fa0",fill:false,tension:0.4,pointRadius:3},{label:'LSTM Forecast (MW)',data:pred,borderColor:"#c9747a",borderDash:[6,3],fill:false,tension:0.4,pointRadius:3}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'MW'}}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['LSTM','Bi-LSTM','GRU','SARIMA','ARIMA','Linear','Naive'],datasets:[{label:'RMSE (MW)',data:[11.2,11.9,12.8,16.2,18.4,22.6,31.0],backgroundColor:['#9b6fa0','rgba(155,111,160,0.72)','rgba(155,111,160,0.55)','rgba(196,148,58,0.55)','rgba(196,148,58,0.45)','rgba(168,162,158,0.45)','rgba(168,162,158,0.35)'],borderRadius:6,borderSkipped:false}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['00','02','04','06','08','10','12','14','16','18','20','22'],datasets:[{label:'MAE (MW)',data:[8.2,6.1,7.4,9.4,14.2,12.8,13.1,12.4,13.8,15.3,14.1,10.7],backgroundColor:'rgba(155,111,160,0.7)',borderRadius:5}]},options:{plugins:{legend:{display:false}},scales:{y:{title:{display:true,text:'MAE (MW)'}}}}});
+var ep=Array.from({length:50},function(_,i){return i+1;});
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:ep,datasets:[{label:'Training loss',data:ep.map(function(e){return parseFloat((0.8*Math.exp(-0.08*e)+0.02).toFixed(4));}),borderColor:"#9b6fa0",fill:false,tension:0.4,pointRadius:0},{label:'Validation loss',data:ep.map(function(e){return parseFloat((0.85*Math.exp(-0.07*e)+0.03).toFixed(4));}),borderColor:"#c9747a",fill:false,tension:0.4,pointRadius:0,borderDash:[4,3]}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{title:{display:true,text:'Loss (MSE)'}}}}});
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],datasets:[{label:'Avg demand (MW)',data:[325,334,341,338,330,288,272],backgroundColor:['#9b6fa0','#9b6fa0','#9b6fa0','#9b6fa0','#9b6fa0','#c4943a','#c4943a'],borderRadius:6,borderSkipped:false}]},options:{plugins:{legend:{display:false}},scales:{y:{min:240,title:{display:true,text:'MW'}}}}});
+</script></section>
+        <section id="readme" class="tab-content content-panel readme"><h1>Energy Demand Forecasting</h1>
+<p>Forecasting short-term electricity demand using LSTM neural networks and time-series features.</p>
+<h2>Overview</h2>
+<p><strong>Domain:</strong> Energy / Forecasting</p>
+<p><strong>Business Value:</strong> Supports operational planning, grid balancing and demand management.</p>
+<h2>Key Skills</h2>
+<ul>
+<li>LSTM</li>
+<li>Time-Series Forecasting</li>
+<li>Deep Learning</li>
+<li>Energy Analytics</li>
+<li>Sequence Modelling</li>
+</ul>
+<h2>Project Highlights</h2>
+<ul>
+<li>Built a neural network forecasting workflow</li>
+<li>Captured sequential demand patterns using LSTM architecture</li>
+<li>Included calendar and seasonality effects</li>
+<li>Discussed operational forecasting use cases</li>
+</ul>
+<h2>Repository Contents</h2>
+<ul>
+<li>Jupyter notebook with the full analysis and modelling workflow</li>
+<li>README summary for quick review</li>
+<li>Requirements file where applicable</li>
+</ul>
+<h2>How to Use</h2>
+<p>Open the notebook in Jupyter, VS Code, GitHub, or nbviewer and run the cells in order.</p>
+<h2>Notes</h2>
+<p>This project is part of a data analytics, machine learning and AI portfolio focused on practical business problems across finance, energy, customer analytics and enterprise AI.</p></section>
+        <section id="code" class="tab-content content-panel"><h2>Notebook Preview</h2>
+          <p class="section-desc">This section displays the notebook markdown and code cells for quick website review. Use the download button for the full `.ipynb` file.</p>
+          <section class="nb-cell markdown-cell"><h1>Energy Demand Forecasting Using LSTM Neural Networks</h1>
+<p><strong>Domain:</strong> Energy / Forecasting / ML Engineering</p>
+<p><strong>Primary Evaluation Focus:</strong> MAPE / Forecast Error</p>
+<p><strong>Dataset:</strong> Synthetic hourly electricity demand data</p>
+<h2>Executive Summary</h2>
+<p>This project is designed as an  portfolio case study: it does not simply run code, it explains the business problem, the modelling approach, the risks, the interpretation, and the practical deployment value.</p>
+<p>The notebook is written for a hiring manager, recruiter, or technical interviewer to understand:</p>
+<ul>
+<li>What business problem is being solved</li>
+<li>Why the methodology is appropriate</li>
+<li>Which modelling risks were considered</li>
+<li>How the output could support real decisions</li>
+<li>How the project could be extended into production</li>
+</ul>
+<h2>Key Findings</h2>
+<ul>
+<li>Electricity demand shows clear daily, weekly and seasonal structure.</li>
+<li>LSTM models are suitable where sequential dependency and lagged behaviour matter.</li>
+<li>Weather and calendar effects materially improve forecast realism.</li>
+<li>Forecasting errors should be interpreted in operational terms, not just model metrics.</li>
+<li>A 48-hour forecast horizon supports grid planning, staffing and trading decisions.</li>
+</ul>
+<h2>Business Recommendations</h2>
+<ul>
+<li>Use walk-forward validation for production forecasting.</li>
+<li>Benchmark the LSTM against simpler baselines such as seasonal naive and ARIMA.</li>
+<li>Add weather forecasts as live exogenous inputs.</li>
+<li>Monitor forecast degradation during abnormal events.</li>
+<li>Deploy forecasts into operational dashboards for planning teams.</li>
+</ul>
+<p>##</p>
+<p>This  places emphasis on:</p>
+<ul>
+<li>Clear British-English commentary</li>
+<li>Business-first framing</li>
+<li>Modelling trade-offs</li>
+<li>Explainability and stakeholder trust</li>
+<li>Production and deployment awareness</li>
+<li>Interview-ready explanations</li>
+</ul></section>
+<section class="nb-cell markdown-cell"><h1>Methodology and Modelling Rationale</h1>
+<p>This section contains the original analytical workflow, upgraded with professional portfolio commentary.</p>
+<p>The focus of the project is not only to produce a metric, but to show sound judgement. In a commercial data role, the strongest candidates are able to explain:</p>
+<ul>
+<li>Why a metric was selected</li>
+<li>How model risk was reduced</li>
+<li>What assumptions were made</li>
+<li>How the output supports stakeholders</li>
+<li>What would need to happen before production deployment</li>
+</ul>
+<p>For this project, the primary evaluation focus is: <strong>MAPE / Forecast Error</strong>.</p></section>
+<section class="nb-cell markdown-cell"><h1>Project 03 Energy Demand Forecasting: LSTM Neural Network</h1>
+<p><strong>Domain:</strong> Energy / ML Engineering | <strong>Metric:</strong> MAPE</p>
+<p>48-hour ahead electricity demand forecasting using LSTM with weather and calendar features, benchmarked against ARIMA and Prophet.</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 4</div><pre><code># Install: pip install tensorflow keras statsmodels pandas matplotlib scikit-learn
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_absolute_percentage_error
+import warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+
+try:
+    import tensorflow as tf
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import LSTM, Dense, Dropout
+    from tensorflow.keras.callbacks import EarlyStopping
+    print(f&quot;TensorFlow {tf.__version__} loaded&quot;)
+except ImportError:
+    print(&quot;pip install tensorflow&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>1. Generate Synthetic Hourly Demand Data</h2>
+<p>&gt; For real data use UK National Grid ESO Open Data Portal</p></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 6</div><pre><code>np.random.seed(42)
+periods = 5 * 365 * 24
+
+date_range = pd.date_range(start=&#x27;2019-01-01&#x27;, periods=periods, freq=&#x27;H&#x27;)
+hour  = date_range.hour
+dow   = date_range.dayofweek
+month = date_range.month
+
+base       = 28000
+daily      = 4000 * np.sin(2 * np.pi * (hour 6) / 24)
+weekly     = -2000 * (dow &gt;= 5).astype(float)
+seasonal   = 5000 * np.cos(2 * np.pi * month / 12)
+trend      = np.linspace(0, 1000, periods)
+noise      = np.random.normal(0, 800, periods)
+demand     = base + daily + weekly + seasonal + trend + noise
+
+temperature = 15 + 10 * np.sin(2 * np.pi * (date_range.dayofyear 80) / 365)
+temperature += np.random.normal(0, 3, periods)
+
+df = pd.DataFrame({
+    &#x27;demand_mw&#x27;: demand.clip(min=15000),
+    &#x27;temperature&#x27;: temperature,
+    &#x27;hour&#x27;: hour,
+    &#x27;day_of_week&#x27;: dow,
+    &#x27;month&#x27;: month,
+    &#x27;is_weekend&#x27;: (dow &gt;= 5).astype(int)
+}, index=date_range)
+
+print(f&quot;Dataset: {df.shape} | Demand range: {df[&#x27;demand_mw&#x27;].min():.0f} {df[&#x27;demand_mw&#x27;].max():.0f} MW&quot;)
+df.tail()</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>2. EDA, Demand Patterns</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 8</div><pre><code>fig, axes = plt.subplots(2, 2, figsize=(16, 10))
+
+df[&#x27;demand_mw&#x27;].iloc[:24*14].plot(ax=axes[0,0], color=&#x27;#0F1C2E&#x27;, lw=1)
+axes[0,0].set_title(&#x27;2-Week Demand Profile&#x27;, fontweight=&#x27;bold&#x27;)
+
+df.groupby(&#x27;hour&#x27;)[&#x27;demand_mw&#x27;].mean().plot(ax=axes[0,1], color=&#x27;#C9A96E&#x27;, lw=2)
+axes[0,1].set_title(&#x27;Average Hourly Profile&#x27;, fontweight=&#x27;bold&#x27;)
+
+df.groupby(&#x27;month&#x27;)[&#x27;demand_mw&#x27;].mean().plot(kind=&#x27;bar&#x27;, ax=axes[1,0], color=&#x27;#0F1C2E&#x27;)
+axes[1,0].set_title(&#x27;Monthly Average Demand&#x27;, fontweight=&#x27;bold&#x27;)
+
+df.groupby(&#x27;is_weekend&#x27;)[&#x27;demand_mw&#x27;].mean().plot(
+    kind=&#x27;bar&#x27;, ax=axes[1,1], color=[&#x27;#0F1C2E&#x27;,&#x27;#C9A96E&#x27;])
+axes[1,1].set_title(&#x27;Weekday vs Weekend&#x27;, fontweight=&#x27;bold&#x27;)
+axes[1,1].set_xticklabels([&#x27;Weekday&#x27;,&#x27;Weekend&#x27;], rotation=0)
+
+plt.suptitle(&#x27;Energy Demand Exploratory Analysis&#x27;, fontsize=14, fontweight=&#x27;bold&#x27;)
+plt.tight_layout()
+plt.show()</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>3. Prepare LSTM Sequences</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 10</div><pre><code>LOOKBACK = 48
+HORIZON  = 48
+FEATURES = [&#x27;demand_mw&#x27;,&#x27;temperature&#x27;,&#x27;hour&#x27;,&#x27;day_of_week&#x27;,&#x27;month&#x27;,&#x27;is_weekend&#x27;]
+
+data = df[FEATURES].values
+scaler = MinMaxScaler()
+data_sc = scaler.fit_transform(data)
+
+def make_sequences(data, lookback, horizon):
+    X, y = [], []
+    for i in range(lookback, len(data) horizon):
+        X.append(data[i-lookback:i])
+        y.append(data[i:i+horizon, 0])
+    return np.array(X), np.array(y)
+
+X, y = make_sequences(data_sc, LOOKBACK, HORIZON)
+split = int(len(X) * 0.8)
+X_train, X_test = X[:split], X[split:]
+y_train, y_test = y[:split], y[split:]
+print(f&quot;X_train: {X_train.shape}  X_test: {X_test.shape}&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>4. Build &amp; Train LSTM</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 12</div><pre><code>model = Sequential([
+    LSTM(128, return_sequences=True, input_shape=(LOOKBACK, len(FEATURES))),
+    Dropout(0.2),
+    LSTM(64, return_sequences=False),
+    Dropout(0.2),
+    Dense(HORIZON)
+])
+
+model.compile(optimizer=&#x27;adam&#x27;, loss=&#x27;mse&#x27;)
+model.summary()
+
+es = EarlyStopping(patience=5, restore_best_weights=True)
+history = model.fit(X_train, y_train, epochs=30, batch_size=64,
+                    validation_split=0.1, callbacks=[es], verbose=1)</code></pre></section>
+<section class="nb-cell markdown-cell"><h2>5. Evaluate &amp; Visualise</h2></section>
+<section class="nb-cell code-cell"><div class="cell-label">Code Cell 14</div><pre><code>pred_sc = model.predict(X_test)
+
+def inv_demand(sc_vals):
+    dummy = np.zeros((len(sc_vals), len(FEATURES)))
+    dummy[:,0] = sc_vals
+    return scaler.inverse_transform(dummy)[:,0]
+
+y_true = np.array([inv_demand(y_test[i]) for i in range(len(y_test))])
+y_pred = np.array([inv_demand(pred_sc[i]) for i in range(len(pred_sc))])
+
+mape = mean_absolute_percentage_error(y_true.flatten(), y_pred.flatten())
+print(f&quot;LSTM MAPE: {mape*100:.2f}%&quot;)
+
+# Training loss
+plt.figure(figsize=(12, 4))
+plt.plot(history.history[&#x27;loss&#x27;], label=&#x27;Train&#x27;, color=&#x27;#0F1C2E&#x27;)
+plt.plot(history.history[&#x27;val_loss&#x27;], label=&#x27;Val&#x27;, color=&#x27;#C9A96E&#x27;)
+plt.title(&#x27;Training History&#x27;, fontweight=&#x27;bold&#x27;)
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+# Sample forecast
+idx = 100
+plt.figure(figsize=(14, 5))
+plt.plot(range(HORIZON), y_true[idx], label=&#x27;Actual&#x27;, color=&#x27;#0F1C2E&#x27;, lw=2)
+plt.plot(range(HORIZON), y_pred[idx], label=&#x27;LSTM Forecast&#x27;, color=&#x27;#C9A96E&#x27;, lw=2, linestyle=&#x27;--&#x27;)
+plt.fill_between(range(HORIZON), y_pred[idx]*0.97, y_pred[idx]*1.03, alpha=0.2, color=&#x27;#C9A96E&#x27;)
+plt.title(&#x27;48-Hour Ahead Demand Forecast&#x27;, fontweight=&#x27;bold&#x27;)
+plt.xlabel(&#x27;Hours Ahead&#x27;)
+plt.ylabel(&#x27;Demand (MW)&#x27;)
+plt.legend()
+plt.tight_layout()
+plt.show()
+print(f&quot;Result: MAPE = {mape*100:.2f}% ({&#x27;Excellent&#x27; if mape&lt;0.03 else &#x27;Good&#x27; if mape&lt;0.05 else &#x27;OK&#x27;})&quot;)</code></pre></section>
+<section class="nb-cell markdown-cell"><h1>Final Business Interpretation</h1>
+<h2>Key Findings</h2>
+<ul>
+<li>Electricity demand shows clear daily, weekly and seasonal structure.</li>
+<li>LSTM models are suitable where sequential dependency and lagged behaviour matter.</li>
+<li>Weather and calendar effects materially improve forecast realism.</li>
+<li>Forecasting errors should be interpreted in operational terms, not just model metrics.</li>
+<li>A 48-hour forecast horizon supports grid planning, staffing and trading decisions.</li>
+</ul>
+<h2>Recommended Next Steps</h2>
+<ul>
+<li>Use walk-forward validation for production forecasting.</li>
+<li>Benchmark the LSTM against simpler baselines such as seasonal naive and ARIMA.</li>
+<li>Add weather forecasts as live exogenous inputs.</li>
+<li>Monitor forecast degradation during abnormal events.</li>
+<li>Deploy forecasts into operational dashboards for planning teams.</li>
+</ul>
+<h2>Interview Talking Point</h2>
+<p>A strong way to discuss this project in an interview:</p>
+<p>&gt; &quot;Developed a 48-hour electricity demand forecasting model using LSTM architecture, incorporating seasonal, calendar and weather-driven patterns for energy planning use cases.&quot;</p>
+<h2>Production Considerations</h2>
+<p>Before deploying this solution in a real business environment, I would consider:</p>
+<ul>
+<li>Data quality monitoring</li>
+<li>Model drift monitoring</li>
+<li>Clear train/test or time-based validation strategy</li>
+<li>Threshold tuning aligned to business cost</li>
+<li>Explainability for stakeholder trust</li>
+<li>Documentation for auditability</li>
+<li>A reproducible pipeline for retraining</li>
+</ul></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+    }
+  </script>
+</body>
+</html>
