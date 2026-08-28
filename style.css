@@ -259,3 +259,6 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #cdd6
   .skills-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2,1fr); }
 }
+
+.hi-icon { color: var(--accent); }
+.hi-svg { width: 19px; height: 19px; display: block; }
