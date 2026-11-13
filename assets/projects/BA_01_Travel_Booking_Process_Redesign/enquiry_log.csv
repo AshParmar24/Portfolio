@@ -1,0 +1,597 @@
+enquiry_id,received_date,channel,trip_type,consultant,first_response_hours,quote_sent,quote_turnaround_hours,quote_versions,quote_followed_up,booked,booking_value_gbp,booking_error,admin_minutes
+ENQ9001,2026-08-31,Web form,Tailor-made,Consultant H,10.9,No,,0,No,No,,No,10
+ENQ9002,2026-08-31,Walk-in,Tailor-made,Consultant C,0.0,Yes,20.2,3,Yes,Yes,6883.95,No,49
+ENQ9003,2026-08-31,Walk-in,Tailor-made,Consultant J,0.6,Yes,9.8,2,Yes,No,,No,53
+ENQ9004,2026-08-31,Web form,Package holiday,Consultant K,2.9,Yes,4.4,1,Yes,No,,No,50
+ENQ9005,2026-08-31,Email,Tailor-made,Consultant B,63.6,Yes,20.3,1,Yes,No,,No,39
+ENQ9006,2026-08-31,Phone,Package holiday,Consultant H,0.2,Yes,6.6,2,Yes,No,,No,44
+ENQ9007,2026-08-31,Web form,Package holiday,Consultant D,10.3,No,,0,No,No,,No,4
+ENQ9008,2026-08-31,Email,Tailor-made,Consultant F,39.5,Yes,52.2,1,Yes,No,,No,31
+ENQ9009,2026-08-31,Phone,Tailor-made,Consultant A,0.0,Yes,55.2,1,No,No,,No,43
+ENQ9010,2026-08-31,Web form,Package holiday,Consultant B,24.4,Yes,6.0,1,No,No,,No,40
+ENQ9011,2026-08-31,Phone,Package holiday,Consultant K,0.1,Yes,11.8,2,Yes,Yes,4127.79,No,42
+ENQ9012,2026-08-31,Social media,Tailor-made,Consultant E,3.9,Yes,66.3,6,Yes,Yes,4080.48,No,87
+ENQ9013,2026-08-31,Phone,Flights or hotel only,Consultant H,0.2,Yes,1.7,1,Yes,Yes,1268.75,No,52
+ENQ9014,2026-08-31,Phone,Tailor-made,Consultant C,0.1,Yes,14.1,2,No,No,,No,48
+ENQ9015,2026-08-31,Walk-in,Package holiday,Consultant K,0.1,Yes,6.3,2,No,No,,No,60
+ENQ9016,2026-08-31,Phone,Package holiday,Consultant A,0.1,Yes,18.9,1,No,No,,No,38
+ENQ9017,2026-08-31,Social media,Tailor-made,Consultant B,2.4,Yes,32.9,5,No,No,,No,84
+ENQ9018,2026-08-31,Phone,Package holiday,Consultant D,0.5,Yes,1.5,1,No,No,,No,53
+ENQ9019,2026-08-31,Phone,Cruise,Consultant L,0.4,Yes,4.0,1,No,Yes,6610.36,No,46
+ENQ9020,2026-08-31,Phone,Tailor-made,Consultant J,0.1,Yes,17.5,5,Yes,Yes,9178.22,No,80
+ENQ9021,2026-09-01,Web form,Package holiday,Consultant D,6.3,Yes,3.5,1,Yes,No,,No,41
+ENQ9022,2026-09-01,Phone,Package holiday,Consultant B,0.2,Yes,12.1,1,No,No,,No,41
+ENQ9023,2026-09-01,Phone,Package holiday,Consultant B,0.4,Yes,4.9,1,Yes,Yes,4423.45,No,35
+ENQ9024,2026-09-01,Web form,Package holiday,Consultant E,28.2,Yes,6.6,2,Yes,No,,No,56
+ENQ9025,2026-09-01,Email,Package holiday,Consultant F,1.0,Yes,1.7,1,No,No,,No,34
+ENQ9026,2026-09-01,Phone,Tailor-made,Consultant G,0.0,Yes,4.8,3,Yes,Yes,8898.88,Yes,67
+ENQ9027,2026-09-01,Phone,Flights or hotel only,Consultant F,0.1,Yes,4.4,1,Yes,No,,No,48
+ENQ9028,2026-09-01,Phone,Package holiday,Consultant E,0.0,Yes,6.2,2,No,Yes,5175.24,Yes,46
+ENQ9029,2026-09-01,Web form,Flights or hotel only,Consultant K,11.2,Yes,35.9,1,Yes,No,,No,53
+ENQ9030,2026-09-01,Phone,Package holiday,Consultant L,0.2,Yes,9.9,1,Yes,No,,No,45
+ENQ9031,2026-09-02,Phone,Package holiday,Consultant A,0.3,Yes,13.3,2,No,No,,No,53
+ENQ9032,2026-09-02,Web form,Package holiday,Consultant L,26.4,No,,0,No,No,,No,7
+ENQ9033,2026-09-02,Email,Package holiday,Consultant B,31.6,Yes,14.1,1,No,No,,No,33
+ENQ9034,2026-09-02,Phone,Package holiday,Consultant J,0.1,Yes,8.3,1,Yes,No,,No,39
+ENQ9035,2026-09-02,Walk-in,Package holiday,Consultant D,0.0,Yes,1.8,2,Yes,No,,No,54
+ENQ9036,2026-09-02,Email,Tailor-made,Consultant L,2.6,Yes,42.6,3,No,No,,No,69
+ENQ9037,2026-09-02,Walk-in,Tailor-made,Consultant B,0.1,Yes,71.4,2,Yes,Yes,2868.9,No,46
+ENQ9038,2026-09-02,Web form,Tailor-made,Consultant L,17.2,Yes,14.2,2,Yes,Yes,7104.75,No,56
+ENQ9039,2026-09-02,Phone,Tailor-made,Consultant L,0.1,Yes,18.0,3,Yes,Yes,12087.4,No,63
+ENQ9040,2026-09-02,Web form,Flights or hotel only,Consultant A,31.4,Yes,10.9,2,Yes,No,,No,62
+ENQ9041,2026-09-02,Email,Cruise,Consultant K,19.1,Yes,13.9,2,Yes,No,,No,61
+ENQ9042,2026-09-02,Email,Package holiday,Consultant K,3.2,No,,0,No,No,,No,8
+ENQ9043,2026-09-02,Phone,Package holiday,Consultant A,0.2,Yes,6.2,1,No,No,,No,50
+ENQ9044,2026-09-02,Web form,Flights or hotel only,Consultant B,32.7,Yes,5.2,2,Yes,No,,No,50
+ENQ9045,2026-09-02,Phone,Cruise,Consultant J,0.1,Yes,14.8,3,No,No,,No,53
+ENQ9046,2026-09-02,Email,Package holiday,Consultant L,24.8,Yes,4.8,2,No,No,,No,51
+ENQ9047,2026-09-03,Phone,Cruise,Consultant D,0.0,Yes,7.2,2,Yes,No,,No,56
+ENQ9048,2026-09-03,Email,Flights or hotel only,Consultant L,11.4,Yes,13.0,1,No,No,,No,49
+ENQ9049,2026-09-03,Phone,Package holiday,Consultant C,1.8,Yes,11.9,1,Yes,No,,No,39
+ENQ9050,2026-09-03,Email,Flights or hotel only,Consultant F,5.9,Yes,11.0,1,Yes,No,,No,40
+ENQ9051,2026-09-03,Email,Tailor-made,Consultant F,22.8,Yes,2.3,3,Yes,No,,No,70
+ENQ9052,2026-09-03,Email,Package holiday,Consultant D,18.0,No,,0,No,No,,No,8
+ENQ9053,2026-09-03,Web form,Flights or hotel only,Consultant H,9.3,No,,0,No,No,,No,9
+ENQ9054,2026-09-03,Phone,Package holiday,Consultant F,0.9,Yes,2.2,2,Yes,Yes,3817.04,No,67
+ENQ9055,2026-09-03,Web form,Tailor-made,Consultant H,8.0,Yes,6.3,5,Yes,No,,No,65
+ENQ9056,2026-09-03,Email,Package holiday,Consultant K,21.8,Yes,1.9,2,Yes,No,,No,38
+ENQ9057,2026-09-03,Walk-in,Tailor-made,Consultant F,0.5,Yes,17.5,2,No,Yes,3922.4,No,39
+ENQ9058,2026-09-04,Phone,Package holiday,Consultant E,0.1,Yes,8.3,2,No,No,,No,44
+ENQ9059,2026-09-04,Phone,Tailor-made,Consultant F,0.1,Yes,10.3,6,Yes,Yes,3261.65,Yes,85
+ENQ9060,2026-09-04,Email,Flights or hotel only,Consultant F,6.2,Yes,9.4,1,Yes,Yes,598.91,No,37
+ENQ9061,2026-09-04,Walk-in,Package holiday,Consultant C,0.3,Yes,2.0,1,Yes,No,,No,42
+ENQ9062,2026-09-04,Phone,Package holiday,Consultant E,0.1,Yes,2.3,1,Yes,No,,No,52
+ENQ9063,2026-09-04,Phone,Package holiday,Consultant J,0.1,Yes,10.4,1,Yes,No,,No,38
+ENQ9064,2026-09-04,Web form,Package holiday,Consultant F,18.1,Yes,2.8,1,Yes,No,,No,43
+ENQ9065,2026-09-04,Walk-in,Package holiday,Consultant G,0.1,Yes,3.8,1,No,No,,No,50
+ENQ9066,2026-09-04,Email,Flights or hotel only,Consultant A,0.8,No,,0,No,No,,No,5
+ENQ9067,2026-09-04,Social media,Cruise,Consultant B,28.6,No,,0,No,No,,No,9
+ENQ9068,2026-09-04,Social media,Package holiday,Consultant F,24.8,Yes,7.5,3,Yes,No,,No,82
+ENQ9069,2026-09-04,Phone,Tailor-made,Consultant G,0.3,Yes,31.3,3,Yes,No,,No,53
+ENQ9070,2026-09-04,Phone,Package holiday,Consultant C,0.0,Yes,2.8,2,Yes,No,,No,52
+ENQ9071,2026-09-04,Email,Flights or hotel only,Consultant E,1.3,Yes,20.5,2,No,Yes,998.47,No,56
+ENQ9072,2026-09-04,Phone,Package holiday,Consultant K,1.0,Yes,18.4,1,No,No,,No,52
+ENQ9073,2026-09-04,Social media,Flights or hotel only,Consultant K,3.8,Yes,9.2,1,Yes,No,,No,41
+ENQ9074,2026-09-04,Email,Package holiday,Consultant J,23.3,Yes,24.5,1,Yes,No,,No,62
+ENQ9075,2026-09-05,Email,Package holiday,Consultant K,23.6,Yes,5.9,1,Yes,No,,No,43
+ENQ9076,2026-09-05,Email,Package holiday,Consultant C,8.4,Yes,24.3,1,Yes,No,,No,44
+ENQ9077,2026-09-05,Email,Flights or hotel only,Consultant C,4.3,Yes,21.9,1,No,No,,No,45
+ENQ9078,2026-09-05,Phone,Package holiday,Consultant C,0.3,Yes,2.5,2,Yes,No,,No,47
+ENQ9079,2026-09-05,Web form,Package holiday,Consultant G,3.5,Yes,2.5,3,Yes,No,,No,57
+ENQ9080,2026-09-05,Phone,Package holiday,Consultant G,0.2,Yes,15.3,3,Yes,No,,No,63
+ENQ9081,2026-09-05,Email,Package holiday,Consultant L,15.1,Yes,10.2,2,No,No,,No,59
+ENQ9082,2026-09-05,Phone,Package holiday,Consultant C,0.3,No,,0,No,No,,No,12
+ENQ9083,2026-09-05,Web form,Package holiday,Consultant J,22.0,Yes,8.5,1,Yes,No,,No,67
+ENQ9084,2026-09-07,Social media,Tailor-made,Consultant A,20.3,Yes,11.6,2,No,No,,No,36
+ENQ9085,2026-09-07,Phone,Package holiday,Consultant L,0.1,Yes,4.6,1,Yes,No,,No,37
+ENQ9086,2026-09-07,Walk-in,Cruise,Consultant C,0.6,Yes,10.8,1,No,No,,No,53
+ENQ9087,2026-09-07,Walk-in,Package holiday,Consultant J,0.1,Yes,3.7,1,Yes,Yes,3127.04,No,41
+ENQ9088,2026-09-07,Social media,Package holiday,Consultant G,7.2,Yes,1.0,3,Yes,No,,No,50
+ENQ9089,2026-09-07,Social media,Package holiday,Consultant J,1.2,Yes,4.4,1,No,No,,No,43
+ENQ9090,2026-09-07,Social media,Tailor-made,Consultant F,4.8,Yes,31.7,3,No,No,,No,53
+ENQ9091,2026-09-07,Web form,Package holiday,Consultant A,14.7,Yes,22.1,1,Yes,Yes,4190.54,No,31
+ENQ9092,2026-09-08,Email,Flights or hotel only,Consultant K,12.0,No,,0,No,No,,No,13
+ENQ9093,2026-09-08,Phone,Package holiday,Consultant B,0.1,Yes,3.3,1,Yes,Yes,1820.91,No,40
+ENQ9094,2026-09-08,Phone,Tailor-made,Consultant C,0.3,Yes,12.0,2,No,Yes,7546.96,No,59
+ENQ9095,2026-09-08,Phone,Package holiday,Consultant G,0.2,Yes,9.7,1,Yes,Yes,3873.19,No,52
+ENQ9096,2026-09-08,Web form,Package holiday,Consultant C,15.7,Yes,12.8,1,No,No,,No,57
+ENQ9097,2026-09-08,Phone,Flights or hotel only,Consultant L,0.6,Yes,13.8,1,Yes,Yes,370.41,No,54
+ENQ9098,2026-09-08,Phone,Flights or hotel only,Consultant G,0.3,Yes,4.8,1,No,No,,No,49
+ENQ9099,2026-09-08,Phone,Flights or hotel only,Consultant J,0.0,Yes,5.4,1,Yes,No,,No,45
+ENQ9100,2026-09-08,Email,Tailor-made,Consultant F,19.1,Yes,24.7,1,No,No,,No,46
+ENQ9101,2026-09-08,Email,Package holiday,Consultant D,12.2,Yes,12.4,2,Yes,No,,No,57
+ENQ9102,2026-09-08,Phone,Package holiday,Consultant K,0.1,Yes,17.4,1,Yes,Yes,5383.37,No,37
+ENQ9103,2026-09-09,Email,Tailor-made,Consultant A,49.0,Yes,55.7,3,No,No,,No,59
+ENQ9104,2026-09-09,Phone,Package holiday,Consultant D,0.4,Yes,2.1,2,Yes,Yes,1330.77,No,47
+ENQ9105,2026-09-09,Walk-in,Tailor-made,Consultant D,0.1,Yes,13.3,2,No,No,,No,45
+ENQ9106,2026-09-09,Phone,Flights or hotel only,Consultant F,0.2,Yes,5.7,1,No,Yes,683.25,No,42
+ENQ9107,2026-09-09,Email,Tailor-made,Consultant A,12.7,Yes,23.7,1,Yes,No,,No,44
+ENQ9108,2026-09-09,Web form,Tailor-made,Consultant B,38.8,Yes,19.2,4,No,No,,No,71
+ENQ9109,2026-09-09,Phone,Tailor-made,Consultant C,0.1,No,,0,No,No,,No,13
+ENQ9110,2026-09-09,Social media,Package holiday,Consultant A,50.4,No,,0,No,No,,No,11
+ENQ9111,2026-09-09,Phone,Flights or hotel only,Consultant L,0.7,Yes,13.4,4,Yes,No,,No,77
+ENQ9112,2026-09-09,Email,Package holiday,Consultant F,31.6,Yes,1.9,2,No,No,,No,55
+ENQ9113,2026-09-09,Walk-in,Cruise,Consultant F,0.5,Yes,22.4,1,Yes,No,,No,48
+ENQ9114,2026-09-09,Phone,Flights or hotel only,Consultant C,0.0,Yes,3.9,2,Yes,No,,No,47
+ENQ9115,2026-09-09,Web form,Tailor-made,Consultant H,56.4,Yes,21.8,2,No,No,,No,64
+ENQ9116,2026-09-09,Social media,Package holiday,Consultant D,24.6,Yes,6.7,1,Yes,No,,No,36
+ENQ9117,2026-09-10,Web form,Tailor-made,Consultant L,22.8,No,,0,No,No,,No,9
+ENQ9118,2026-09-10,Email,Package holiday,Consultant B,18.2,Yes,29.1,1,Yes,Yes,3017.34,No,46
+ENQ9119,2026-09-10,Phone,Tailor-made,Consultant E,0.0,Yes,50.5,5,No,No,,No,83
+ENQ9120,2026-09-10,Web form,Package holiday,Consultant H,9.2,Yes,21.6,1,No,No,,No,48
+ENQ9121,2026-09-10,Social media,Cruise,Consultant L,24.7,Yes,0.5,2,Yes,No,,No,47
+ENQ9122,2026-09-10,Email,Flights or hotel only,Consultant F,33.2,Yes,30.7,1,Yes,Yes,1937.39,No,49
+ENQ9123,2026-09-10,Phone,Package holiday,Consultant G,0.1,Yes,2.6,1,No,Yes,1281.88,No,33
+ENQ9124,2026-09-10,Web form,Package holiday,Consultant K,28.8,Yes,3.4,1,No,Yes,2996.7,No,37
+ENQ9125,2026-09-10,Email,Tailor-made,Consultant C,27.1,Yes,21.7,3,No,No,,No,58
+ENQ9126,2026-09-10,Phone,Package holiday,Consultant H,0.1,Yes,5.0,2,Yes,No,,No,59
+ENQ9127,2026-09-10,Email,Cruise,Consultant C,11.3,Yes,8.6,1,No,No,,No,32
+ENQ9128,2026-09-10,Walk-in,Flights or hotel only,Consultant C,0.3,Yes,5.0,2,Yes,Yes,745.61,No,53
+ENQ9129,2026-09-10,Web form,Tailor-made,Consultant A,33.7,Yes,36.4,1,Yes,Yes,8806.78,No,39
+ENQ9130,2026-09-10,Phone,Package holiday,Consultant J,0.3,Yes,6.9,1,No,No,,No,41
+ENQ9131,2026-09-10,Web form,Tailor-made,Consultant G,5.3,Yes,34.1,1,Yes,No,,No,31
+ENQ9132,2026-09-10,Email,Package holiday,Consultant L,22.0,Yes,3.8,1,No,No,,No,54
+ENQ9133,2026-09-11,Web form,Package holiday,Consultant J,42.6,Yes,0.8,2,No,No,,No,48
+ENQ9134,2026-09-11,Email,Package holiday,Consultant B,11.7,Yes,7.0,1,Yes,No,,No,58
+ENQ9135,2026-09-11,Phone,Package holiday,Consultant E,0.1,Yes,3.9,1,No,No,,No,27
+ENQ9136,2026-09-11,Phone,Package holiday,Consultant G,0.2,Yes,5.0,1,Yes,No,,No,45
+ENQ9137,2026-09-11,Web form,Package holiday,Consultant A,17.3,Yes,28.8,1,Yes,No,,No,46
+ENQ9138,2026-09-11,Web form,Package holiday,Consultant J,12.8,Yes,7.4,2,Yes,No,,No,61
+ENQ9139,2026-09-11,Walk-in,Cruise,Consultant B,0.6,Yes,14.3,1,Yes,Yes,2656.17,Yes,23
+ENQ9140,2026-09-11,Phone,Tailor-made,Consultant K,0.1,Yes,23.1,2,Yes,Yes,8828.27,No,50
+ENQ9141,2026-09-11,Email,Tailor-made,Consultant J,3.8,Yes,13.1,3,Yes,No,,No,72
+ENQ9142,2026-09-11,Walk-in,Tailor-made,Consultant B,0.1,Yes,33.5,5,Yes,No,,No,95
+ENQ9143,2026-09-11,Email,Package holiday,Consultant A,6.4,Yes,6.7,2,Yes,No,,No,57
+ENQ9144,2026-09-11,Phone,Tailor-made,Consultant D,0.0,Yes,2.2,1,Yes,No,,No,44
+ENQ9145,2026-09-11,Phone,Tailor-made,Consultant H,0.0,Yes,36.0,3,Yes,Yes,8363.58,No,65
+ENQ9146,2026-09-12,Walk-in,Tailor-made,Consultant J,0.0,Yes,52.6,3,No,No,,No,69
+ENQ9147,2026-09-12,Email,Package holiday,Consultant F,19.5,Yes,23.3,2,Yes,Yes,6538.82,Yes,44
+ENQ9148,2026-09-12,Phone,Flights or hotel only,Consultant D,0.7,Yes,11.8,2,No,No,,No,39
+ENQ9149,2026-09-12,Web form,Cruise,Consultant L,57.4,Yes,26.5,3,No,No,,No,53
+ENQ9150,2026-09-12,Email,Tailor-made,Consultant D,9.0,Yes,22.6,2,Yes,No,,No,43
+ENQ9151,2026-09-12,Walk-in,Cruise,Consultant C,0.1,Yes,20.1,1,Yes,No,,No,46
+ENQ9152,2026-09-12,Web form,Package holiday,Consultant C,48.8,Yes,3.2,2,No,Yes,2580.13,No,50
+ENQ9153,2026-09-12,Phone,Flights or hotel only,Consultant H,0.1,Yes,5.2,2,No,Yes,799.72,No,37
+ENQ9154,2026-09-12,Email,Tailor-made,Consultant B,8.4,No,,0,No,No,,No,3
+ENQ9155,2026-09-14,Social media,Tailor-made,Consultant H,20.6,Yes,35.3,2,Yes,No,,No,48
+ENQ9156,2026-09-14,Phone,Package holiday,Consultant B,0.1,Yes,10.1,1,No,No,,No,50
+ENQ9157,2026-09-14,Phone,Tailor-made,Consultant H,0.1,Yes,42.6,2,No,No,,No,58
+ENQ9158,2026-09-14,Social media,Package holiday,Consultant F,25.8,Yes,14.9,1,Yes,No,,No,53
+ENQ9159,2026-09-14,Email,Package holiday,Consultant K,27.8,No,,0,No,No,,No,11
+ENQ9160,2026-09-14,Web form,Flights or hotel only,Consultant D,45.3,Yes,10.8,1,No,No,,No,34
+ENQ9161,2026-09-14,Phone,Flights or hotel only,Consultant E,0.3,Yes,4.4,2,Yes,No,,No,57
+ENQ9162,2026-09-14,Email,Tailor-made,Consultant D,26.0,Yes,12.6,4,Yes,No,,No,79
+ENQ9163,2026-09-14,Phone,Cruise,Consultant A,0.2,Yes,51.8,5,No,Yes,6688.07,No,77
+ENQ9164,2026-09-14,Email,Flights or hotel only,Consultant H,3.8,Yes,8.9,2,No,No,,No,39
+ENQ9165,2026-09-14,Email,Flights or hotel only,Consultant D,29.7,No,,0,No,No,,No,10
+ENQ9166,2026-09-15,Social media,Package holiday,Consultant K,0.9,Yes,19.4,1,No,No,,No,55
+ENQ9167,2026-09-15,Social media,Cruise,Consultant E,17.7,Yes,6.9,2,Yes,No,,No,44
+ENQ9168,2026-09-15,Web form,Flights or hotel only,Consultant D,7.8,Yes,17.6,2,Yes,No,,No,60
+ENQ9169,2026-09-15,Phone,Package holiday,Consultant A,0.0,Yes,15.2,1,No,No,,No,29
+ENQ9170,2026-09-15,Email,Flights or hotel only,Consultant G,31.8,Yes,9.1,1,No,No,,No,38
+ENQ9171,2026-09-15,Phone,Tailor-made,Consultant H,0.0,Yes,34.1,5,Yes,Yes,6732.02,No,81
+ENQ9172,2026-09-15,Web form,Tailor-made,Consultant H,10.2,Yes,42.5,2,Yes,Yes,8679.5,No,52
+ENQ9173,2026-09-15,Email,Package holiday,Consultant B,2.3,Yes,6.1,1,Yes,Yes,5182.02,Yes,38
+ENQ9174,2026-09-15,Email,Tailor-made,Consultant D,39.2,Yes,41.8,3,No,No,,No,63
+ENQ9175,2026-09-15,Email,Flights or hotel only,Consultant J,9.7,Yes,15.8,1,No,No,,No,42
+ENQ9176,2026-09-15,Walk-in,Tailor-made,Consultant E,0.1,Yes,68.2,2,Yes,No,,No,50
+ENQ9177,2026-09-15,Phone,Flights or hotel only,Consultant G,0.1,No,,0,No,No,,No,5
+ENQ9178,2026-09-15,Phone,Tailor-made,Consultant J,0.2,Yes,69.1,3,Yes,Yes,5275.27,No,48
+ENQ9179,2026-09-15,Phone,Flights or hotel only,Consultant H,0.0,Yes,10.2,1,Yes,No,,No,40
+ENQ9180,2026-09-15,Web form,Package holiday,Consultant B,25.1,No,,0,No,No,,No,5
+ENQ9181,2026-09-15,Phone,Flights or hotel only,Consultant L,0.2,Yes,2.5,1,No,No,,No,41
+ENQ9182,2026-09-15,Web form,Package holiday,Consultant F,7.4,Yes,15.5,2,No,No,,No,59
+ENQ9183,2026-09-16,Social media,Tailor-made,Consultant H,10.7,Yes,29.8,2,Yes,No,,No,63
+ENQ9184,2026-09-16,Web form,Flights or hotel only,Consultant E,2.1,Yes,3.9,2,Yes,No,,No,46
+ENQ9185,2026-09-16,Social media,Flights or hotel only,Consultant F,20.2,No,,0,No,No,,No,3
+ENQ9186,2026-09-16,Phone,Package holiday,Consultant D,0.3,Yes,2.6,1,Yes,No,,No,25
+ENQ9187,2026-09-16,Email,Flights or hotel only,Consultant D,13.4,Yes,3.6,1,Yes,No,,No,38
+ENQ9188,2026-09-16,Email,Package holiday,Consultant K,33.1,Yes,11.6,2,No,Yes,2298.4,No,30
+ENQ9189,2026-09-16,Phone,Package holiday,Consultant B,0.4,Yes,21.6,2,Yes,No,,No,40
+ENQ9190,2026-09-16,Web form,Tailor-made,Consultant C,4.2,Yes,57.6,3,No,Yes,6127.88,No,62
+ENQ9191,2026-09-16,Web form,Cruise,Consultant L,32.5,Yes,13.3,2,Yes,No,,No,53
+ENQ9192,2026-09-16,Phone,Tailor-made,Consultant E,0.1,Yes,21.8,1,Yes,No,,No,43
+ENQ9193,2026-09-17,Email,Tailor-made,Consultant H,14.1,Yes,7.9,1,No,No,,No,41
+ENQ9194,2026-09-17,Web form,Cruise,Consultant A,2.8,Yes,13.2,2,No,Yes,6770.53,No,44
+ENQ9195,2026-09-17,Email,Cruise,Consultant J,12.6,No,,0,No,No,,No,14
+ENQ9196,2026-09-17,Phone,Cruise,Consultant F,1.0,Yes,8.8,2,No,No,,No,44
+ENQ9197,2026-09-17,Walk-in,Package holiday,Consultant K,0.1,Yes,5.3,2,Yes,Yes,2666.29,Yes,66
+ENQ9198,2026-09-17,Phone,Package holiday,Consultant C,0.1,Yes,1.9,1,Yes,Yes,1624.6,No,43
+ENQ9199,2026-09-17,Phone,Package holiday,Consultant F,0.1,Yes,4.0,3,No,No,,No,56
+ENQ9200,2026-09-17,Phone,Tailor-made,Consultant H,0.5,Yes,31.2,2,Yes,Yes,9209.18,Yes,54
+ENQ9201,2026-09-17,Web form,Package holiday,Consultant F,9.0,No,,0,No,No,,No,5
+ENQ9202,2026-09-17,Walk-in,Tailor-made,Consultant L,0.4,Yes,45.0,3,No,No,,No,62
+ENQ9203,2026-09-17,Email,Tailor-made,Consultant F,14.6,Yes,20.9,3,Yes,No,,No,56
+ENQ9204,2026-09-17,Walk-in,Tailor-made,Consultant E,0.0,Yes,51.6,5,No,Yes,16714.3,No,81
+ENQ9205,2026-09-17,Social media,Flights or hotel only,Consultant J,35.9,Yes,12.9,2,No,No,,No,41
+ENQ9206,2026-09-17,Walk-in,Tailor-made,Consultant D,0.1,Yes,46.9,2,No,No,,No,40
+ENQ9207,2026-09-18,Email,Package holiday,Consultant G,17.7,No,,0,No,No,,No,7
+ENQ9208,2026-09-18,Email,Package holiday,Consultant C,25.1,Yes,3.9,2,No,No,,No,53
+ENQ9209,2026-09-18,Web form,Flights or hotel only,Consultant C,11.5,No,,0,No,No,,No,12
+ENQ9210,2026-09-18,Phone,Package holiday,Consultant B,0.3,Yes,11.9,2,No,Yes,3502.78,No,60
+ENQ9211,2026-09-18,Phone,Flights or hotel only,Consultant B,0.2,Yes,9.7,1,Yes,Yes,898.54,No,47
+ENQ9212,2026-09-18,Phone,Package holiday,Consultant H,0.2,Yes,3.6,1,Yes,No,,No,30
+ENQ9213,2026-09-18,Phone,Package holiday,Consultant G,0.0,Yes,14.6,1,No,No,,No,28
+ENQ9214,2026-09-18,Phone,Flights or hotel only,Consultant K,0.7,No,,0,No,No,,No,3
+ENQ9215,2026-09-19,Social media,Flights or hotel only,Consultant K,15.3,No,,0,No,No,,No,7
+ENQ9216,2026-09-19,Phone,Tailor-made,Consultant H,0.3,Yes,31.7,2,Yes,No,,No,42
+ENQ9217,2026-09-19,Social media,Tailor-made,Consultant H,4.4,Yes,34.9,3,Yes,No,,No,66
+ENQ9218,2026-09-19,Phone,Tailor-made,Consultant C,0.1,No,,0,No,No,,No,3
+ENQ9219,2026-09-19,Web form,Package holiday,Consultant K,8.8,Yes,6.6,1,Yes,No,,No,34
+ENQ9220,2026-09-19,Walk-in,Flights or hotel only,Consultant C,0.1,Yes,15.9,1,Yes,No,,No,42
+ENQ9221,2026-09-19,Phone,Tailor-made,Consultant L,0.0,Yes,39.7,5,Yes,Yes,4233.07,No,84
+ENQ9222,2026-09-19,Walk-in,Package holiday,Consultant J,0.7,No,,0,No,No,,No,10
+ENQ9223,2026-09-21,Phone,Flights or hotel only,Consultant A,0.1,Yes,14.1,1,Yes,Yes,755.93,No,45
+ENQ9224,2026-09-21,Phone,Package holiday,Consultant C,0.8,Yes,1.4,1,Yes,No,,No,34
+ENQ9225,2026-09-21,Phone,Cruise,Consultant L,0.1,Yes,26.2,1,Yes,No,,No,33
+ENQ9226,2026-09-21,Email,Package holiday,Consultant L,8.8,Yes,17.7,2,No,No,,No,52
+ENQ9227,2026-09-21,Email,Tailor-made,Consultant G,65.2,Yes,37.2,4,No,No,,No,70
+ENQ9228,2026-09-21,Email,Flights or hotel only,Consultant C,7.2,Yes,10.2,1,Yes,No,,No,51
+ENQ9229,2026-09-21,Phone,Tailor-made,Consultant F,0.1,Yes,27.3,3,Yes,Yes,5714.27,No,67
+ENQ9230,2026-09-21,Web form,Cruise,Consultant A,5.9,Yes,8.2,2,Yes,Yes,13175.85,No,55
+ENQ9231,2026-09-21,Phone,Cruise,Consultant L,0.1,Yes,32.3,3,Yes,No,,No,64
+ENQ9232,2026-09-21,Phone,Tailor-made,Consultant K,0.3,Yes,25.4,3,Yes,No,,No,53
+ENQ9233,2026-09-21,Phone,Package holiday,Consultant F,0.0,No,,0,No,No,,No,9
+ENQ9234,2026-09-22,Web form,Flights or hotel only,Consultant F,4.9,Yes,20.2,2,Yes,No,,No,53
+ENQ9235,2026-09-22,Social media,Tailor-made,Consultant C,11.2,No,,0,No,No,,No,7
+ENQ9236,2026-09-22,Phone,Tailor-made,Consultant C,0.1,Yes,24.1,3,Yes,No,,No,50
+ENQ9237,2026-09-22,Phone,Package holiday,Consultant B,0.2,Yes,1.8,2,Yes,Yes,4801.84,No,48
+ENQ9238,2026-09-22,Walk-in,Flights or hotel only,Consultant E,0.0,Yes,13.1,1,Yes,No,,No,37
+ENQ9239,2026-09-22,Phone,Tailor-made,Consultant E,0.2,Yes,11.0,1,Yes,Yes,9173.45,No,33
+ENQ9240,2026-09-22,Email,Package holiday,Consultant L,2.1,Yes,11.4,1,Yes,Yes,4459.21,No,41
+ENQ9241,2026-09-22,Phone,Flights or hotel only,Consultant F,0.1,Yes,3.8,2,Yes,Yes,664.21,No,63
+ENQ9242,2026-09-22,Phone,Package holiday,Consultant H,0.4,Yes,9.2,1,Yes,No,,No,45
+ENQ9243,2026-09-22,Phone,Package holiday,Consultant H,0.3,Yes,6.4,1,Yes,No,,No,47
+ENQ9244,2026-09-22,Phone,Cruise,Consultant G,0.2,Yes,45.3,2,Yes,No,,No,67
+ENQ9245,2026-09-22,Web form,Tailor-made,Consultant B,1.4,Yes,25.3,4,No,No,,No,71
+ENQ9246,2026-09-22,Web form,Tailor-made,Consultant K,23.6,Yes,19.0,3,No,No,,No,70
+ENQ9247,2026-09-22,Web form,Tailor-made,Consultant A,5.3,Yes,13.3,5,Yes,No,,No,76
+ENQ9248,2026-09-22,Web form,Cruise,Consultant L,38.0,Yes,15.4,2,Yes,No,,No,53
+ENQ9249,2026-09-23,Email,Tailor-made,Consultant F,5.4,Yes,112.8,3,No,No,,No,66
+ENQ9250,2026-09-23,Phone,Package holiday,Consultant J,0.2,No,,0,No,No,,No,8
+ENQ9251,2026-09-23,Web form,Tailor-made,Consultant F,45.1,Yes,11.6,3,Yes,No,,No,54
+ENQ9252,2026-09-23,Phone,Package holiday,Consultant G,0.2,Yes,1.4,3,No,No,,No,47
+ENQ9253,2026-09-23,Social media,Flights or hotel only,Consultant L,23.3,Yes,2.0,1,No,No,,No,48
+ENQ9254,2026-09-23,Web form,Tailor-made,Consultant C,6.6,Yes,48.0,3,No,No,,No,75
+ENQ9255,2026-09-23,Phone,Package holiday,Consultant H,0.0,Yes,17.8,1,Yes,Yes,3132.4,Yes,27
+ENQ9256,2026-09-23,Web form,Cruise,Consultant J,7.5,Yes,42.6,3,Yes,No,,No,56
+ENQ9257,2026-09-23,Social media,Package holiday,Consultant F,35.1,Yes,20.2,1,Yes,No,,No,40
+ENQ9258,2026-09-23,Phone,Tailor-made,Consultant L,0.0,No,,0,No,No,,No,12
+ENQ9259,2026-09-23,Walk-in,Flights or hotel only,Consultant D,1.2,Yes,27.6,4,Yes,No,,No,61
+ENQ9260,2026-09-23,Email,Tailor-made,Consultant F,7.2,No,,0,No,No,,No,11
+ENQ9261,2026-09-23,Web form,Package holiday,Consultant B,6.6,Yes,8.1,1,Yes,Yes,1787.76,No,33
+ENQ9262,2026-09-23,Web form,Cruise,Consultant G,4.8,Yes,9.5,1,Yes,No,,No,45
+ENQ9263,2026-09-23,Phone,Flights or hotel only,Consultant A,0.5,Yes,12.2,2,No,No,,No,68
+ENQ9264,2026-09-23,Email,Flights or hotel only,Consultant L,12.4,Yes,8.2,1,Yes,No,,No,33
+ENQ9265,2026-09-23,Phone,Flights or hotel only,Consultant K,0.4,Yes,11.8,1,Yes,Yes,685.86,No,55
+ENQ9266,2026-09-24,Phone,Tailor-made,Consultant E,0.2,Yes,36.5,4,Yes,Yes,2664.76,Yes,75
+ENQ9267,2026-09-24,Walk-in,Tailor-made,Consultant G,0.6,Yes,10.1,1,Yes,No,,No,42
+ENQ9268,2026-09-24,Email,Package holiday,Consultant E,5.5,No,,0,No,No,,No,7
+ENQ9269,2026-09-24,Walk-in,Flights or hotel only,Consultant C,0.1,Yes,3.1,1,Yes,No,,No,46
+ENQ9270,2026-09-24,Web form,Flights or hotel only,Consultant F,15.5,Yes,8.0,2,No,No,,No,61
+ENQ9271,2026-09-24,Email,Flights or hotel only,Consultant J,28.7,Yes,8.9,1,No,No,,No,50
+ENQ9272,2026-09-25,Email,Tailor-made,Consultant J,3.0,Yes,5.8,2,Yes,No,,No,63
+ENQ9273,2026-09-25,Social media,Package holiday,Consultant B,2.0,Yes,6.3,2,Yes,No,,No,58
+ENQ9274,2026-09-25,Phone,Tailor-made,Consultant G,0.5,Yes,10.1,2,No,No,,No,56
+ENQ9275,2026-09-25,Phone,Package holiday,Consultant F,0.2,Yes,11.8,1,No,No,,No,43
+ENQ9276,2026-09-25,Phone,Flights or hotel only,Consultant K,0.0,No,,0,No,No,,No,3
+ENQ9277,2026-09-25,Email,Tailor-made,Consultant L,7.4,Yes,36.2,1,No,No,,No,45
+ENQ9278,2026-09-25,Email,Package holiday,Consultant J,1.2,Yes,6.0,1,Yes,Yes,4843.46,No,37
+ENQ9279,2026-09-25,Phone,Package holiday,Consultant G,0.0,Yes,0.9,1,Yes,Yes,3668.04,No,35
+ENQ9280,2026-09-25,Email,Tailor-made,Consultant K,4.7,Yes,38.1,2,No,No,,No,45
+ENQ9281,2026-09-25,Phone,Package holiday,Consultant L,0.0,Yes,11.9,1,Yes,No,,No,42
+ENQ9282,2026-09-25,Social media,Tailor-made,Consultant G,18.9,Yes,27.8,3,No,No,,No,59
+ENQ9283,2026-09-25,Phone,Tailor-made,Consultant K,0.2,Yes,43.2,5,Yes,Yes,9273.79,Yes,92
+ENQ9284,2026-09-25,Walk-in,Tailor-made,Consultant C,0.4,Yes,55.1,4,Yes,No,,No,77
+ENQ9285,2026-09-25,Social media,Package holiday,Consultant J,32.4,Yes,12.2,1,No,No,,No,30
+ENQ9286,2026-09-26,Phone,Tailor-made,Consultant J,0.3,Yes,29.7,1,No,No,,No,49
+ENQ9287,2026-09-26,Phone,Package holiday,Consultant H,0.0,Yes,18.8,1,Yes,Yes,2329.51,No,29
+ENQ9288,2026-09-26,Web form,Package holiday,Consultant L,17.4,Yes,4.6,1,Yes,Yes,2007.34,No,34
+ENQ9289,2026-09-26,Phone,Cruise,Consultant C,0.2,Yes,9.1,3,No,No,,No,64
+ENQ9290,2026-09-26,Email,Cruise,Consultant G,10.5,Yes,34.0,3,Yes,Yes,4429.52,No,62
+ENQ9291,2026-09-26,Email,Package holiday,Consultant L,7.6,Yes,5.7,1,No,No,,No,29
+ENQ9292,2026-09-26,Phone,Tailor-made,Consultant D,0.0,Yes,17.2,1,Yes,No,,No,36
+ENQ9293,2026-09-26,Walk-in,Package holiday,Consultant G,0.3,Yes,3.6,2,Yes,Yes,4281.3,No,59
+ENQ9294,2026-09-26,Web form,Flights or hotel only,Consultant K,1.3,Yes,4.6,2,Yes,No,,No,63
+ENQ9295,2026-09-26,Walk-in,Package holiday,Consultant J,0.0,Yes,7.6,2,Yes,No,,No,45
+ENQ9296,2026-09-26,Email,Package holiday,Consultant A,10.4,No,,0,No,No,,No,12
+ENQ9297,2026-09-26,Phone,Flights or hotel only,Consultant F,0.5,Yes,7.4,1,Yes,No,,No,57
+ENQ9298,2026-09-26,Phone,Package holiday,Consultant C,0.3,Yes,9.6,1,No,No,,No,45
+ENQ9299,2026-09-26,Email,Cruise,Consultant C,7.7,Yes,3.9,1,Yes,No,,No,42
+ENQ9300,2026-09-26,Walk-in,Package holiday,Consultant J,0.7,Yes,5.2,1,No,Yes,3010.56,No,37
+ENQ9301,2026-09-28,Web form,Flights or hotel only,Consultant D,6.3,Yes,3.0,1,No,No,,No,27
+ENQ9302,2026-09-28,Web form,Flights or hotel only,Consultant H,20.7,Yes,7.2,2,Yes,Yes,312.35,No,51
+ENQ9303,2026-09-28,Web form,Tailor-made,Consultant L,39.6,Yes,15.9,1,Yes,No,,No,34
+ENQ9304,2026-09-28,Web form,Flights or hotel only,Consultant G,9.4,Yes,22.3,1,Yes,No,,No,47
+ENQ9305,2026-09-28,Phone,Tailor-made,Consultant E,0.4,Yes,14.1,1,No,No,,No,41
+ENQ9306,2026-09-28,Walk-in,Flights or hotel only,Consultant D,0.3,Yes,7.1,1,No,No,,No,40
+ENQ9307,2026-09-28,Web form,Tailor-made,Consultant K,32.1,Yes,8.0,1,Yes,No,,No,42
+ENQ9308,2026-09-28,Web form,Package holiday,Consultant A,17.1,Yes,9.9,1,Yes,No,,No,37
+ENQ9309,2026-09-28,Email,Package holiday,Consultant K,21.1,No,,0,No,No,,No,12
+ENQ9310,2026-09-28,Phone,Tailor-made,Consultant G,0.2,Yes,25.3,2,No,No,,No,52
+ENQ9311,2026-09-28,Phone,Package holiday,Consultant A,0.2,Yes,26.3,1,Yes,Yes,2137.52,No,42
+ENQ9312,2026-09-28,Phone,Tailor-made,Consultant J,0.3,Yes,47.3,2,No,No,,No,56
+ENQ9313,2026-09-29,Phone,Cruise,Consultant H,0.2,Yes,17.3,1,No,Yes,3903.62,No,57
+ENQ9314,2026-09-29,Phone,Package holiday,Consultant G,0.1,Yes,4.8,2,Yes,Yes,3986.79,No,61
+ENQ9315,2026-09-29,Email,Package holiday,Consultant G,12.3,No,,0,No,No,,No,4
+ENQ9316,2026-09-29,Social media,Tailor-made,Consultant E,17.3,Yes,20.3,2,Yes,No,,No,58
+ENQ9317,2026-09-29,Phone,Package holiday,Consultant G,0.1,Yes,16.7,1,No,No,,No,35
+ENQ9318,2026-09-29,Web form,Package holiday,Consultant A,14.3,No,,0,No,No,,No,4
+ENQ9319,2026-09-29,Email,Tailor-made,Consultant G,11.4,Yes,46.5,4,Yes,Yes,6926.6,Yes,60
+ENQ9320,2026-09-29,Web form,Package holiday,Consultant F,6.6,Yes,5.9,1,No,No,,No,40
+ENQ9321,2026-09-29,Phone,Flights or hotel only,Consultant B,0.0,Yes,1.6,1,Yes,No,,No,45
+ENQ9322,2026-09-30,Phone,Cruise,Consultant H,0.1,Yes,9.0,1,No,No,,No,39
+ENQ9323,2026-09-30,Web form,Package holiday,Consultant G,16.5,Yes,19.5,1,No,No,,No,29
+ENQ9324,2026-09-30,Email,Package holiday,Consultant A,13.7,No,,0,No,No,,No,8
+ENQ9325,2026-09-30,Walk-in,Package holiday,Consultant B,0.0,Yes,1.7,2,Yes,No,,No,60
+ENQ9326,2026-09-30,Web form,Flights or hotel only,Consultant G,1.8,Yes,2.4,3,No,No,,No,50
+ENQ9327,2026-09-30,Web form,Tailor-made,Consultant L,10.6,Yes,22.8,8,No,No,,No,112
+ENQ9328,2026-09-30,Walk-in,Cruise,Consultant D,0.8,Yes,14.8,1,Yes,Yes,3032.73,Yes,50
+ENQ9329,2026-09-30,Phone,Package holiday,Consultant K,0.7,Yes,4.6,1,No,No,,No,52
+ENQ9330,2026-09-30,Phone,Tailor-made,Consultant H,0.2,No,,0,No,No,,No,9
+ENQ9331,2026-09-30,Email,Package holiday,Consultant H,6.9,Yes,9.6,1,Yes,Yes,1976.01,No,56
+ENQ9332,2026-09-30,Web form,Tailor-made,Consultant B,3.2,Yes,24.3,1,Yes,Yes,3326.65,No,41
+ENQ9333,2026-10-01,Email,Flights or hotel only,Consultant J,13.2,Yes,7.9,1,Yes,No,,No,39
+ENQ9334,2026-10-01,Email,Tailor-made,Consultant L,23.7,Yes,9.7,1,Yes,No,,No,46
+ENQ9335,2026-10-01,Web form,Cruise,Consultant G,28.6,No,,0,No,No,,No,5
+ENQ9336,2026-10-01,Phone,Flights or hotel only,Consultant H,0.5,Yes,6.1,1,No,Yes,1193.58,No,48
+ENQ9337,2026-10-01,Walk-in,Cruise,Consultant A,0.0,Yes,17.1,1,No,No,,No,40
+ENQ9338,2026-10-01,Phone,Package holiday,Consultant J,0.1,Yes,10.1,3,No,No,,No,60
+ENQ9339,2026-10-01,Email,Flights or hotel only,Consultant C,12.4,Yes,22.6,1,Yes,No,,No,40
+ENQ9340,2026-10-01,Web form,Package holiday,Consultant J,110.1,Yes,0.8,1,No,No,,No,31
+ENQ9341,2026-10-01,Social media,Flights or hotel only,Consultant B,24.0,Yes,4.1,1,No,No,,No,54
+ENQ9342,2026-10-01,Phone,Package holiday,Consultant K,0.0,No,,0,No,No,,No,5
+ENQ9343,2026-10-01,Phone,Package holiday,Consultant H,0.4,Yes,6.9,3,Yes,No,,No,61
+ENQ9344,2026-10-01,Phone,Cruise,Consultant E,0.3,Yes,4.0,1,Yes,No,,No,39
+ENQ9345,2026-10-01,Social media,Cruise,Consultant L,14.4,Yes,5.4,2,No,No,,No,50
+ENQ9346,2026-10-01,Phone,Tailor-made,Consultant G,0.0,Yes,22.9,3,No,No,,No,45
+ENQ9347,2026-10-02,Web form,Tailor-made,Consultant B,0.9,Yes,63.1,4,Yes,No,,No,62
+ENQ9348,2026-10-02,Social media,Tailor-made,Consultant B,1.2,Yes,24.5,3,No,No,,No,58
+ENQ9349,2026-10-02,Phone,Package holiday,Consultant K,0.1,Yes,4.1,2,No,No,,No,66
+ENQ9350,2026-10-02,Walk-in,Cruise,Consultant C,0.0,Yes,14.0,1,No,Yes,8019.35,No,41
+ENQ9351,2026-10-02,Web form,Package holiday,Consultant L,17.6,Yes,5.3,2,No,No,,No,57
+ENQ9352,2026-10-02,Email,Package holiday,Consultant A,14.7,Yes,9.2,1,Yes,Yes,3443.77,No,35
+ENQ9353,2026-10-02,Web form,Tailor-made,Consultant H,29.7,No,,0,No,No,,No,11
+ENQ9354,2026-10-02,Phone,Package holiday,Consultant L,0.3,Yes,7.0,3,Yes,No,,No,46
+ENQ9355,2026-10-02,Walk-in,Tailor-made,Consultant J,0.2,Yes,47.3,4,No,No,,No,63
+ENQ9356,2026-10-02,Web form,Cruise,Consultant C,20.8,Yes,26.2,2,Yes,Yes,7851.41,No,53
+ENQ9357,2026-10-02,Email,Package holiday,Consultant E,7.2,Yes,9.7,2,No,No,,No,58
+ENQ9358,2026-10-02,Phone,Package holiday,Consultant L,0.1,Yes,19.2,1,Yes,Yes,4040.54,No,36
+ENQ9359,2026-10-02,Web form,Tailor-made,Consultant A,32.9,Yes,18.3,4,No,No,,No,70
+ENQ9360,2026-10-02,Phone,Cruise,Consultant D,0.0,Yes,40.4,2,Yes,Yes,3340.03,No,52
+ENQ9361,2026-10-02,Walk-in,Flights or hotel only,Consultant F,0.0,No,,0,No,No,,No,8
+ENQ9362,2026-10-03,Web form,Tailor-made,Consultant C,26.3,Yes,8.5,3,Yes,Yes,8367.68,No,43
+ENQ9363,2026-10-03,Social media,Cruise,Consultant L,19.8,Yes,5.6,1,No,No,,No,47
+ENQ9364,2026-10-03,Phone,Flights or hotel only,Consultant H,0.1,Yes,6.0,1,Yes,No,,No,51
+ENQ9365,2026-10-03,Walk-in,Cruise,Consultant G,0.2,Yes,19.4,3,No,No,,No,54
+ENQ9366,2026-10-03,Phone,Tailor-made,Consultant G,0.1,Yes,19.1,4,Yes,No,,No,81
+ENQ9367,2026-10-03,Email,Flights or hotel only,Consultant G,16.9,Yes,6.0,1,Yes,No,,No,44
+ENQ9368,2026-10-03,Web form,Flights or hotel only,Consultant B,48.2,No,,0,No,No,,No,3
+ENQ9369,2026-10-03,Walk-in,Flights or hotel only,Consultant L,0.3,Yes,8.4,2,No,No,,No,62
+ENQ9370,2026-10-03,Phone,Tailor-made,Consultant H,0.6,Yes,63.9,6,Yes,No,,No,84
+ENQ9371,2026-10-03,Web form,Tailor-made,Consultant J,10.6,Yes,36.1,3,Yes,No,,No,81
+ENQ9372,2026-10-03,Phone,Package holiday,Consultant B,0.0,Yes,10.1,1,Yes,No,,No,29
+ENQ9373,2026-10-03,Web form,Package holiday,Consultant G,14.3,Yes,10.0,3,No,No,,No,69
+ENQ9374,2026-10-03,Email,Package holiday,Consultant L,14.8,Yes,19.0,2,Yes,No,,No,48
+ENQ9375,2026-10-05,Phone,Cruise,Consultant G,0.2,No,,0,No,No,,No,4
+ENQ9376,2026-10-05,Phone,Tailor-made,Consultant B,0.1,Yes,33.7,5,No,No,,No,65
+ENQ9377,2026-10-05,Phone,Tailor-made,Consultant B,0.5,Yes,38.8,4,Yes,Yes,5145.06,No,59
+ENQ9378,2026-10-05,Phone,Cruise,Consultant E,0.4,Yes,49.3,2,Yes,No,,No,43
+ENQ9379,2026-10-05,Walk-in,Cruise,Consultant J,0.5,Yes,18.3,1,Yes,No,,No,69
+ENQ9380,2026-10-05,Email,Package holiday,Consultant F,3.3,Yes,13.8,2,No,No,,No,61
+ENQ9381,2026-10-05,Phone,Cruise,Consultant H,0.1,Yes,4.7,3,Yes,Yes,3052.26,No,57
+ENQ9382,2026-10-05,Phone,Package holiday,Consultant B,0.1,Yes,10.7,1,Yes,No,,No,42
+ENQ9383,2026-10-05,Phone,Flights or hotel only,Consultant G,0.3,Yes,9.0,2,No,No,,No,55
+ENQ9384,2026-10-05,Walk-in,Package holiday,Consultant C,0.5,Yes,3.1,1,No,No,,No,36
+ENQ9385,2026-10-05,Social media,Tailor-made,Consultant C,3.4,Yes,51.6,1,Yes,Yes,5672.33,No,37
+ENQ9386,2026-10-05,Phone,Tailor-made,Consultant H,0.2,Yes,92.0,5,Yes,No,,No,73
+ENQ9387,2026-10-05,Walk-in,Cruise,Consultant C,0.2,Yes,18.3,1,No,No,,No,45
+ENQ9388,2026-10-05,Phone,Package holiday,Consultant H,0.0,Yes,12.6,2,Yes,Yes,1432.74,No,51
+ENQ9389,2026-10-05,Walk-in,Package holiday,Consultant J,0.3,Yes,7.2,2,Yes,Yes,5565.65,No,46
+ENQ9390,2026-10-05,Phone,Flights or hotel only,Consultant B,0.2,Yes,11.6,1,No,No,,No,32
+ENQ9391,2026-10-06,Email,Flights or hotel only,Consultant A,2.6,Yes,5.8,2,No,No,,No,55
+ENQ9392,2026-10-06,Phone,Package holiday,Consultant J,0.9,Yes,2.4,2,Yes,No,,No,49
+ENQ9393,2026-10-06,Walk-in,Package holiday,Consultant K,0.4,Yes,4.0,1,Yes,No,,No,41
+ENQ9394,2026-10-06,Email,Tailor-made,Consultant B,8.5,Yes,18.5,3,No,No,,No,64
+ENQ9395,2026-10-06,Walk-in,Tailor-made,Consultant B,0.2,Yes,11.9,2,No,No,,No,51
+ENQ9396,2026-10-06,Walk-in,Package holiday,Consultant G,0.2,Yes,20.0,1,Yes,Yes,6139.09,No,38
+ENQ9397,2026-10-06,Email,Package holiday,Consultant L,17.5,Yes,9.7,3,No,No,,No,61
+ENQ9398,2026-10-06,Social media,Tailor-made,Consultant E,34.0,Yes,22.7,2,Yes,Yes,7461.28,No,53
+ENQ9399,2026-10-07,Web form,Tailor-made,Consultant B,68.9,Yes,19.3,2,No,Yes,5976.07,No,58
+ENQ9400,2026-10-07,Phone,Tailor-made,Consultant J,0.2,Yes,27.4,3,No,Yes,4125.39,No,55
+ENQ9401,2026-10-07,Walk-in,Package holiday,Consultant E,0.2,Yes,2.3,1,No,Yes,2533.13,No,42
+ENQ9402,2026-10-07,Social media,Tailor-made,Consultant A,14.7,Yes,29.2,2,Yes,No,,No,47
+ENQ9403,2026-10-07,Email,Package holiday,Consultant D,7.5,Yes,9.7,1,Yes,No,,No,25
+ENQ9404,2026-10-07,Email,Tailor-made,Consultant D,48.7,Yes,30.8,2,Yes,No,,No,50
+ENQ9405,2026-10-07,Email,Cruise,Consultant D,26.8,Yes,4.5,4,Yes,No,,No,78
+ENQ9406,2026-10-07,Email,Tailor-made,Consultant D,6.3,Yes,20.9,1,Yes,Yes,4091.3,No,43
+ENQ9407,2026-10-07,Email,Package holiday,Consultant G,13.7,Yes,2.3,2,No,No,,No,42
+ENQ9408,2026-10-07,Email,Package holiday,Consultant K,10.6,Yes,15.8,3,Yes,No,,No,66
+ENQ9409,2026-10-07,Email,Cruise,Consultant D,39.5,Yes,11.2,3,No,No,,No,56
+ENQ9410,2026-10-07,Web form,Cruise,Consultant K,10.8,No,,0,No,No,,No,13
+ENQ9411,2026-10-08,Web form,Package holiday,Consultant H,17.4,Yes,6.2,1,No,No,,No,44
+ENQ9412,2026-10-08,Phone,Package holiday,Consultant A,0.7,Yes,8.8,2,No,No,,No,59
+ENQ9413,2026-10-08,Web form,Package holiday,Consultant L,19.9,Yes,19.9,1,No,No,,No,34
+ENQ9414,2026-10-08,Phone,Package holiday,Consultant C,0.2,Yes,10.4,1,Yes,Yes,1043.85,No,35
+ENQ9415,2026-10-08,Phone,Package holiday,Consultant G,0.1,Yes,4.4,2,No,Yes,6475.99,No,61
+ENQ9416,2026-10-08,Email,Flights or hotel only,Consultant B,32.9,Yes,4.0,1,No,No,,No,50
+ENQ9417,2026-10-08,Phone,Flights or hotel only,Consultant D,0.2,Yes,13.5,2,Yes,No,,No,46
+ENQ9418,2026-10-08,Phone,Package holiday,Consultant J,0.1,Yes,2.8,1,No,No,,No,51
+ENQ9419,2026-10-08,Phone,Flights or hotel only,Consultant K,0.1,Yes,5.3,1,Yes,Yes,1166.08,No,40
+ENQ9420,2026-10-08,Phone,Package holiday,Consultant A,0.1,Yes,2.9,1,No,Yes,5457.74,No,46
+ENQ9421,2026-10-08,Email,Package holiday,Consultant J,39.1,No,,0,No,No,,No,11
+ENQ9422,2026-10-08,Web form,Package holiday,Consultant K,19.3,Yes,21.0,1,Yes,No,,No,51
+ENQ9423,2026-10-08,Phone,Flights or hotel only,Consultant H,0.9,Yes,4.6,1,No,No,,No,35
+ENQ9424,2026-10-08,Web form,Cruise,Consultant H,31.6,Yes,35.6,2,Yes,Yes,6233.15,No,52
+ENQ9425,2026-10-08,Phone,Package holiday,Consultant G,0.3,Yes,6.7,1,No,Yes,1898.56,No,39
+ENQ9426,2026-10-08,Email,Package holiday,Consultant B,5.4,Yes,12.6,3,Yes,No,,No,66
+ENQ9427,2026-10-08,Walk-in,Package holiday,Consultant L,0.5,Yes,6.9,1,Yes,Yes,3249.0,Yes,41
+ENQ9428,2026-10-09,Web form,Cruise,Consultant C,12.5,Yes,28.7,1,No,No,,No,34
+ENQ9429,2026-10-09,Email,Tailor-made,Consultant D,42.9,No,,0,No,No,,No,11
+ENQ9430,2026-10-09,Web form,Package holiday,Consultant F,9.8,Yes,7.6,1,Yes,No,,No,50
+ENQ9431,2026-10-09,Email,Cruise,Consultant L,7.5,Yes,3.9,1,Yes,No,,No,41
+ENQ9432,2026-10-09,Phone,Tailor-made,Consultant D,0.1,Yes,29.3,2,Yes,No,,No,66
+ENQ9433,2026-10-09,Web form,Flights or hotel only,Consultant D,25.7,Yes,6.0,2,Yes,No,,No,47
+ENQ9434,2026-10-10,Phone,Tailor-made,Consultant E,0.5,Yes,37.0,1,No,No,,No,45
+ENQ9435,2026-10-10,Web form,Package holiday,Consultant H,25.8,Yes,5.4,2,No,No,,No,49
+ENQ9436,2026-10-10,Walk-in,Package holiday,Consultant L,0.0,Yes,8.5,1,No,No,,No,45
+ENQ9437,2026-10-10,Phone,Package holiday,Consultant F,0.0,Yes,3.5,1,Yes,No,,No,40
+ENQ9438,2026-10-10,Phone,Flights or hotel only,Consultant K,0.7,Yes,14.1,1,Yes,No,,No,52
+ENQ9439,2026-10-10,Phone,Package holiday,Consultant A,0.4,Yes,6.8,1,Yes,No,,No,49
+ENQ9440,2026-10-10,Phone,Tailor-made,Consultant A,0.2,Yes,14.7,4,No,Yes,5003.15,No,76
+ENQ9441,2026-10-12,Phone,Package holiday,Consultant A,0.2,Yes,6.7,2,No,Yes,3982.68,No,49
+ENQ9442,2026-10-12,Phone,Package holiday,Consultant K,0.4,Yes,5.4,3,Yes,Yes,3191.67,No,52
+ENQ9443,2026-10-12,Email,Flights or hotel only,Consultant D,17.7,Yes,2.8,1,No,No,,No,32
+ENQ9444,2026-10-12,Walk-in,Package holiday,Consultant L,0.0,Yes,4.2,1,Yes,Yes,4238.54,No,42
+ENQ9445,2026-10-12,Phone,Tailor-made,Consultant E,0.2,No,,0,No,No,,No,3
+ENQ9446,2026-10-12,Phone,Flights or hotel only,Consultant E,0.4,Yes,9.9,1,No,No,,No,55
+ENQ9447,2026-10-12,Walk-in,Cruise,Consultant A,0.1,Yes,27.5,1,No,No,,No,47
+ENQ9448,2026-10-12,Email,Package holiday,Consultant D,8.3,Yes,3.5,2,No,No,,No,51
+ENQ9449,2026-10-12,Phone,Tailor-made,Consultant E,0.4,No,,0,No,No,,No,8
+ENQ9450,2026-10-12,Web form,Tailor-made,Consultant L,10.1,Yes,39.5,1,No,No,,No,57
+ENQ9451,2026-10-12,Walk-in,Tailor-made,Consultant G,0.5,Yes,30.4,2,Yes,No,,No,57
+ENQ9452,2026-10-12,Phone,Package holiday,Consultant G,0.2,Yes,14.4,1,Yes,Yes,1818.42,No,30
+ENQ9453,2026-10-12,Phone,Flights or hotel only,Consultant F,0.1,Yes,4.1,1,Yes,No,,No,26
+ENQ9454,2026-10-12,Email,Cruise,Consultant G,35.4,Yes,19.0,1,Yes,No,,No,31
+ENQ9455,2026-10-12,Phone,Flights or hotel only,Consultant K,0.1,Yes,6.8,2,No,Yes,1250.94,No,43
+ENQ9456,2026-10-12,Walk-in,Tailor-made,Consultant A,0.3,Yes,13.0,2,Yes,No,,No,46
+ENQ9457,2026-10-12,Walk-in,Package holiday,Consultant A,0.1,Yes,5.1,2,No,No,,No,52
+ENQ9458,2026-10-12,Email,Tailor-made,Consultant J,20.2,Yes,15.9,4,Yes,No,,No,64
+ENQ9459,2026-10-12,Walk-in,Package holiday,Consultant D,0.0,Yes,1.2,1,No,No,,No,42
+ENQ9460,2026-10-12,Email,Tailor-made,Consultant B,45.3,Yes,5.5,1,No,No,,No,55
+ENQ9461,2026-10-12,Social media,Package holiday,Consultant K,8.8,No,,0,No,No,,No,6
+ENQ9462,2026-10-13,Walk-in,Cruise,Consultant K,0.9,Yes,30.1,2,No,No,,No,49
+ENQ9463,2026-10-13,Phone,Package holiday,Consultant K,0.0,Yes,2.5,1,Yes,Yes,1975.46,No,50
+ENQ9464,2026-10-13,Phone,Tailor-made,Consultant C,0.1,Yes,36.6,4,No,No,,No,63
+ENQ9465,2026-10-13,Email,Cruise,Consultant H,11.6,Yes,2.1,1,No,No,,No,43
+ENQ9466,2026-10-13,Phone,Cruise,Consultant D,0.0,Yes,5.6,1,No,No,,No,64
+ENQ9467,2026-10-13,Walk-in,Flights or hotel only,Consultant G,0.2,Yes,5.9,2,No,No,,No,55
+ENQ9468,2026-10-13,Walk-in,Tailor-made,Consultant B,0.3,Yes,36.7,1,Yes,No,,No,46
+ENQ9469,2026-10-13,Web form,Tailor-made,Consultant A,10.5,Yes,68.8,2,Yes,No,,No,60
+ENQ9470,2026-10-13,Phone,Package holiday,Consultant C,0.1,No,,0,No,No,,No,3
+ENQ9471,2026-10-14,Social media,Flights or hotel only,Consultant B,11.9,Yes,5.2,2,No,Yes,589.13,No,42
+ENQ9472,2026-10-14,Walk-in,Tailor-made,Consultant E,0.2,Yes,46.2,4,Yes,No,,No,65
+ENQ9473,2026-10-14,Web form,Tailor-made,Consultant A,21.6,Yes,10.3,3,No,No,,No,59
+ENQ9474,2026-10-14,Social media,Tailor-made,Consultant J,15.4,Yes,35.6,3,No,Yes,6199.29,No,84
+ENQ9475,2026-10-14,Web form,Cruise,Consultant C,31.8,Yes,6.4,4,Yes,No,,No,70
+ENQ9476,2026-10-14,Email,Flights or hotel only,Consultant B,7.1,Yes,11.8,1,Yes,No,,No,43
+ENQ9477,2026-10-14,Social media,Tailor-made,Consultant K,22.7,Yes,22.1,4,No,No,,No,81
+ENQ9478,2026-10-14,Social media,Package holiday,Consultant J,25.8,Yes,55.1,1,No,No,,No,46
+ENQ9479,2026-10-14,Walk-in,Package holiday,Consultant K,0.1,No,,0,No,No,,No,6
+ENQ9480,2026-10-14,Phone,Package holiday,Consultant C,0.1,Yes,2.5,2,Yes,Yes,3568.64,No,44
+ENQ9481,2026-10-14,Phone,Cruise,Consultant D,0.1,Yes,48.3,3,No,No,,No,56
+ENQ9482,2026-10-14,Web form,Tailor-made,Consultant E,12.9,Yes,33.5,1,No,No,,No,46
+ENQ9483,2026-10-14,Phone,Package holiday,Consultant A,0.4,Yes,16.5,2,Yes,No,,No,38
+ENQ9484,2026-10-14,Web form,Tailor-made,Consultant C,10.3,Yes,16.5,3,Yes,No,,No,63
+ENQ9485,2026-10-14,Social media,Package holiday,Consultant D,7.0,Yes,5.1,1,No,No,,No,41
+ENQ9486,2026-10-14,Phone,Flights or hotel only,Consultant F,0.2,Yes,5.7,2,No,No,,No,59
+ENQ9487,2026-10-15,Email,Tailor-made,Consultant L,15.1,Yes,50.3,4,No,No,,No,63
+ENQ9488,2026-10-15,Phone,Package holiday,Consultant E,0.2,Yes,10.8,1,Yes,Yes,1926.27,No,39
+ENQ9489,2026-10-15,Phone,Package holiday,Consultant B,0.1,Yes,6.2,3,No,Yes,2091.88,No,64
+ENQ9490,2026-10-15,Phone,Package holiday,Consultant J,0.1,Yes,13.5,1,No,No,,No,26
+ENQ9491,2026-10-15,Social media,Package holiday,Consultant F,6.3,Yes,5.3,2,Yes,No,,No,55
+ENQ9492,2026-10-15,Web form,Cruise,Consultant E,0.9,Yes,16.2,2,No,No,,No,54
+ENQ9493,2026-10-15,Web form,Package holiday,Consultant B,7.1,Yes,19.0,2,Yes,Yes,6848.83,No,46
+ENQ9494,2026-10-15,Web form,Package holiday,Consultant B,11.5,No,,0,No,No,,No,10
+ENQ9495,2026-10-16,Phone,Package holiday,Consultant C,0.1,Yes,10.8,1,No,No,,No,33
+ENQ9496,2026-10-16,Web form,Tailor-made,Consultant C,15.6,Yes,17.4,1,No,No,,No,34
+ENQ9497,2026-10-16,Phone,Package holiday,Consultant J,1.5,Yes,22.7,2,No,No,,No,44
+ENQ9498,2026-10-16,Phone,Tailor-made,Consultant A,0.3,Yes,12.3,2,No,No,,No,47
+ENQ9499,2026-10-16,Phone,Tailor-made,Consultant E,0.2,Yes,29.3,5,Yes,No,,No,83
+ENQ9500,2026-10-16,Email,Package holiday,Consultant H,5.6,Yes,5.1,1,No,No,,No,34
+ENQ9501,2026-10-16,Email,Cruise,Consultant G,3.0,Yes,10.1,2,Yes,No,,No,59
+ENQ9502,2026-10-16,Phone,Cruise,Consultant A,0.0,Yes,5.0,1,Yes,Yes,5290.7,No,54
+ENQ9503,2026-10-16,Phone,Tailor-made,Consultant F,0.9,No,,0,No,No,,No,7
+ENQ9504,2026-10-16,Web form,Package holiday,Consultant L,19.0,Yes,25.0,2,No,No,,No,55
+ENQ9505,2026-10-16,Email,Tailor-made,Consultant D,9.0,Yes,20.0,3,Yes,Yes,7410.1,Yes,52
+ENQ9506,2026-10-16,Web form,Cruise,Consultant L,10.0,Yes,8.8,2,No,No,,No,55
+ENQ9507,2026-10-16,Phone,Package holiday,Consultant H,0.4,Yes,6.9,1,Yes,No,,No,33
+ENQ9508,2026-10-16,Web form,Package holiday,Consultant F,1.4,Yes,18.7,1,Yes,Yes,2600.88,No,54
+ENQ9509,2026-10-16,Email,Package holiday,Consultant C,10.1,Yes,20.6,2,Yes,No,,No,53
+ENQ9510,2026-10-16,Web form,Package holiday,Consultant D,7.2,Yes,10.3,3,Yes,Yes,6930.02,No,57
+ENQ9511,2026-10-16,Phone,Tailor-made,Consultant F,0.9,Yes,33.3,3,Yes,No,,No,72
+ENQ9512,2026-10-16,Web form,Package holiday,Consultant G,4.6,Yes,10.8,1,No,No,,No,38
+ENQ9513,2026-10-16,Social media,Tailor-made,Consultant G,49.0,Yes,31.4,2,No,No,,No,57
+ENQ9514,2026-10-16,Email,Cruise,Consultant E,25.3,Yes,5.9,1,No,No,,No,49
+ENQ9515,2026-10-16,Phone,Cruise,Consultant E,0.2,Yes,20.5,4,Yes,Yes,4278.8,No,66
+ENQ9516,2026-10-16,Social media,Flights or hotel only,Consultant C,10.2,Yes,5.6,2,Yes,No,,No,60
+ENQ9517,2026-10-16,Phone,Package holiday,Consultant F,0.5,Yes,26.2,1,No,No,,No,44
+ENQ9518,2026-10-17,Email,Tailor-made,Consultant E,2.4,Yes,48.1,1,Yes,No,,No,36
+ENQ9519,2026-10-17,Email,Package holiday,Consultant C,32.9,Yes,9.4,2,Yes,No,,No,56
+ENQ9520,2026-10-17,Walk-in,Flights or hotel only,Consultant K,0.1,Yes,4.1,3,Yes,No,,No,64
+ENQ9521,2026-10-17,Phone,Tailor-made,Consultant H,0.2,Yes,20.5,6,Yes,No,,No,93
+ENQ9522,2026-10-17,Email,Package holiday,Consultant B,23.6,Yes,6.2,2,No,No,,No,45
+ENQ9523,2026-10-17,Walk-in,Tailor-made,Consultant B,0.1,Yes,82.9,4,No,No,,No,58
+ENQ9524,2026-10-17,Web form,Package holiday,Consultant C,10.9,Yes,20.2,1,Yes,No,,No,42
+ENQ9525,2026-10-17,Walk-in,Tailor-made,Consultant C,0.0,No,,0,No,No,,No,10
+ENQ9526,2026-10-17,Walk-in,Package holiday,Consultant K,0.6,Yes,10.7,3,No,No,,No,74
+ENQ9527,2026-10-17,Phone,Flights or hotel only,Consultant L,0.5,Yes,1.1,1,No,No,,No,28
+ENQ9528,2026-10-17,Web form,Flights or hotel only,Consultant A,52.2,Yes,3.9,1,No,No,,No,56
+ENQ9529,2026-10-17,Phone,Tailor-made,Consultant J,0.4,Yes,52.4,1,Yes,Yes,5976.41,No,39
+ENQ9530,2026-10-17,Web form,Tailor-made,Consultant G,20.8,Yes,78.6,3,No,No,,No,53
+ENQ9531,2026-10-17,Phone,Tailor-made,Consultant C,0.3,Yes,12.1,2,Yes,Yes,9456.43,No,38
+ENQ9532,2026-10-17,Web form,Package holiday,Consultant F,24.4,Yes,6.2,2,No,No,,No,50
+ENQ9533,2026-10-17,Phone,Flights or hotel only,Consultant F,0.3,Yes,6.6,3,Yes,No,,No,67
+ENQ9534,2026-10-17,Email,Package holiday,Consultant H,12.2,Yes,7.8,1,No,No,,No,45
+ENQ9535,2026-10-19,Social media,Tailor-made,Consultant G,32.7,Yes,54.3,2,Yes,No,,No,53
+ENQ9536,2026-10-19,Phone,Tailor-made,Consultant F,0.3,Yes,71.7,4,No,No,,No,72
+ENQ9537,2026-10-19,Social media,Flights or hotel only,Consultant D,19.7,Yes,5.9,2,Yes,Yes,259.56,No,46
+ENQ9538,2026-10-19,Social media,Package holiday,Consultant B,15.4,Yes,14.7,2,No,No,,No,58
+ENQ9539,2026-10-19,Web form,Cruise,Consultant L,21.1,No,,0,No,No,,No,8
+ENQ9540,2026-10-19,Web form,Package holiday,Consultant J,18.4,Yes,5.4,2,No,No,,No,33
+ENQ9541,2026-10-19,Walk-in,Tailor-made,Consultant E,0.5,Yes,21.3,3,Yes,Yes,6613.04,No,67
+ENQ9542,2026-10-19,Phone,Package holiday,Consultant K,0.1,Yes,7.8,2,Yes,Yes,4271.79,No,51
+ENQ9543,2026-10-19,Web form,Package holiday,Consultant F,14.9,Yes,7.4,1,No,No,,No,36
+ENQ9544,2026-10-19,Email,Tailor-made,Consultant E,42.2,Yes,38.5,5,No,No,,No,78
+ENQ9545,2026-10-19,Web form,Tailor-made,Consultant A,14.9,Yes,17.3,3,Yes,Yes,6162.57,No,60
+ENQ9546,2026-10-19,Email,Package holiday,Consultant H,22.4,Yes,24.4,1,Yes,No,,No,45
+ENQ9547,2026-10-19,Walk-in,Cruise,Consultant A,0.1,Yes,29.4,4,No,Yes,6665.71,No,88
+ENQ9548,2026-10-19,Email,Tailor-made,Consultant G,28.4,Yes,59.3,2,Yes,No,,No,68
+ENQ9549,2026-10-19,Social media,Tailor-made,Consultant H,4.0,No,,0,No,No,,No,11
+ENQ9550,2026-10-19,Web form,Package holiday,Consultant D,10.4,Yes,11.9,1,Yes,No,,No,41
+ENQ9551,2026-10-19,Phone,Package holiday,Consultant L,0.2,Yes,6.5,2,No,No,,No,39
+ENQ9552,2026-10-19,Email,Tailor-made,Consultant L,7.8,No,,0,No,No,,No,4
+ENQ9553,2026-10-20,Phone,Cruise,Consultant C,0.7,Yes,34.6,1,No,No,,No,50
+ENQ9554,2026-10-20,Phone,Flights or hotel only,Consultant G,0.1,Yes,8.4,2,No,Yes,865.78,No,41
+ENQ9555,2026-10-20,Phone,Flights or hotel only,Consultant C,0.3,Yes,16.0,1,Yes,Yes,498.36,No,37
+ENQ9556,2026-10-20,Phone,Tailor-made,Consultant H,0.6,No,,0,No,No,,No,5
+ENQ9557,2026-10-20,Email,Flights or hotel only,Consultant F,60.1,No,,0,No,No,,No,3
+ENQ9558,2026-10-20,Walk-in,Tailor-made,Consultant A,0.4,Yes,61.2,3,No,Yes,5776.58,No,58
+ENQ9559,2026-10-20,Email,Flights or hotel only,Consultant B,31.0,Yes,7.4,1,Yes,No,,No,39
+ENQ9560,2026-10-20,Phone,Tailor-made,Consultant A,0.0,Yes,14.7,1,Yes,No,,No,31
+ENQ9561,2026-10-20,Phone,Cruise,Consultant J,0.1,Yes,11.4,5,No,No,,No,76
+ENQ9562,2026-10-20,Phone,Tailor-made,Consultant A,0.4,Yes,6.2,2,Yes,Yes,3409.89,No,54
+ENQ9563,2026-10-20,Phone,Tailor-made,Consultant E,0.4,Yes,13.9,3,Yes,Yes,6832.07,No,50
+ENQ9564,2026-10-21,Phone,Tailor-made,Consultant K,0.2,Yes,16.1,3,No,Yes,4574.73,No,72
+ENQ9565,2026-10-21,Phone,Flights or hotel only,Consultant J,0.2,Yes,3.5,1,Yes,Yes,686.8,No,39
+ENQ9566,2026-10-21,Phone,Flights or hotel only,Consultant A,0.2,Yes,17.8,1,No,No,,No,45
+ENQ9567,2026-10-21,Social media,Package holiday,Consultant B,18.8,Yes,35.1,1,Yes,Yes,2821.79,No,49
+ENQ9568,2026-10-21,Phone,Tailor-made,Consultant H,0.1,Yes,36.3,2,Yes,No,,No,48
+ENQ9569,2026-10-21,Email,Flights or hotel only,Consultant L,12.8,Yes,8.2,2,Yes,Yes,1018.33,No,48
+ENQ9570,2026-10-21,Phone,Flights or hotel only,Consultant L,0.1,Yes,11.8,2,Yes,No,,No,41
+ENQ9571,2026-10-21,Social media,Cruise,Consultant B,41.7,Yes,12.5,2,No,No,,No,57
+ENQ9572,2026-10-21,Walk-in,Package holiday,Consultant E,0.4,Yes,4.2,2,No,Yes,2213.24,No,51
+ENQ9573,2026-10-21,Email,Tailor-made,Consultant C,10.1,Yes,58.5,2,No,No,,No,47
+ENQ9574,2026-10-21,Phone,Flights or hotel only,Consultant F,0.2,Yes,20.0,1,Yes,No,,No,44
+ENQ9575,2026-10-22,Web form,Cruise,Consultant J,35.0,Yes,14.0,1,Yes,Yes,5965.7,No,48
+ENQ9576,2026-10-22,Phone,Tailor-made,Consultant G,0.1,Yes,35.8,2,Yes,No,,No,68
+ENQ9577,2026-10-22,Phone,Package holiday,Consultant C,0.2,Yes,8.4,1,No,No,,No,43
+ENQ9578,2026-10-22,Walk-in,Package holiday,Consultant H,0.2,Yes,16.3,1,Yes,No,,No,43
+ENQ9579,2026-10-22,Phone,Flights or hotel only,Consultant J,0.1,Yes,15.6,1,Yes,No,,No,48
+ENQ9580,2026-10-22,Phone,Flights or hotel only,Consultant C,0.1,Yes,3.9,1,Yes,No,,No,36
+ENQ9581,2026-10-23,Email,Flights or hotel only,Consultant J,20.7,Yes,3.3,1,Yes,No,,No,49
+ENQ9582,2026-10-23,Walk-in,Flights or hotel only,Consultant D,0.2,Yes,22.5,2,Yes,No,,No,59
+ENQ9583,2026-10-23,Web form,Package holiday,Consultant D,31.7,No,,0,No,No,,No,5
+ENQ9584,2026-10-23,Walk-in,Flights or hotel only,Consultant E,0.0,Yes,7.2,1,Yes,Yes,667.94,No,26
+ENQ9585,2026-10-23,Phone,Cruise,Consultant G,0.4,Yes,17.9,2,No,No,,No,52
+ENQ9586,2026-10-23,Phone,Package holiday,Consultant K,0.1,Yes,3.2,2,Yes,No,,No,67
+ENQ9587,2026-10-23,Phone,Package holiday,Consultant D,0.1,No,,0,No,No,,No,7
+ENQ9588,2026-10-23,Phone,Cruise,Consultant E,0.1,Yes,13.2,3,No,No,,No,52
+ENQ9589,2026-10-23,Email,Package holiday,Consultant J,8.2,Yes,0.3,1,No,No,,No,30
+ENQ9590,2026-10-23,Phone,Tailor-made,Consultant F,0.3,Yes,46.3,7,Yes,No,,No,92
+ENQ9591,2026-10-24,Phone,Cruise,Consultant H,0.1,Yes,24.9,1,Yes,No,,No,39
+ENQ9592,2026-10-24,Phone,Package holiday,Consultant C,0.1,Yes,19.4,2,Yes,Yes,5994.39,No,54
+ENQ9593,2026-10-24,Phone,Tailor-made,Consultant H,0.1,Yes,28.7,2,Yes,Yes,5925.36,No,50
+ENQ9594,2026-10-24,Walk-in,Tailor-made,Consultant E,0.1,Yes,12.9,2,No,No,,No,45
+ENQ9595,2026-10-24,Walk-in,Cruise,Consultant F,0.0,Yes,9.0,2,No,No,,No,60
+ENQ9596,2026-10-24,Web form,Package holiday,Consultant A,10.3,Yes,5.9,1,No,No,,No,36

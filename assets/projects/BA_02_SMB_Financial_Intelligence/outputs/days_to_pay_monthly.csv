@@ -1,0 +1,48 @@
+month,segment,avg_days_to_pay,invoiced_value
+2024-11,Contractor,36.8,155700.0
+2024-11,Trade Account,38.6,515617.0
+2024-12,Contractor,37.2,109583.0
+2024-12,Trade Account,38.5,348315.0
+2025-01,Contractor,37.1,143790.0
+2025-01,Trade Account,38.7,403911.0
+2025-02,Contractor,37.4,109942.0
+2025-02,Trade Account,38.4,468192.0
+2025-03,Contractor,37.4,150698.0
+2025-03,Trade Account,39.7,514772.0
+2025-04,Contractor,36.5,183662.0
+2025-04,Trade Account,39.2,595964.0
+2025-05,Contractor,37.0,201683.0
+2025-05,Trade Account,39.0,622382.0
+2025-06,Contractor,36.7,160977.0
+2025-06,Trade Account,39.1,607969.0
+2025-07,Contractor,36.7,172042.0
+2025-07,Trade Account,38.7,558433.0
+2025-08,Contractor,36.7,159673.0
+2025-08,Trade Account,39.8,557623.0
+2025-09,Contractor,37.2,166128.0
+2025-09,Trade Account,40.0,706852.0
+2025-10,Contractor,37.1,149144.0
+2025-10,Trade Account,38.7,597338.0
+2025-11,Contractor,37.0,123896.0
+2025-11,Trade Account,41.1,518148.0
+2025-12,Contractor,36.7,119185.0
+2025-12,Trade Account,40.6,425575.0
+2026-01,Contractor,36.5,131012.0
+2026-01,Trade Account,42.7,402158.0
+2026-02,Contractor,36.8,143330.0
+2026-02,Trade Account,44.9,441725.0
+2026-03,Contractor,37.2,172322.0
+2026-03,Trade Account,45.6,633294.0
+2026-04,Contractor,36.9,167959.0
+2026-04,Trade Account,48.1,570317.0
+2026-05,Contractor,37.0,211481.0
+2026-05,Trade Account,48.6,587128.0
+2026-06,Contractor,37.5,152002.0
+2026-06,Trade Account,49.1,619861.0
+2026-07,Contractor,37.9,165565.0
+2026-07,Trade Account,51.3,680111.0
+2026-08,Contractor,36.3,175476.0
+2026-08,Trade Account,51.5,488796.0
+2026-09,Contractor,36.0,126464.0
+2026-09,Trade Account,38.9,208404.0
+2026-10,Contractor,30.0,497.0

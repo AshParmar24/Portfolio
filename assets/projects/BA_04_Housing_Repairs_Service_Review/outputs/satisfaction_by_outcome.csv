@@ -1,0 +1,5 @@
+target_outcome,fix_outcome,responses,avg_satisfaction
+Within target,Fixed first time,5175,4.34
+Within target,Needed a return visit,514,3.79
+Missed target,Fixed first time,578,2.99
+Missed target,Needed a return visit,978,2.58

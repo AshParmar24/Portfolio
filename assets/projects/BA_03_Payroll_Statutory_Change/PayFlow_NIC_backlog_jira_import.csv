@@ -1,0 +1,73 @@
+Summary,Issue Type,Description,Priority,Story Points,Labels,Sprint
+US-01 Tax-year parameter table,Story,"As a payroll compliance lead I want employer NIC parameters held by tax year so that a statutory change is a data update, not a code change.
+
+Acceptance criteria:
+Given the 2025-26 row is approved
+When I view parameters for 6 April 2025
+Then I see 15 percent, £417 monthly threshold and £10,500 allowance
+
+Requirements: FR-01, NFR-01",Highest,5,employer-nic-2025,Sprint 1
+US-02 Payment date selects the rules,Story,"As a payroll administrator I want the pay run to pick rules by payment date so that pay dated after 5 April uses the new rates automatically.
+
+Acceptance criteria:
+Given a pay run for March work
+When the payment date is 10 April 2025
+Then employer NIC uses 2025-26 parameters
+
+Requirements: FR-02, NFR-02",Highest,3,employer-nic-2025,Sprint 1
+US-03 Category A calculation,Story,"As an employer I want employer NIC calculated at the correct rate and threshold so that my liability to HMRC is right.
+
+Acceptance criteria:
+Given gross pay of £2,500 paid on 28 April 2025
+When the pay run completes
+Then employer NIC is £312.45
+
+Requirements: FR-03, FR-07",Highest,5,employer-nic-2025,Sprint 1
+US-04 Under 21s and apprentices,Story,"As an employer of apprentices I want the zero rate up to the upper secondary threshold kept so that I am not overcharged.
+
+Acceptance criteria:
+Given a category H employee earning £3,000
+When the pay run completes
+Then employer NIC is £0.00
+
+Requirements: FR-04",Highest,3,employer-nic-2025,Sprint 1
+US-05 Employment Allowance limit,Story,"As an eligible employer I want up to £10,500 offset against my employer NIC so that I receive the full allowance.
+
+Acceptance criteria:
+Given monthly employer NIC of £1,200
+When month 9 is processed
+Then allowance used to date is £10,500 and £300 is payable
+
+Requirements: FR-05",Highest,5,employer-nic-2025,Sprint 2
+"US-06 Remove the £100,000 check",Story,"As a larger employer I want to claim the allowance without the prior-year limit so that I am not wrongly blocked.
+
+Acceptance criteria:
+Given prior-year employer NIC of £180,000
+When I open the claim screen for 2025-26
+Then no limit warning is shown and I can claim
+
+Requirements: FR-06",Highest,2,employer-nic-2025,Sprint 2
+US-07 Cost comparison report,Story,"As a finance manager I want to compare employer NIC under old and new rules so that I can re-forecast my staff budget.
+
+Acceptance criteria:
+Given a completed March 2025 pay run
+When I run the comparison report
+Then each employee shows both amounts and the difference, with totals
+
+Requirements: FR-08",Medium,5,employer-nic-2025,Sprint 2
+US-08 Client notice,Story,"As a client success manager I want each client told their estimated cost impact so that the April payroll does not surprise them.
+
+Acceptance criteria:
+Given a client with pay data for the last three months
+When the notice is generated
+Then it states the estimated annual change in employer NIC
+
+Requirements: FR-09",Medium,3,employer-nic-2025,Sprint 2
+US-09 Support view of rules used,Story,"As a support agent I want to see which tax-year rules a payslip used so that I can answer queries in one contact.
+
+Acceptance criteria:
+Given a payslip
+When I open its calculation detail
+Then the tax year and parameter values are shown
+
+Requirements: FR-10",Low,2,employer-nic-2025,Backlog

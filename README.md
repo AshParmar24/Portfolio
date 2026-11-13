@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Personal portfolio website showcasing my projects, skills, and experience.
+Personal portfolio website showcasing my business analysis case studies, data projects, skills, and experience.
 
 ## Tech Stack
 - HTML

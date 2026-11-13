@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Asmita Parmar, Data Analytics, ML & AI Portfolio</title>
-  <meta name="description" content="Portfolio of Asmita Parmar, data analytics, machine learning and AI engineering projects across finance, energy, customer analytics and ESG.">
+  <title>Asmita Parmar, Business Analysis, Data Analytics & AI Portfolio</title>
+  <meta name="description" content="Portfolio of Asmita Parmar: business analysis case studies and data analytics, machine learning and AI projects across travel, wholesale, payroll, housing, finance and energy.">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
@@ -16,7 +16,7 @@
         <span class="logo-mark">AP</span>
         <div>
           <div class="nav-name">Asmita Parmar</div>
-          <div class="nav-role">Data Analytics &amp; AI</div>
+          <div class="nav-role">Business Analysis, Data &amp; AI</div>
         </div>
       </a>
       <div class="nav-links">
@@ -32,10 +32,10 @@
 
     <!-- HERO -->
     <section class="hero container">
-      <div class="eyebrow">Data Analytics · Machine Learning · AI</div>
+      <div class="eyebrow">Business Analysis · Data Analytics · AI</div>
       <h1>From raw data to<br><em>real decisions.</em></h1>
       <p class="hero-sub">
-        I'm Asmita Parmar, a data analyst and machine learning practitioner with an MSc Distinction in Data Science & AI and 17 years of analytical experience across finance, energy, and customer domains.
+        I'm Asmita Parmar, a business and data analyst with an MSc Distinction in Data Science &amp; AI and 17 years of analytical experience. I turn business problems into clear requirements, sound analysis and decisions people can act on.
       </p>
       <div class="hero-actions">
         <a class="button primary" href="#projects">View Projects</a>
@@ -43,12 +43,12 @@
 
       <div class="stats">
         <div class="stat">
-          <strong>10</strong>
+          <strong>15</strong>
           <span>Applied portfolio projects</span>
         </div>
         <div class="stat">
-          <strong>4</strong>
-          <span>Specialist domains</span>
+          <strong>5</strong>
+          <span>Business analysis case studies</span>
         </div>
         <div class="stat">
           <strong>MSc</strong>
@@ -119,10 +119,20 @@
         <div class="section-head">
           <div>
             <h2>Core Skills</h2>
-            <p class="section-desc">A practical combination of analytics, machine learning, AI engineering and stakeholder-focused communication across real commercial problem spaces.</p>
+            <p class="section-desc">A practical combination of business analysis, analytics, machine learning and stakeholder-focused communication across real commercial problem spaces.</p>
           </div>
         </div>
-        <div class="skills-grid">
+        <div class="skills-grid five">
+          <div class="skill-cat">
+            <div class="skill-cat-label">Business Analysis</div>
+            <div class="skill-items">
+              <span class="skill-item">Requirements &amp; User Stories</span>
+              <span class="skill-item">Process Mapping (As-Is / To-Be)</span>
+              <span class="skill-item">Business Cases &amp; Options Appraisal</span>
+              <span class="skill-item">UAT &amp; Traceability</span>
+              <span class="skill-item">KPI Frameworks &amp; Dashboards</span>
+            </div>
+          </div>
           <div class="skill-cat">
             <div class="skill-cat-label">Languages &amp; Data</div>
             <div class="skill-items">
@@ -173,12 +183,13 @@
         <div class="section-head">
           <div>
             <h2>Projects</h2>
-            <p class="section-desc">Ten applied projects, each covering the full data workflow from cleaning and EDA through modelling, evaluation, explainability and business interpretation.</p>
+            <p class="section-desc">Five business analysis case studies, from requirements and process maps to dashboards and a business case, followed by ten data science projects covering the full workflow from cleaning and EDA to modelling and business interpretation.</p>
           </div>
         </div>
 
         <div class="domain-filter">
           <button class="filter-btn active" onclick="filterCards('all',this)">All Projects</button>
+          <button class="filter-btn" onclick="filterCards('ba',this)">Business Analysis</button>
           <button class="filter-btn" onclick="filterCards('customer',this)">Customer Analytics</button>
           <button class="filter-btn" onclick="filterCards('finance',this)">Finance &amp; Risk</button>
           <button class="filter-btn" onclick="filterCards('energy',this)">Energy &amp; ESG</button>
@@ -186,6 +197,76 @@
         </div>
 
         <div class="grid" id="projects-grid">
+
+          <article class="card" data-domain="ba">
+            <div class="card-number">BA 01 / 05</div>
+            <div class="tag">Travel · Requirements &amp; Process</div>
+            <h3>Enquiry to Booking Process Redesign</h3>
+            <p>Measured and mapped how a travel agency turns 596 enquiries into bookings, then specified 19 requirements and 9 user stories for a single booking system.</p>
+            <div class="skill-list">
+              <span class="pill">Requirements</span><span class="pill">Process Mapping</span><span class="pill">Stakeholder Analysis</span><span class="pill">User Stories</span>
+            </div>
+            <div class="card-actions">
+              <a class="small-link" href="projects/BA_01_Travel_Booking_Process_Redesign.html">View project</a>
+              <a class="small-link sec" href="assets/projects/BA_01_Travel_Booking_Process_Redesign/Wren_Harbour_Requirements_Workbook.xlsx">Workbook ↓</a>
+            </div>
+          </article>
+
+          <article class="card" data-domain="ba">
+            <div class="card-number">BA 02 / 05</div>
+            <div class="tag">Datavra · KPIs &amp; Reporting</div>
+            <h3>SMB Operational and Financial Intelligence</h3>
+            <p>KPI framework, data dictionary, SQL and an interactive dashboard that explain a wholesaler's falling margin to the pound and put a value on each fix.</p>
+            <div class="skill-list">
+              <span class="pill">KPI Framework</span><span class="pill">SQL</span><span class="pill">Dashboard</span><span class="pill">Root-Cause Analysis</span>
+            </div>
+            <div class="card-actions">
+              <a class="small-link" href="projects/BA_02_SMB_Financial_Intelligence.html">View project</a>
+              <a class="small-link sec" href="assets/projects/BA_02_SMB_Financial_Intelligence/KPI_Framework_and_Data_Dictionary.xlsx">KPI framework ↓</a>
+            </div>
+          </article>
+
+          <article class="card" data-domain="ba">
+            <div class="card-number">BA 03 / 05</div>
+            <div class="tag">Payroll SaaS · Systems Analysis</div>
+            <h3>Payroll Statutory Change</h3>
+            <p>A real change in employer National Insurance taken from legislation to business rules, a sprint backlog and 22 acceptance tests with calculated expected results.</p>
+            <div class="skill-list">
+              <span class="pill">Business Rules</span><span class="pill">User Stories</span><span class="pill">UAT</span><span class="pill">Traceability</span>
+            </div>
+            <div class="card-actions">
+              <a class="small-link" href="projects/BA_03_Payroll_Statutory_Change.html">View project</a>
+              <a class="small-link sec" href="assets/projects/BA_03_Payroll_Statutory_Change/PayFlow_Employer_NIC_Change_Pack.xlsx">Test pack ↓</a>
+            </div>
+          </article>
+
+          <article class="card" data-domain="ba">
+            <div class="card-number">BA 04 / 05</div>
+            <div class="tag">Social Housing · Service Performance</div>
+            <h3>Housing Repairs Service Review</h3>
+            <p>SQL analysis of 25,000 repairs jobs showing that one contractor, phone bookings and damp and mould demand explain a fall in performance against target.</p>
+            <div class="skill-list">
+              <span class="pill">SQL</span><span class="pill">SLA Analysis</span><span class="pill">Dashboard</span><span class="pill">Recommendations</span>
+            </div>
+            <div class="card-actions">
+              <a class="small-link" href="projects/BA_04_Housing_Repairs_Service_Review.html">View project</a>
+              <a class="small-link sec" href="assets/projects/BA_04_Housing_Repairs_Service_Review/ba04_repairs_queries.sql">SQL ↓</a>
+            </div>
+          </article>
+
+          <article class="card" data-domain="ba">
+            <div class="card-number">BA 05 / 05</div>
+            <div class="tag">Social Housing · Business Case</div>
+            <h3>Repairs Scheduling Business Case</h3>
+            <p>Four-option appraisal in a live Excel model with NPV, payback, sensitivity and weighted scoring, and a recommendation that separates savings from compliance.</p>
+            <div class="skill-list">
+              <span class="pill">Business Case</span><span class="pill">Excel Modelling</span><span class="pill">NPV</span><span class="pill">Benefits Realisation</span>
+            </div>
+            <div class="card-actions">
+              <a class="small-link" href="projects/BA_05_Repairs_Scheduling_Business_Case.html">View project</a>
+              <a class="small-link sec" href="assets/projects/BA_05_Repairs_Scheduling_Business_Case/Repairs_Scheduling_Business_Case_Model.xlsx">Excel model ↓</a>
+            </div>
+          </article>
 
           <article class="card" data-domain="customer">
             <div class="card-number">01 / 10</div>
@@ -337,7 +418,7 @@
     <div class="container footer-inner">
       <div>
         <div class="footer-name">Asmita Parmar</div>
-        <div class="footer-copy">Data Analytics &amp; AI Portfolio</div>
+        <div class="footer-copy">Business Analysis, Data Analytics &amp; AI Portfolio</div>
       </div>
       <div class="footer-links">
         <a href="#projects">Projects</a>

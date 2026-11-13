@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payroll Statutory Change: Employer National Insurance, Asmita Parmar</title>
+  <meta name="description" content="Taking a real change in UK payroll law from legislation to business rules, requirements, a sprint backlog and an acceptance test pack with calculated expected results.">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Business Analysis &amp; Data</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#case" onclick="showTab('case')">Case study</a><a href="#reqs" onclick="showTab('reqs')">Requirements</a><a href="#stories" onclick="showTab('stories')">User stories</a><a href="#tests" onclick="showTab('tests')">Test pack</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html#projects">Back to portfolio</a>
+      <div class="eyebrow">Payroll SaaS · Business Systems Analysis</div>
+      <h1>Payroll Statutory Change: Employer National Insurance</h1>
+      <p class="hero-sub" style="max-width:760px;margin-bottom:8px;">Taking a real change in UK payroll law from legislation to business rules, requirements, a sprint backlog and an acceptance test pack with calculated expected results.</p>
+      <div class="project-meta"><span class="pill">Requirements</span><span class="pill">Business Rules</span><span class="pill">User Stories</span><span class="pill">UAT</span><span class="pill">Traceability Matrix</span><span class="pill">Impact Analysis</span><span class="pill">Jira Backlog</span></div>
+      <div class="download-row"><a class="button primary" href="../assets/projects/BA_03_Payroll_Statutory_Change/PayFlow_Employer_NIC_Change_Pack.xlsx">Download the analysis and test pack (Excel)</a><a class="button" href="../assets/projects/BA_03_Payroll_Statutory_Change/PayFlow_NIC_backlog_jira_import.csv">Jira import backlog (CSV)</a><a class="button" href="../assets/projects/BA_03_Payroll_Statutory_Change/nic_reference_calculator.py">Reference calculator (Python)</a></div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Business analysis 03/05</div>
+        <a href="../index.html#projects">← All projects</a>
+        <a href="#case" onclick="showTab('case')">Case study</a><a href="#reqs" onclick="showTab('reqs')">Requirements</a><a href="#stories" onclick="showTab('stories')">User stories</a><a href="#tests" onclick="showTab('tests')">Test pack</a><a href="../assets/projects/BA_03_Payroll_Statutory_Change/PayFlow_Employer_NIC_Change_Pack.xlsx">Download the analysis and test pack (Excel) ↓</a><a href="../assets/projects/BA_03_Payroll_Statutory_Change/PayFlow_NIC_backlog_jira_import.csv">Jira import backlog (CSV) ↓</a><a href="../assets/projects/BA_03_Payroll_Statutory_Change/nic_reference_calculator.py">Reference calculator (Python) ↓</a><a href="../assets/projects/BA_03_Payroll_Statutory_Change/README.md">README ↓</a>
+      </aside>
+      <div>
+        <div class="tabs"><button class="tab-btn active" data-tab="case" onclick="showTab('case')">Case study</button><button class="tab-btn" data-tab="reqs" onclick="showTab('reqs')">Requirements</button><button class="tab-btn" data-tab="stories" onclick="showTab('stories')">User stories</button><button class="tab-btn" data-tab="tests" onclick="showTab('tests')">Test pack</button></div>
+        <section id="case" class="tab-content content-panel readme active"><div class="ba-note"><strong>About this project.</strong> PayFlow Global is a fictional payroll platform and its client base is synthetic. The legislation is real: the rates, thresholds and rounding rule are taken from HMRC guidance and every expected test result is checked against an independent calculation.</div>
+<h1>Payroll Statutory Change: Employer National Insurance</h1>
+<p><strong>Scenario.</strong> The Autumn Budget 2024 changed employer National Insurance from 6 April 2025: the rate rose from 13.8 to 15 percent, the secondary threshold fell from £9,100 to £5,000 a year, and the Employment Allowance rose from £5,000 to £10,500 with the £100,000 eligibility limit removed. PayFlow, a cloud payroll platform with 1,150 UK employer clients, had to change its calculation engine, claim screen, reports and client communications before the first April pay run.</p>
+<p><strong>My role.</strong> Business systems analyst. I read the legislation, turned it into business rules with worked examples, wrote the requirements and user stories, designed the acceptance tests with calculated expected results, and traced every legislative change through to a test.</p>
+<div class="kpi-row">
+<div class="kpi"><div class="kpi-label">Requirements</div><div class="kpi-value">15</div><div class="kpi-sub">11 functional, 4 non-functional</div></div>
+<div class="kpi"><div class="kpi-label">User stories</div><div class="kpi-value">9</div><div class="kpi-sub">33 story points, 2 sprints</div></div>
+<div class="kpi"><div class="kpi-label">Test cases</div><div class="kpi-value">22</div><div class="kpi-sub">20 with calculated expected results</div></div>
+<div class="kpi"><div class="kpi-label">Traceability</div><div class="kpi-value">8 of 9</div><div class="kpi-sub">changes covered; 1 gap logged</div></div>
+</div>
+<h2>What changed</h2>
+<div class="table-scroll"><table class="data-table"><thead><tr><th>Parameter</th><th>2024-25</th><th>2025-26 (from 6 April 2025)</th></tr></thead><tbody><tr><td>Employer Class 1 rate</td><td>13.8%</td><td>15%</td></tr><tr><td>Secondary threshold (annual / monthly / weekly)</td><td>£9,100 / £758 / £175</td><td>£5,000 / £417 / £96</td></tr><tr><td>Upper secondary threshold for under 21s and apprentices (monthly)</td><td>£4,189</td><td>£4,189 (unchanged)</td></tr><tr><td>Employment Allowance</td><td>£5,000</td><td>£10,500</td></tr><tr><td>Employment Allowance eligibility limit</td><td>Employer NIC under £100,000 in the previous year</td><td>Removed</td></tr></tbody></table></div>
+<h2>Impact analysis</h2>
+<p>An employee on £30,000 costs the employer £865.80 more a year in National Insurance (£2,884.20 to £3,750.00). The increase is £615 at the old threshold and grows by £12 for every extra £1,000 of salary, so the percentage rise is largest for lower-paid and part-time staff.</p>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Employer NIC per employee by annual salary (£)</div><canvas id="cSal" height="170"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Clients paying less or the same after the change, by size (%)</div><canvas id="cBand" height="170"></canvas></div>
+</div>
+<p>The larger Employment Allowance changes who is affected. In the modelled client base, 326 of 1,150 clients (28 percent) pay less or the same after the change: every employer with one to four staff, and 102 of 254 with five to nine. Everyone with ten or more employees pays more. That shaped two requirements: a cost comparison report (FR-08) and a client notice that states each client's own estimated impact (FR-09), because a single generic message would be wrong for more than a quarter of clients.</p>
+<h2>A defect the analysis caught before development</h2>
+<div class="callout"><p>Test TC-11 pays £3,150.50. The calculation gives exactly £410.025. A spreadsheet ROUND function returns £410.03. The legislation says an exact half penny is rounded <strong>down</strong>, so the correct answer is £410.02. I wrote this in as business rule BR-07, built the expected results with a half-down formula, and added the case to the regression pack.</p></div>
+<h2>Business rules</h2>
+<div class="table-scroll"><table class="data-table"><thead><tr><th>ID</th><th>Rule</th><th>Calculation</th><th>Worked example</th></tr></thead><tbody><tr><td>BR-01</td><td>Parameters belong to a tax year.</td><td>One row per tax year: rate, thresholds, allowance, effective dates.</td><td>2025-26: 15 percent, £417 a month, £10,500</td></tr><tr><td>BR-02</td><td>The payment date decides which tax year applies.</td><td>If payment date is on or after 6 April 2025 use 2025-26 parameters.</td><td>March work paid on 10 April 2025 uses the new rules</td></tr><tr><td>BR-03</td><td>Category A: employer NIC is due on earnings above the secondary threshold.</td><td>max(0, gross - secondary threshold) x rate, rounded under BR-07</td><td>Gross £2,500: (2,500 - 417) x 15% = £312.45</td></tr><tr><td>BR-04</td><td>Categories M and H: nothing is due up to the upper secondary threshold.</td><td>max(0, gross - upper secondary threshold) x rate</td><td>Gross £4,500: (4,500 - 4,189) x 15% = £46.65</td></tr><tr><td>BR-05</td><td>Employment Allowance offsets employer NIC until the annual limit is reached.</td><td>allowance used to date = min(limit, cumulative employer NIC)</td><td>Liability £1,200 a month: £10,500 lasts into month 9</td></tr><tr><td>BR-06</td><td>From 2025-26 the £100,000 prior-year limit no longer blocks a claim.</td><td>Eligibility check removed; other declarations unchanged</td><td>An employer with £180,000 liability last year can now claim</td></tr><tr><td>BR-07</td><td>Round to the nearest penny; an exact half penny is rounded down (unchanged rule).</td><td>Regulation 12(1)(b), Social Security (Contributions) Regulations 2001</td><td>£410.025 becomes £410.02, not £410.03</td></tr></tbody></table></div>
+<h2>Traceability</h2>
+<p>Every legislative change is covered by a rule, a requirement, a story and at least one test. The one gap, directors' annual earnings method, is logged for the next release.</p>
+<div class="table-scroll"><table class="data-table"><thead><tr><th>Source of change</th><th>Rule</th><th>Requirement</th><th>Story</th><th>Tests</th><th>Status</th></tr></thead><tbody><tr><td>Rate rises from 13.8 to 15 percent</td><td>BR-01, BR-03</td><td>FR-01, FR-03, FR-07</td><td>US-01, US-03</td><td>TC-07, TC-08, TC-12</td><td>Covered</td></tr><tr><td>Secondary threshold falls to £5,000 a year (£417 a month)</td><td>BR-03</td><td>FR-03</td><td>US-03</td><td>TC-01 to TC-06</td><td>Covered</td></tr><tr><td>Change applies to payments on or after 6 April 2025</td><td>BR-02</td><td>FR-02, NFR-02</td><td>US-02</td><td>TC-05, TC-07, TC-09 to TC-11, TC-22</td><td>Covered</td></tr><tr><td>Upper secondary threshold unchanged for under 21s and apprentices</td><td>BR-04</td><td>FR-04</td><td>US-04</td><td>TC-13 to TC-16</td><td>Covered</td></tr><tr><td>Employment Allowance rises to £10,500</td><td>BR-05</td><td>FR-05</td><td>US-05</td><td>TC-17 to TC-20</td><td>Covered</td></tr><tr><td>£100,000 eligibility limit removed</td><td>BR-06</td><td>FR-06</td><td>US-06</td><td>TC-21</td><td>Covered</td></tr><tr><td>Clients need to re-forecast and be told (stakeholder need)</td><td>n/a</td><td>FR-08, FR-09</td><td>US-07, US-08</td><td>Report and notice reviewed in sprint demo</td><td>Covered</td></tr><tr><td>Rounding rule unchanged: half penny rounds down</td><td>BR-07</td><td>NFR-02</td><td>US-02</td><td>TC-11</td><td>Covered</td></tr><tr><td>Directors' annual earnings method</td><td>To be written</td><td>FR-11</td><td>Not yet written</td><td>None</td><td>Gap: next release</td></tr></tbody></table></div>
+<h2>Estimate</h2>
+<p>35 working days across analysis, development, testing and client communication: £16,353 including 15 percent contingency. Day rates are illustrative.</p>
+<h2>Scope and limits</h2>
+<p>In scope: monthly and weekly paid employees in category letters A, M and H. Out of scope and listed as follow-on work: directors' annual earnings method, other category letters, and Class 1A and 1B. The client impact model applies the old £100,000 test to same-year liability as a simplification.</p>
+</section><section id="reqs" class="tab-content content-panel readme"><h2>Requirements catalogue</h2><div class="table-scroll"><table class="data-table"><thead><tr><th>ID</th><th>Type</th><th>Requirement</th><th>Priority</th><th>Traces to</th><th>Owner</th></tr></thead><tbody><tr><td>FR-01</td><td>Functional</td><td>Hold employer NIC rate, thresholds and Employment Allowance in a parameter table keyed by tax year, with effective from and to dates.</td><td>Must</td><td>BR-01</td><td>Payroll Compliance Lead</td></tr><tr><td>FR-02</td><td>Functional</td><td>Select the parameter set using the payment date of the pay run, not the period worked.</td><td>Must</td><td>BR-02</td><td>Payroll Compliance Lead</td></tr><tr><td>FR-03</td><td>Functional</td><td>Calculate employer NIC for category A at the tax-year rate on earnings above the secondary threshold for the pay frequency.</td><td>Must</td><td>BR-03</td><td>Payroll Compliance Lead</td></tr><tr><td>FR-04</td><td>Functional</td><td>For categories M and H charge no employer NIC up to the upper secondary threshold and the tax-year rate above it.</td><td>Must</td><td>BR-04</td><td>Payroll Compliance Lead</td></tr><tr><td>FR-05</td><td>Functional</td><td>Apply an Employment Allowance limit of £10,500 for 2025-26, offset against employer NIC each period until used up.</td><td>Must</td><td>BR-05</td><td>Payroll Compliance Lead</td></tr><tr><td>FR-06</td><td>Functional</td><td>Remove the £100,000 prior-year liability check from the Employment Allowance claim screen from 2025-26. Keep the other eligibility declarations.</td><td>Must</td><td>BR-06</td><td>Product Manager</td></tr><tr><td>FR-07</td><td>Functional</td><td>Show employer NIC and allowance used on the employer payroll summary and in the journal export with no change to account mapping.</td><td>Must</td><td>BR-03</td><td>Client Finance Users</td></tr><tr><td>FR-08</td><td>Functional</td><td>Provide an employer cost comparison report: employer NIC per employee under 2024-25 and 2025-26 rules for the same pay.</td><td>Should</td><td>Need: client budgeting</td><td>Client Success Manager</td></tr><tr><td>FR-09</td><td>Functional</td><td>Send each client an in-app notice and email before April explaining the change and their estimated annual cost impact.</td><td>Should</td><td>Need: client communication</td><td>Client Success Manager</td></tr><tr><td>FR-10</td><td>Functional</td><td>Let support agents view which parameter set a payslip used, to answer client queries.</td><td>Could</td><td>Need: support handling</td><td>Support Team Leader</td></tr><tr><td>FR-11</td><td>Functional</td><td>Directors' annual earnings method under the new thresholds.</td><td>Won't (this release)</td><td>Follow-on</td><td>Payroll Compliance Lead</td></tr><tr><td>NFR-01</td><td>Non-functional</td><td>Every parameter change is logged with user, time, old and new value, and needs approval by a second person before it goes live.</td><td>Must</td><td>Audit</td><td>Head of Engineering</td></tr><tr><td>NFR-02</td><td>Non-functional</td><td>Re-running any pay period paid before 6 April 2025 reproduces the original employer NIC to the penny.</td><td>Must</td><td>BR-02</td><td>QA Lead</td></tr><tr><td>NFR-03</td><td>Non-functional</td><td>A 5,000 employee pay run completes within 5 percent of its current run time.</td><td>Should</td><td>Performance</td><td>Head of Engineering</td></tr><tr><td>NFR-04</td><td>Non-functional</td><td>Test data contains no real employee data. The change introduces no new personal data items.</td><td>Must</td><td>UK GDPR</td><td>Data Protection Officer</td></tr></tbody></table></div></section><section id="stories" class="tab-content content-panel readme"><h2>User stories and acceptance criteria</h2><p>The same backlog is supplied as a CSV in Jira's import format (Summary, Issue Type, Description, Priority, Story Points, Labels, Sprint).</p><div class="table-scroll"><table><thead><tr><th>ID</th><th>Summary</th><th>User story</th><th>Acceptance criteria</th><th>Priority</th><th>Points</th><th>Sprint</th></tr></thead><tbody><tr><td>US-01</td><td>Tax-year parameter table</td><td>As a payroll compliance lead I want employer NIC parameters held by tax year so that a statutory change is a data update, not a code change.</td><td>Given the 2025-26 row is approved<br>When I view parameters for 6 April 2025<br>Then I see 15 percent, £417 monthly threshold and £10,500 allowance</td><td>Must</td><td>5</td><td>Sprint 1</td></tr><tr><td>US-02</td><td>Payment date selects the rules</td><td>As a payroll administrator I want the pay run to pick rules by payment date so that pay dated after 5 April uses the new rates automatically.</td><td>Given a pay run for March work<br>When the payment date is 10 April 2025<br>Then employer NIC uses 2025-26 parameters</td><td>Must</td><td>3</td><td>Sprint 1</td></tr><tr><td>US-03</td><td>Category A calculation</td><td>As an employer I want employer NIC calculated at the correct rate and threshold so that my liability to HMRC is right.</td><td>Given gross pay of £2,500 paid on 28 April 2025<br>When the pay run completes<br>Then employer NIC is £312.45</td><td>Must</td><td>5</td><td>Sprint 1</td></tr><tr><td>US-04</td><td>Under 21s and apprentices</td><td>As an employer of apprentices I want the zero rate up to the upper secondary threshold kept so that I am not overcharged.</td><td>Given a category H employee earning £3,000<br>When the pay run completes<br>Then employer NIC is £0.00</td><td>Must</td><td>3</td><td>Sprint 1</td></tr><tr><td>US-05</td><td>Employment Allowance limit</td><td>As an eligible employer I want up to £10,500 offset against my employer NIC so that I receive the full allowance.</td><td>Given monthly employer NIC of £1,200<br>When month 9 is processed<br>Then allowance used to date is £10,500 and £300 is payable</td><td>Must</td><td>5</td><td>Sprint 2</td></tr><tr><td>US-06</td><td>Remove the £100,000 check</td><td>As a larger employer I want to claim the allowance without the prior-year limit so that I am not wrongly blocked.</td><td>Given prior-year employer NIC of £180,000<br>When I open the claim screen for 2025-26<br>Then no limit warning is shown and I can claim</td><td>Must</td><td>2</td><td>Sprint 2</td></tr><tr><td>US-07</td><td>Cost comparison report</td><td>As a finance manager I want to compare employer NIC under old and new rules so that I can re-forecast my staff budget.</td><td>Given a completed March 2025 pay run<br>When I run the comparison report<br>Then each employee shows both amounts and the difference, with totals</td><td>Should</td><td>5</td><td>Sprint 2</td></tr><tr><td>US-08</td><td>Client notice</td><td>As a client success manager I want each client told their estimated cost impact so that the April payroll does not surprise them.</td><td>Given a client with pay data for the last three months<br>When the notice is generated<br>Then it states the estimated annual change in employer NIC</td><td>Should</td><td>3</td><td>Sprint 2</td></tr><tr><td>US-09</td><td>Support view of rules used</td><td>As a support agent I want to see which tax-year rules a payslip used so that I can answer queries in one contact.</td><td>Given a payslip<br>When I open its calculation detail<br>Then the tax year and parameter values are shown</td><td>Could</td><td>2</td><td>Backlog</td></tr></tbody></table></div></section><section id="tests" class="tab-content content-panel readme"><h2>Acceptance tests: calculation</h2><p>Expected employer NIC is a live formula in the workbook, driven by the Rates sheet, and matches the independent Python calculation on all 16 cases.</p><div class="table-scroll"><table class="data-table"><thead><tr><th>Test</th><th>What it proves</th><th>Cat.</th><th class=num>Gross (£)</th><th>Payment date</th><th>Rules used</th><th class=num>Expected NIC (£)</th><th>Story</th></tr></thead><tbody><tr><td>TC-01</td><td>Below the new threshold: nothing due</td><td>A</td><td class=num>400.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>0.00</td><td>US-03</td></tr><tr><td>TC-02</td><td>Exactly at the new threshold: nothing due</td><td>A</td><td class=num>417.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>0.00</td><td>US-03</td></tr><tr><td>TC-03</td><td>One pound above the new threshold</td><td>A</td><td class=num>418.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>0.15</td><td>US-03</td></tr><tr><td>TC-04</td><td>Between old and new thresholds: newly liable</td><td>A</td><td class=num>600.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>27.45</td><td>US-03</td></tr><tr><td>TC-05</td><td>At the old threshold under old rules: nothing due</td><td>A</td><td class=num>758.00</td><td>28 Mar 2025</td><td>2024-25</td><td class=num>0.00</td><td>US-02</td></tr><tr><td>TC-06</td><td>At the old threshold under new rules: now liable</td><td>A</td><td class=num>758.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>51.15</td><td>US-03</td></tr><tr><td>TC-07</td><td>Typical salary under old rules (regression)</td><td>A</td><td class=num>2,500.00</td><td>28 Mar 2025</td><td>2024-25</td><td class=num>240.40</td><td>US-02</td></tr><tr><td>TC-08</td><td>Typical salary under new rules</td><td>A</td><td class=num>2,500.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>312.45</td><td>US-03</td></tr><tr><td>TC-09</td><td>Last day of old rules</td><td>A</td><td class=num>2,500.00</td><td>5 Apr 2025</td><td>2024-25</td><td class=num>240.40</td><td>US-02</td></tr><tr><td>TC-10</td><td>First day of new rules</td><td>A</td><td class=num>2,500.00</td><td>6 Apr 2025</td><td>2025-26</td><td class=num>312.45</td><td>US-02</td></tr><tr><td>TC-11</td><td>March work paid in April uses new rules; result of £410.025 rounds down to £410.02</td><td>A</td><td class=num>3,150.50</td><td>10 Apr 2025</td><td>2025-26</td><td class=num>410.02</td><td>US-02</td></tr><tr><td>TC-12</td><td>Higher earner under new rules</td><td>A</td><td class=num>6,000.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>837.45</td><td>US-03</td></tr><tr><td>TC-13</td><td>Apprentice below upper secondary threshold: nothing due</td><td>H</td><td class=num>3,000.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>0.00</td><td>US-04</td></tr><tr><td>TC-14</td><td>Under 21 exactly at upper secondary threshold</td><td>M</td><td class=num>4,189.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>0.00</td><td>US-04</td></tr><tr><td>TC-15</td><td>Under 21 above upper secondary threshold</td><td>M</td><td class=num>4,500.00</td><td>28 Apr 2025</td><td>2025-26</td><td class=num>46.65</td><td>US-04</td></tr><tr><td>TC-16</td><td>Apprentice above threshold under old rules (regression)</td><td>H</td><td class=num>4,500.00</td><td>28 Mar 2025</td><td>2024-25</td><td class=num>42.92</td><td>US-04</td></tr></tbody></table></div><h2>Acceptance tests: Employment Allowance</h2><div class="table-scroll"><table class="data-table"><thead><tr><th>Test</th><th>What it proves</th><th class=num>Monthly NIC (£)</th><th class=num>Months</th><th class=num>Limit (£)</th><th class=num>Allowance used (£)</th><th class=num>Payable to date (£)</th></tr></thead><tbody><tr><td>TC-17</td><td>Old limit reached in month 5</td><td class=num>1,200.00</td><td class=num>5</td><td class=num>5,000</td><td class=num>5,000.00</td><td class=num>1,000.00</td></tr><tr><td>TC-18</td><td>New limit not yet reached in month 8</td><td class=num>1,200.00</td><td class=num>8</td><td class=num>10,500</td><td class=num>9,600.00</td><td class=num>0.00</td></tr><tr><td>TC-19</td><td>New limit reached in month 9</td><td class=num>1,200.00</td><td class=num>9</td><td class=num>10,500</td><td class=num>10,500.00</td><td class=num>300.00</td></tr><tr><td>TC-20</td><td>Small employer never reaches the new limit</td><td class=num>640.00</td><td class=num>12</td><td class=num>10,500</td><td class=num>7,680.00</td><td class=num>0.00</td></tr></tbody></table></div><p>TC-21 (claim screen with no £100,000 warning) and TC-22 (full regression of March 2025 payroll for three reference clients) are manual checks described in the workbook.</p><h2>Independent reference calculation</h2><section class="nb-cell code-cell"><div class="cell-label">nic_reference_calculator.py</div><pre><code>"""
+Employer (secondary) Class 1 National Insurance: reference calculator
+---------------------------------------------------------------------
+An independent calculation used to check the expected results in the UAT pack.
+Scope: monthly-paid employees, category letters A, M (under 21) and H (apprentice under 25).
+Out of scope: directors' annual earnings method, other category letters, Class 1A and 1B.
+
+Parameters are selected by PAYMENT DATE, not by the period the work was done in.
+Rounding follows the statutory rule: nearest penny, with an exact half penny rounded down.
+"""
+from datetime import date
+from decimal import Decimal, ROUND_HALF_DOWN
+
+PARAMS = {
+    # tax year: rate, monthly secondary threshold, monthly upper secondary threshold, employment allowance
+    "2024-25": {"from": date(2024, 4, 6), "to": date(2025, 4, 5), "rate": 0.138, "st_month": 758, "ust_month": 4189, "allowance": 5000},
+    "2025-26": {"from": date(2025, 4, 6), "to": date(2026, 4, 5), "rate": 0.15,  "st_month": 417, "ust_month": 4189, "allowance": 10500},
+}
+
+def params_for(payment_date: date) -&gt; dict:
+    for p in PARAMS.values():
+        if p["from"] &lt;= payment_date &lt;= p["to"]:
+            return p
+    raise ValueError(f"No parameter set covers {payment_date}")
+
+def employer_nic(gross_month: float, category: str, payment_date: date) -&gt; float:
+    p = params_for(payment_date)
+    # M and H: nothing is due until earnings pass the upper secondary threshold
+    threshold = p["ust_month"] if category in ("M", "H") else p["st_month"]
+    due = max(Decimal(0), Decimal(str(gross_month)) - threshold) * Decimal(str(p["rate"]))
+    # Regulation 12(1)(b), Social Security (Contributions) Regulations 2001:
+    # round to the nearest penny, and an exact half penny is rounded DOWN.
+    return float(due.quantize(Decimal("0.01"), rounding=ROUND_HALF_DOWN))
+
+def allowance_used(monthly_liability: float, months: int, payment_date: date) -&gt; float:
+    """Employment Allowance offset against liability so far this tax year."""
+    return round(min(params_for(payment_date)["allowance"], monthly_liability * months), 2)
+
+if __name__ == "__main__":
+    for gross in (400, 417, 418, 758, 1500, 2500, 4189, 6000):
+        old = employer_nic(gross, "A", date(2025, 3, 28))
+        new = employer_nic(gross, "A", date(2025, 4, 28))
+        print(f"gross £{gross:&gt;6,.2f}  2024-25 £{old:&gt;7.2f}  2025-26 £{new:&gt;7.2f}  change £{new - old:&gt;7.2f}")
+</code></pre></section></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Business Analysis, Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    var tabInit = {};
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+      if (window.onTab && !tabInit[tab]) { tabInit[tab] = true; window.onTab(tab); }
+    }
+    if (window.Chart) {
+      Chart.defaults.font.family = "DM Sans, sans-serif";
+      Chart.defaults.color = "#78716c";
+      Chart.defaults.plugins.legend.labels.boxWidth = 12;
+      Chart.defaults.plugins.legend.labels.boxHeight = 12;
+      Chart.defaults.elements.line.borderWidth = 2;
+      Chart.defaults.elements.point.radius = 0;
+      Chart.defaults.elements.point.hoverRadius = 5;
+      Chart.defaults.elements.bar.borderRadius = 4;
+      Chart.defaults.interaction.mode = 'index';
+      Chart.defaults.interaction.intersect = false;
+    }
+    var GRID = { color: '#efe9e0' }, NOGRID = { display: false };
+    var COL = { purple: '#7e4fa8', amber: '#c27a00', teal: '#009494', rose: '#d6456a', soft: '#c9b6d8', ink: '#57534e' };
+    function gbp(v) { return '£' + Math.round(v).toLocaleString('en-GB'); }
+    function gbpk(v) { return Math.abs(v) >= 1e6 ? '£' + (v/1e6).toFixed(2) + 'm' : '£' + Math.round(v/1000) + 'k'; }
+    function monthLabel(m) { var n = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; return n[+m.slice(5)-1] + ' ' + m.slice(2,4); }
+var P = {"sal": [[6000, 0, 150], [9100, 0, 615], [12570, 478.86, 1135.5], [15000, 814.2, 1500], [20000, 1504.2, 2250], [25000, 2194.2, 3000], [30000, 2884.2, 3750], [37430, 3909.54, 4864.5], [40000, 4264.2, 5250], [50000, 5644.2, 6750], [60000, 7024.2, 8250], [80000, 9784.2, 11250]], "band": [["1 to 4", 100.0, 224], ["5 to 9", 40.2, 254], ["10 to 24", 0.0, 387], ["25 to 49", 0.0, 188], ["50 to 99", 0.0, 78], ["100 or more", 0.0, 19]]};
+
+    function drawCase() {
+      new Chart(document.getElementById('cSal'), { type: 'line', data: { labels: P.sal.map(function(r) { return '£' + (r[0] / 1000) + 'k'; }), datasets: [
+        { label: '2024-25 rules', data: P.sal.map(function(r) { return r[1]; }), borderColor: COL.amber, backgroundColor: COL.amber, borderDash: [6, 4], pointRadius: 3 },
+        { label: '2025-26 rules', data: P.sal.map(function(r) { return r[2]; }), borderColor: COL.purple, backgroundColor: COL.purple, pointRadius: 3 }] },
+        options: { plugins: { tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': £' + c.parsed.y.toLocaleString('en-GB', { minimumFractionDigits: 2 }); } } } }, scales: { x: { grid: NOGRID, title: { display: true, text: 'annual salary' } }, y: { grid: GRID, min: 0, ticks: { callback: function(v) { return '£' + v.toLocaleString('en-GB'); } } } } } });
+      new Chart(document.getElementById('cBand'), { type: 'bar', data: { labels: P.band.map(function(r) { return r[0] + ' staff'; }), datasets: [{ label: 'Pay less or the same', data: P.band.map(function(r) { return r[1]; }), backgroundColor: COL.purple, maxBarThickness: 60 }] },
+        options: { plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return c.parsed.y + '% of ' + P.band[c.dataIndex][2] + ' clients'; } } } }, scales: { x: { grid: NOGRID }, y: { grid: GRID, min: 0, max: 100, ticks: { callback: function(v) { return v + '%'; } } } } } });
+    }
+    tabInit.case = true; drawCase();
+
+    if (location.hash) { var t = location.hash.slice(1); if (document.getElementById(t)) showTab(t); }
+  </script>
+</body>
+</html>

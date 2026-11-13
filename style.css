@@ -262,3 +262,33 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #cdd6
 
 .hi-icon { color: var(--accent); }
 .hi-svg { width: 19px; height: 19px; display: block; }
+
+/* Business analysis case studies */
+.ba-note { background: var(--gold-light); border: 1px solid #ecd9ae; border-radius: var(--radius-sm); padding: 12px 16px; font-size: 0.86rem; color: var(--text-2); line-height: 1.6; margin-bottom: 22px; }
+.ba-note strong { color: var(--text); }
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 18px 0; }
+.kpi { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px 18px; }
+.kpi-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.kpi-value { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; line-height: 1.15; color: var(--text); margin-top: 4px; }
+.kpi-sub { font-size: 0.76rem; color: var(--muted); margin-top: 2px; }
+.filter-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 6px 0 4px; }
+.filter-row label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); display: flex; flex-direction: column; gap: 5px; }
+.filter-row select { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--text); background: var(--white); border: 1px solid var(--border-2); border-radius: 8px; padding: 8px 12px; min-width: 170px; }
+.table-scroll { overflow-x: auto; margin: 14px 0; }
+.readme .table-scroll table { margin: 0; }
+.readme td.num, .readme th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.readme td { vertical-align: top; }
+.table-view { margin-top: 18px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 16px; background: var(--bg); }
+.table-view summary { cursor: pointer; font-size: 0.86rem; font-weight: 600; color: var(--accent-2); }
+.process-map { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-sm); margin: 14px 0; background: var(--white); }
+.process-map img { display: block; width: 100%; height: auto; }
+.readme pre code { white-space: pre; }
+.callout { border-left: 3px solid var(--accent); background: var(--accent-light); padding: 14px 18px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 16px 0; }
+.callout p { color: var(--text-2); font-weight: 400; }
+.skills-grid.five { grid-template-columns: repeat(5, 1fr); }
+.group-label { grid-column: 1 / -1; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin: 14px 0 0; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+@media (max-width: 1024px) { .skills-grid.five { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .skills-grid.five { grid-template-columns: 1fr; } }
+.layout > * { min-width: 0; }
+.chart-grid-2 > *, .chart-grid-3 > * { min-width: 0; }
+@media (max-width: 768px) { .readme > table { display: block; overflow-x: auto; } .content-panel { padding: 20px; } }

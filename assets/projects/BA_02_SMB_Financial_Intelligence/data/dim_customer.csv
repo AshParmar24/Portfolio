@@ -1,0 +1,641 @@
+customer_id,segment,depot_id,payment_terms_days,rep_id
+5000,Trade Account,2,30,6
+5001,Trade Account,2,30,6
+5002,Cash & Retail,2,0,4
+5003,Trade Account,2,30,6
+5004,Trade Account,1,30,2
+5005,Cash & Retail,3,0,8
+5006,Contractor,3,30,7
+5007,Cash & Retail,3,0,9
+5008,Contractor,3,30,7
+5009,Cash & Retail,2,0,6
+5010,Cash & Retail,2,0,6
+5011,Contractor,3,30,7
+5012,Cash & Retail,2,0,4
+5013,Contractor,3,30,8
+5014,Contractor,2,30,6
+5015,Cash & Retail,1,0,1
+5016,Contractor,1,30,3
+5017,Trade Account,3,30,7
+5018,Contractor,1,30,2
+5019,Trade Account,3,30,8
+5020,Cash & Retail,1,0,2
+5021,Contractor,3,30,8
+5022,Trade Account,1,30,1
+5023,Cash & Retail,1,0,1
+5024,Cash & Retail,3,0,7
+5025,Cash & Retail,1,0,1
+5026,Contractor,2,30,6
+5027,Contractor,1,30,2
+5028,Trade Account,1,30,3
+5029,Trade Account,3,30,7
+5030,Contractor,2,30,4
+5031,Contractor,3,30,9
+5032,Cash & Retail,1,0,2
+5033,Trade Account,2,30,4
+5034,Trade Account,3,30,8
+5035,Cash & Retail,3,0,8
+5036,Cash & Retail,2,0,5
+5037,Cash & Retail,2,0,6
+5038,Cash & Retail,1,0,3
+5039,Cash & Retail,1,0,3
+5040,Contractor,2,30,4
+5041,Cash & Retail,2,0,4
+5042,Contractor,1,30,2
+5043,Contractor,2,30,4
+5044,Cash & Retail,1,0,2
+5045,Contractor,3,30,7
+5046,Cash & Retail,1,0,3
+5047,Contractor,2,30,5
+5048,Trade Account,2,30,5
+5049,Trade Account,3,30,7
+5050,Contractor,2,30,4
+5051,Cash & Retail,1,0,3
+5052,Cash & Retail,2,0,5
+5053,Contractor,3,30,8
+5054,Trade Account,2,30,6
+5055,Contractor,1,30,1
+5056,Trade Account,1,30,1
+5057,Contractor,1,30,1
+5058,Contractor,1,30,1
+5059,Contractor,1,30,1
+5060,Contractor,3,30,7
+5061,Trade Account,1,30,3
+5062,Trade Account,2,30,5
+5063,Cash & Retail,1,0,1
+5064,Contractor,1,30,3
+5065,Cash & Retail,2,0,4
+5066,Cash & Retail,2,0,4
+5067,Trade Account,1,30,2
+5068,Contractor,3,30,9
+5069,Contractor,3,30,7
+5070,Trade Account,1,30,1
+5071,Trade Account,1,30,3
+5072,Cash & Retail,3,0,9
+5073,Cash & Retail,2,0,4
+5074,Contractor,1,30,2
+5075,Cash & Retail,1,0,2
+5076,Contractor,3,30,7
+5077,Cash & Retail,2,0,5
+5078,Contractor,2,30,4
+5079,Contractor,1,30,1
+5080,Cash & Retail,3,0,7
+5081,Cash & Retail,1,0,3
+5082,Contractor,1,30,2
+5083,Cash & Retail,3,0,7
+5084,Contractor,3,30,9
+5085,Cash & Retail,1,0,3
+5086,Cash & Retail,2,0,4
+5087,Contractor,1,30,3
+5088,Cash & Retail,3,0,9
+5089,Contractor,1,30,1
+5090,Cash & Retail,1,0,2
+5091,Cash & Retail,2,0,5
+5092,Cash & Retail,3,0,8
+5093,Cash & Retail,2,0,6
+5094,Trade Account,2,30,6
+5095,Contractor,1,30,1
+5096,Cash & Retail,1,0,1
+5097,Contractor,3,30,8
+5098,Contractor,1,30,1
+5099,Trade Account,3,30,7
+5100,Trade Account,3,30,8
+5101,Cash & Retail,2,0,4
+5102,Trade Account,1,30,3
+5103,Cash & Retail,3,0,7
+5104,Trade Account,3,30,9
+5105,Contractor,3,30,9
+5106,Trade Account,1,30,3
+5107,Contractor,2,30,5
+5108,Trade Account,3,30,9
+5109,Contractor,1,30,3
+5110,Trade Account,1,30,3
+5111,Contractor,2,30,6
+5112,Contractor,3,30,9
+5113,Trade Account,1,30,3
+5114,Cash & Retail,2,0,4
+5115,Cash & Retail,2,0,4
+5116,Cash & Retail,2,0,6
+5117,Contractor,1,30,2
+5118,Cash & Retail,3,0,7
+5119,Trade Account,1,30,2
+5120,Cash & Retail,3,0,8
+5121,Trade Account,1,30,1
+5122,Contractor,2,30,6
+5123,Trade Account,1,30,3
+5124,Cash & Retail,1,0,1
+5125,Contractor,3,30,8
+5126,Cash & Retail,1,0,2
+5127,Trade Account,2,30,5
+5128,Cash & Retail,2,0,5
+5129,Contractor,1,30,1
+5130,Trade Account,2,30,5
+5131,Contractor,3,30,9
+5132,Trade Account,2,30,4
+5133,Contractor,3,30,9
+5134,Contractor,1,30,1
+5135,Trade Account,2,30,6
+5136,Contractor,1,30,3
+5137,Contractor,1,30,3
+5138,Trade Account,2,30,5
+5139,Cash & Retail,1,0,1
+5140,Contractor,3,30,7
+5141,Trade Account,2,30,4
+5142,Cash & Retail,1,0,1
+5143,Contractor,2,30,5
+5144,Contractor,1,30,2
+5145,Contractor,2,30,6
+5146,Contractor,3,30,7
+5147,Cash & Retail,3,0,7
+5148,Trade Account,1,30,2
+5149,Cash & Retail,1,0,1
+5150,Contractor,2,30,6
+5151,Contractor,1,30,3
+5152,Trade Account,3,30,8
+5153,Trade Account,2,30,4
+5154,Contractor,2,30,6
+5155,Trade Account,3,30,9
+5156,Trade Account,3,30,8
+5157,Contractor,2,30,5
+5158,Contractor,2,30,6
+5159,Cash & Retail,1,0,3
+5160,Trade Account,3,30,7
+5161,Cash & Retail,3,0,7
+5162,Trade Account,1,30,2
+5163,Cash & Retail,1,0,3
+5164,Cash & Retail,3,0,8
+5165,Cash & Retail,2,0,6
+5166,Contractor,1,30,2
+5167,Trade Account,1,30,3
+5168,Cash & Retail,2,0,6
+5169,Contractor,2,30,5
+5170,Trade Account,1,30,3
+5171,Contractor,2,30,6
+5172,Trade Account,3,30,9
+5173,Contractor,3,30,9
+5174,Contractor,2,30,5
+5175,Cash & Retail,3,0,9
+5176,Trade Account,2,30,6
+5177,Trade Account,3,30,7
+5178,Contractor,1,30,3
+5179,Trade Account,1,30,3
+5180,Cash & Retail,1,0,2
+5181,Cash & Retail,2,0,6
+5182,Contractor,1,30,2
+5183,Trade Account,3,30,8
+5184,Trade Account,1,30,1
+5185,Cash & Retail,3,0,8
+5186,Trade Account,1,30,3
+5187,Trade Account,1,30,3
+5188,Cash & Retail,1,0,2
+5189,Contractor,1,30,1
+5190,Contractor,1,30,1
+5191,Contractor,1,30,1
+5192,Cash & Retail,3,0,8
+5193,Contractor,2,30,6
+5194,Cash & Retail,2,0,4
+5195,Contractor,1,30,2
+5196,Trade Account,1,30,2
+5197,Trade Account,2,30,4
+5198,Cash & Retail,1,0,3
+5199,Trade Account,1,30,2
+5200,Contractor,1,30,1
+5201,Contractor,3,30,9
+5202,Cash & Retail,3,0,7
+5203,Trade Account,1,30,3
+5204,Trade Account,1,30,1
+5205,Contractor,1,30,1
+5206,Contractor,1,30,2
+5207,Trade Account,1,30,1
+5208,Cash & Retail,3,0,7
+5209,Cash & Retail,1,0,1
+5210,Trade Account,3,30,7
+5211,Trade Account,1,30,1
+5212,Cash & Retail,2,0,4
+5213,Contractor,3,30,7
+5214,Cash & Retail,1,0,1
+5215,Contractor,3,30,7
+5216,Trade Account,3,30,9
+5217,Trade Account,2,30,6
+5218,Contractor,1,30,3
+5219,Cash & Retail,1,0,2
+5220,Trade Account,2,30,5
+5221,Contractor,1,30,1
+5222,Contractor,3,30,9
+5223,Contractor,3,30,9
+5224,Trade Account,2,30,5
+5225,Cash & Retail,2,0,5
+5226,Contractor,2,30,6
+5227,Cash & Retail,1,0,1
+5228,Cash & Retail,1,0,2
+5229,Cash & Retail,2,0,5
+5230,Trade Account,2,30,5
+5231,Cash & Retail,2,0,4
+5232,Trade Account,2,30,4
+5233,Contractor,1,30,1
+5234,Trade Account,3,30,8
+5235,Contractor,1,30,3
+5236,Trade Account,1,30,2
+5237,Cash & Retail,1,0,1
+5238,Trade Account,2,30,5
+5239,Contractor,3,30,8
+5240,Cash & Retail,2,0,5
+5241,Trade Account,2,30,5
+5242,Contractor,3,30,9
+5243,Contractor,3,30,9
+5244,Cash & Retail,2,0,4
+5245,Cash & Retail,3,0,7
+5246,Cash & Retail,3,0,9
+5247,Cash & Retail,1,0,3
+5248,Contractor,2,30,6
+5249,Contractor,2,30,6
+5250,Trade Account,2,30,5
+5251,Trade Account,1,30,3
+5252,Cash & Retail,1,0,2
+5253,Trade Account,3,30,7
+5254,Cash & Retail,3,0,8
+5255,Contractor,1,30,1
+5256,Trade Account,3,30,7
+5257,Trade Account,2,30,4
+5258,Contractor,2,30,4
+5259,Trade Account,1,30,3
+5260,Contractor,1,30,3
+5261,Cash & Retail,2,0,4
+5262,Contractor,2,30,4
+5263,Contractor,2,30,4
+5264,Cash & Retail,2,0,4
+5265,Trade Account,3,30,8
+5266,Contractor,2,30,5
+5267,Cash & Retail,1,0,3
+5268,Contractor,1,30,3
+5269,Contractor,2,30,5
+5270,Contractor,1,30,1
+5271,Trade Account,2,30,4
+5272,Cash & Retail,1,0,1
+5273,Cash & Retail,1,0,1
+5274,Cash & Retail,1,0,1
+5275,Contractor,1,30,2
+5276,Contractor,1,30,2
+5277,Contractor,3,30,8
+5278,Cash & Retail,1,0,2
+5279,Cash & Retail,3,0,7
+5280,Trade Account,1,30,1
+5281,Cash & Retail,2,0,5
+5282,Cash & Retail,2,0,5
+5283,Cash & Retail,2,0,5
+5284,Trade Account,3,30,9
+5285,Cash & Retail,1,0,1
+5286,Cash & Retail,2,0,5
+5287,Trade Account,1,30,2
+5288,Contractor,3,30,7
+5289,Trade Account,2,30,6
+5290,Cash & Retail,1,0,2
+5291,Contractor,1,30,1
+5292,Contractor,1,30,3
+5293,Cash & Retail,3,0,9
+5294,Cash & Retail,2,0,5
+5295,Trade Account,2,30,5
+5296,Cash & Retail,2,0,4
+5297,Contractor,1,30,1
+5298,Trade Account,3,30,7
+5299,Contractor,3,30,8
+5300,Contractor,2,30,4
+5301,Cash & Retail,1,0,1
+5302,Cash & Retail,1,0,2
+5303,Trade Account,1,30,1
+5304,Contractor,2,30,6
+5305,Cash & Retail,1,0,3
+5306,Contractor,1,30,3
+5307,Cash & Retail,3,0,8
+5308,Contractor,1,30,3
+5309,Trade Account,1,30,3
+5310,Contractor,1,30,2
+5311,Contractor,1,30,1
+5312,Cash & Retail,2,0,4
+5313,Contractor,2,30,4
+5314,Trade Account,3,30,7
+5315,Cash & Retail,2,0,5
+5316,Contractor,1,30,1
+5317,Contractor,2,30,6
+5318,Cash & Retail,1,0,3
+5319,Contractor,3,30,9
+5320,Contractor,1,30,1
+5321,Cash & Retail,2,0,4
+5322,Cash & Retail,3,0,8
+5323,Cash & Retail,3,0,7
+5324,Contractor,2,30,4
+5325,Contractor,1,30,1
+5326,Trade Account,1,30,2
+5327,Trade Account,1,30,2
+5328,Contractor,1,30,3
+5329,Trade Account,1,30,1
+5330,Trade Account,3,30,9
+5331,Cash & Retail,1,0,1
+5332,Contractor,1,30,3
+5333,Trade Account,3,30,9
+5334,Trade Account,3,30,9
+5335,Contractor,1,30,1
+5336,Contractor,2,30,5
+5337,Contractor,2,30,6
+5338,Trade Account,2,30,5
+5339,Cash & Retail,1,0,2
+5340,Trade Account,3,30,9
+5341,Contractor,1,30,1
+5342,Contractor,2,30,5
+5343,Contractor,3,30,9
+5344,Cash & Retail,1,0,1
+5345,Trade Account,3,30,7
+5346,Trade Account,1,30,3
+5347,Trade Account,1,30,2
+5348,Cash & Retail,2,0,5
+5349,Contractor,1,30,2
+5350,Cash & Retail,2,0,4
+5351,Trade Account,2,30,4
+5352,Contractor,3,30,8
+5353,Cash & Retail,3,0,9
+5354,Contractor,3,30,9
+5355,Contractor,2,30,4
+5356,Cash & Retail,3,0,7
+5357,Contractor,3,30,8
+5358,Cash & Retail,2,0,6
+5359,Trade Account,1,30,1
+5360,Contractor,1,30,2
+5361,Contractor,3,30,8
+5362,Cash & Retail,2,0,5
+5363,Trade Account,1,30,3
+5364,Cash & Retail,3,0,9
+5365,Cash & Retail,2,0,4
+5366,Cash & Retail,1,0,1
+5367,Contractor,3,30,8
+5368,Contractor,2,30,5
+5369,Cash & Retail,1,0,2
+5370,Trade Account,2,30,5
+5371,Trade Account,2,30,4
+5372,Cash & Retail,3,0,8
+5373,Cash & Retail,2,0,5
+5374,Cash & Retail,1,0,3
+5375,Contractor,2,30,6
+5376,Cash & Retail,1,0,1
+5377,Cash & Retail,1,0,3
+5378,Trade Account,3,30,7
+5379,Cash & Retail,2,0,5
+5380,Cash & Retail,3,0,8
+5381,Contractor,1,30,1
+5382,Trade Account,2,30,5
+5383,Contractor,1,30,1
+5384,Cash & Retail,1,0,2
+5385,Contractor,2,30,6
+5386,Cash & Retail,3,0,7
+5387,Cash & Retail,2,0,6
+5388,Cash & Retail,1,0,2
+5389,Cash & Retail,1,0,3
+5390,Trade Account,1,30,2
+5391,Contractor,2,30,5
+5392,Cash & Retail,3,0,7
+5393,Contractor,2,30,4
+5394,Trade Account,3,30,8
+5395,Trade Account,1,30,2
+5396,Trade Account,3,30,8
+5397,Contractor,2,30,5
+5398,Cash & Retail,2,0,4
+5399,Contractor,1,30,1
+5400,Cash & Retail,2,0,6
+5401,Trade Account,1,30,2
+5402,Cash & Retail,1,0,2
+5403,Cash & Retail,1,0,2
+5404,Contractor,2,30,5
+5405,Contractor,1,30,1
+5406,Cash & Retail,2,0,5
+5407,Trade Account,2,30,4
+5408,Cash & Retail,1,0,2
+5409,Cash & Retail,3,0,7
+5410,Cash & Retail,2,0,6
+5411,Cash & Retail,3,0,9
+5412,Contractor,3,30,8
+5413,Cash & Retail,3,0,8
+5414,Contractor,3,30,8
+5415,Contractor,3,30,8
+5416,Cash & Retail,3,0,7
+5417,Trade Account,3,30,8
+5418,Trade Account,1,30,3
+5419,Cash & Retail,1,0,2
+5420,Cash & Retail,3,0,8
+5421,Trade Account,1,30,1
+5422,Cash & Retail,3,0,9
+5423,Cash & Retail,3,0,8
+5424,Cash & Retail,2,0,4
+5425,Contractor,1,30,3
+5426,Contractor,2,30,5
+5427,Trade Account,3,30,9
+5428,Contractor,1,30,2
+5429,Contractor,3,30,9
+5430,Trade Account,2,30,5
+5431,Trade Account,3,30,9
+5432,Trade Account,1,30,3
+5433,Contractor,3,30,7
+5434,Cash & Retail,1,0,3
+5435,Contractor,2,30,6
+5436,Contractor,3,30,7
+5437,Cash & Retail,2,0,6
+5438,Cash & Retail,1,0,1
+5439,Contractor,3,30,8
+5440,Contractor,2,30,4
+5441,Cash & Retail,1,0,3
+5442,Trade Account,3,30,8
+5443,Contractor,3,30,7
+5444,Cash & Retail,3,0,9
+5445,Contractor,2,30,4
+5446,Cash & Retail,1,0,3
+5447,Cash & Retail,2,0,6
+5448,Cash & Retail,2,0,4
+5449,Contractor,2,30,5
+5450,Cash & Retail,1,0,1
+5451,Cash & Retail,1,0,3
+5452,Contractor,1,30,1
+5453,Trade Account,1,30,2
+5454,Cash & Retail,1,0,3
+5455,Contractor,2,30,5
+5456,Trade Account,2,30,6
+5457,Trade Account,2,30,6
+5458,Contractor,2,30,5
+5459,Contractor,1,30,2
+5460,Contractor,1,30,2
+5461,Contractor,1,30,1
+5462,Trade Account,1,30,2
+5463,Cash & Retail,1,0,2
+5464,Trade Account,2,30,6
+5465,Cash & Retail,1,0,1
+5466,Trade Account,1,30,2
+5467,Contractor,3,30,9
+5468,Cash & Retail,1,0,3
+5469,Contractor,1,30,3
+5470,Cash & Retail,3,0,8
+5471,Trade Account,3,30,7
+5472,Cash & Retail,2,0,5
+5473,Contractor,2,30,5
+5474,Cash & Retail,1,0,1
+5475,Cash & Retail,3,0,9
+5476,Cash & Retail,2,0,5
+5477,Cash & Retail,3,0,7
+5478,Cash & Retail,1,0,1
+5479,Cash & Retail,1,0,1
+5480,Contractor,3,30,8
+5481,Contractor,1,30,1
+5482,Contractor,3,30,7
+5483,Contractor,3,30,9
+5484,Contractor,1,30,1
+5485,Trade Account,2,30,5
+5486,Trade Account,1,30,1
+5487,Contractor,3,30,7
+5488,Trade Account,2,30,6
+5489,Contractor,2,30,4
+5490,Cash & Retail,1,0,3
+5491,Trade Account,1,30,1
+5492,Cash & Retail,2,0,5
+5493,Contractor,2,30,5
+5494,Cash & Retail,3,0,9
+5495,Trade Account,1,30,1
+5496,Contractor,2,30,6
+5497,Contractor,3,30,8
+5498,Cash & Retail,1,0,3
+5499,Trade Account,2,30,6
+5500,Contractor,3,30,9
+5501,Cash & Retail,2,0,5
+5502,Cash & Retail,1,0,2
+5503,Trade Account,2,30,4
+5504,Cash & Retail,1,0,1
+5505,Trade Account,1,30,1
+5506,Trade Account,3,30,9
+5507,Trade Account,2,30,4
+5508,Cash & Retail,1,0,1
+5509,Cash & Retail,2,0,5
+5510,Cash & Retail,2,0,4
+5511,Cash & Retail,3,0,7
+5512,Cash & Retail,2,0,4
+5513,Cash & Retail,3,0,7
+5514,Contractor,2,30,4
+5515,Contractor,1,30,3
+5516,Cash & Retail,2,0,5
+5517,Contractor,1,30,2
+5518,Trade Account,1,30,3
+5519,Cash & Retail,1,0,3
+5520,Trade Account,2,30,6
+5521,Contractor,1,30,2
+5522,Cash & Retail,1,0,3
+5523,Cash & Retail,3,0,7
+5524,Contractor,1,30,2
+5525,Contractor,2,30,5
+5526,Trade Account,2,30,5
+5527,Contractor,1,30,2
+5528,Cash & Retail,2,0,5
+5529,Contractor,1,30,1
+5530,Cash & Retail,3,0,9
+5531,Cash & Retail,1,0,3
+5532,Contractor,1,30,2
+5533,Cash & Retail,2,0,6
+5534,Cash & Retail,2,0,5
+5535,Contractor,3,30,9
+5536,Trade Account,2,30,5
+5537,Cash & Retail,3,0,9
+5538,Cash & Retail,2,0,6
+5539,Cash & Retail,3,0,8
+5540,Trade Account,3,30,9
+5541,Contractor,3,30,7
+5542,Trade Account,1,30,2
+5543,Contractor,3,30,9
+5544,Contractor,2,30,5
+5545,Trade Account,1,30,3
+5546,Cash & Retail,1,0,3
+5547,Cash & Retail,1,0,1
+5548,Contractor,2,30,4
+5549,Cash & Retail,1,0,3
+5550,Trade Account,2,30,5
+5551,Trade Account,1,30,3
+5552,Cash & Retail,1,0,1
+5553,Cash & Retail,1,0,2
+5554,Cash & Retail,1,0,2
+5555,Contractor,3,30,8
+5556,Trade Account,2,30,6
+5557,Contractor,2,30,5
+5558,Cash & Retail,3,0,9
+5559,Cash & Retail,2,0,5
+5560,Cash & Retail,3,0,9
+5561,Cash & Retail,2,0,4
+5562,Contractor,2,30,6
+5563,Cash & Retail,2,0,4
+5564,Cash & Retail,2,0,5
+5565,Trade Account,1,30,3
+5566,Trade Account,1,30,1
+5567,Trade Account,3,30,9
+5568,Cash & Retail,1,0,1
+5569,Cash & Retail,3,0,9
+5570,Trade Account,2,30,5
+5571,Cash & Retail,1,0,3
+5572,Trade Account,2,30,6
+5573,Cash & Retail,1,0,1
+5574,Trade Account,2,30,5
+5575,Cash & Retail,1,0,3
+5576,Trade Account,3,30,9
+5577,Contractor,1,30,1
+5578,Contractor,1,30,2
+5579,Contractor,1,30,3
+5580,Cash & Retail,3,0,7
+5581,Contractor,1,30,2
+5582,Cash & Retail,2,0,4
+5583,Contractor,1,30,2
+5584,Contractor,1,30,1
+5585,Trade Account,1,30,3
+5586,Trade Account,2,30,4
+5587,Trade Account,2,30,4
+5588,Cash & Retail,3,0,8
+5589,Trade Account,3,30,8
+5590,Contractor,3,30,7
+5591,Contractor,1,30,2
+5592,Contractor,2,30,6
+5593,Contractor,1,30,1
+5594,Trade Account,3,30,9
+5595,Trade Account,1,30,2
+5596,Cash & Retail,2,0,6
+5597,Cash & Retail,1,0,2
+5598,Contractor,1,30,3
+5599,Contractor,3,30,8
+5600,Cash & Retail,2,0,4
+5601,Trade Account,2,30,5
+5602,Contractor,3,30,9
+5603,Cash & Retail,2,0,4
+5604,Contractor,3,30,8
+5605,Contractor,3,30,7
+5606,Contractor,1,30,3
+5607,Contractor,2,30,6
+5608,Cash & Retail,1,0,1
+5609,Cash & Retail,1,0,2
+5610,Contractor,1,30,2
+5611,Contractor,3,30,7
+5612,Contractor,1,30,1
+5613,Contractor,2,30,4
+5614,Trade Account,2,30,4
+5615,Contractor,3,30,8
+5616,Cash & Retail,3,0,8
+5617,Trade Account,1,30,2
+5618,Cash & Retail,3,0,9
+5619,Trade Account,1,30,2
+5620,Trade Account,2,30,4
+5621,Contractor,1,30,2
+5622,Cash & Retail,1,0,3
+5623,Contractor,3,30,8
+5624,Contractor,3,30,7
+5625,Trade Account,2,30,5
+5626,Contractor,1,30,2
+5627,Contractor,1,30,1
+5628,Trade Account,1,30,2
+5629,Cash & Retail,1,0,2
+5630,Trade Account,1,30,1
+5631,Contractor,1,30,1
+5632,Contractor,1,30,3
+5633,Cash & Retail,1,0,3
+5634,Cash & Retail,3,0,7
+5635,Cash & Retail,2,0,6
+5636,Trade Account,3,30,9
+5637,Trade Account,2,30,5
+5638,Contractor,1,30,1
+5639,Contractor,2,30,4

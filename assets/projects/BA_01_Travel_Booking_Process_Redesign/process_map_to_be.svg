@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1578 630" width="1578" height="630" font-family="DM Sans, Arial, sans-serif" role="img" aria-label="To-be: enquiry to booking with a single booking system">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#57534e"/></marker></defs>
+<rect width="1578" height="630" fill="#ffffff"/>
+<text x="16" y="30" font-size="17" font-weight="600" fill="#1c1917">To-be: enquiry to booking with a single booking system</text>
+<rect x="12" y="54" width="1554" height="112" fill="#fdfbf7" stroke="#d6cec4"/>
+<rect x="12" y="54" width="108" height="112" fill="#f5eef8" stroke="#d6cec4"/>
+<text x="66" y="114.0" font-size="12" font-weight="600" text-anchor="middle" fill="#4a3550">Customer</text>
+<rect x="12" y="166" width="1554" height="112" fill="#f8f4ee" stroke="#d6cec4"/>
+<rect x="12" y="166" width="108" height="112" fill="#f5eef8" stroke="#d6cec4"/>
+<text x="66" y="220.0" font-size="12" font-weight="600" text-anchor="middle" fill="#4a3550">Booking</text>
+<text x="66" y="234.0" font-size="12" font-weight="600" text-anchor="middle" fill="#4a3550">System</text>
+<rect x="12" y="278" width="1554" height="112" fill="#fdfbf7" stroke="#d6cec4"/>
+<rect x="12" y="278" width="108" height="112" fill="#f5eef8" stroke="#d6cec4"/>
+<text x="66" y="332.0" font-size="12" font-weight="600" text-anchor="middle" fill="#4a3550">Travel</text>
+<text x="66" y="346.0" font-size="12" font-weight="600" text-anchor="middle" fill="#4a3550">Consultant</text>
+<rect x="12" y="390" width="1554" height="112" fill="#f8f4ee" stroke="#d6cec4"/>
+<rect x="12" y="390" width="108" height="112" fill="#f5eef8" stroke="#d6cec4"/>
+<text x="66" y="444.0" font-size="12" font-weight="600" text-anchor="middle" fill="#4a3550">Accounts and</text>
+<text x="66" y="458.0" font-size="12" font-weight="600" text-anchor="middle" fill="#4a3550">Admin</text>
+<rect x="12" y="502" width="1554" height="112" fill="#fdfbf7" stroke="#d6cec4"/>
+<rect x="12" y="502" width="108" height="112" fill="#f5eef8" stroke="#d6cec4"/>
+<text x="66" y="562.0" font-size="12" font-weight="600" text-anchor="middle" fill="#4a3550">Tour Operator</text>
+<path d="M231.0 110.0 L308.0 110.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M369.0 139.0 L369.0 193.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M430.0 222.0 L527.0 222.0 L527.0 305.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M588.0 334.0 L624.0 334.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M685.0 305.0 L685.0 139.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M746.0 110.0 L799.0 110.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M843.0 144.0 L843.0 193.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="851.0" y="166.0" font-size="10.5" fill="#57534e" font-weight="600">Not yet</text>
+<path d="M887.0 110.0 L1001.0 110.0 L1001.0 305.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="893.0" y="104.0" font-size="10.5" fill="#57534e" font-weight="600">Yes</text>
+<path d="M1001.0 363.0 L1001.0 529.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M1062.0 558.0 L1159.0 558.0 L1159.0 251.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M1159.0 193.0 L1159.0 139.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M1220.0 110.0 L1317.0 110.0 L1317.0 193.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M1378.0 222.0 L1475.0 222.0 L1475.0 130.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<path d="M1317.0 251.0 L1317.0 417.0" fill="none" stroke="#57534e" stroke-width="1.5" marker-end="url(#arr)"/>
+<circle cx="211.0" cy="110.0" r="20" fill="#e6f4f4" stroke="#4a3550" stroke-width="1.5"/>
+<text x="211.0" y="146.0" font-size="10.5" text-anchor="middle" fill="#44403c">Wants a holiday</text>
+<rect x="308.0" y="81.0" width="122" height="58" rx="8" fill="#ffffff" stroke="#7e4fa8" stroke-width="1.5"/>
+<text x="369.0" y="107.5" font-size="11" text-anchor="middle" fill="#1c1917">Makes enquiry by any</text>
+<text x="369.0" y="120.5" font-size="11" text-anchor="middle" fill="#1c1917">channel</text>
+<rect x="308.0" y="193.0" width="122" height="58" rx="8" fill="#e6f4f4" stroke="#009494" stroke-width="1.5"/>
+<text x="369.0" y="213.0" font-size="11" text-anchor="middle" fill="#1c1917">Creates one enquiry</text>
+<text x="369.0" y="226.0" font-size="11" text-anchor="middle" fill="#1c1917">record; acknowledges;</text>
+<text x="369.0" y="239.0" font-size="11" text-anchor="middle" fill="#1c1917">assigns by rota</text>
+<rect x="466.0" y="305.0" width="122" height="58" rx="8" fill="#ffffff" stroke="#7e4fa8" stroke-width="1.5"/>
+<text x="527.0" y="318.5" font-size="11" text-anchor="middle" fill="#1c1917">Replies within 2</text>
+<text x="527.0" y="331.5" font-size="11" text-anchor="middle" fill="#1c1917">working hours</text>
+<text x="527.0" y="344.5" font-size="11" text-anchor="middle" fill="#1c1917">(manager alerted if</text>
+<text x="527.0" y="357.5" font-size="11" text-anchor="middle" fill="#1c1917">not)</text>
+<rect x="624.0" y="305.0" width="122" height="58" rx="8" fill="#ffffff" stroke="#7e4fa8" stroke-width="1.5"/>
+<text x="685.0" y="331.5" font-size="11" text-anchor="middle" fill="#1c1917">Builds quote from the</text>
+<text x="685.0" y="344.5" font-size="11" text-anchor="middle" fill="#1c1917">enquiry record</text>
+<rect x="624.0" y="81.0" width="122" height="58" rx="8" fill="#ffffff" stroke="#7e4fa8" stroke-width="1.5"/>
+<text x="685.0" y="114.0" font-size="11" text-anchor="middle" fill="#1c1917">Receives quote</text>
+<path d="M799.0 110.0 L843.0 76.0 L887.0 110.0 L843.0 144.0 z" fill="#fff7e0" stroke="#c27a00" stroke-width="1.5"/>
+<text x="843.0" y="107.5" font-size="10" text-anchor="middle" fill="#1c1917">Accepts</text>
+<text x="843.0" y="120.5" font-size="10" text-anchor="middle" fill="#1c1917">quote?</text>
+<rect x="782.0" y="193.0" width="122" height="58" rx="8" fill="#e6f4f4" stroke="#009494" stroke-width="1.5"/>
+<text x="843.0" y="219.5" font-size="11" text-anchor="middle" fill="#1c1917">Sets follow-up task</text>
+<text x="843.0" y="232.5" font-size="11" text-anchor="middle" fill="#1c1917">at 3 days</text>
+<rect x="940.0" y="305.0" width="122" height="58" rx="8" fill="#ffffff" stroke="#7e4fa8" stroke-width="1.5"/>
+<text x="1001.0" y="325.0" font-size="11" text-anchor="middle" fill="#1c1917">Converts quote to</text>
+<text x="1001.0" y="338.0" font-size="11" text-anchor="middle" fill="#1c1917">booking; enters once</text>
+<text x="1001.0" y="351.0" font-size="11" text-anchor="middle" fill="#1c1917">in supplier portal</text>
+<rect x="940.0" y="529.0" width="122" height="58" rx="8" fill="#ffffff" stroke="#7e4fa8" stroke-width="1.5"/>
+<text x="1001.0" y="562.0" font-size="11" text-anchor="middle" fill="#1c1917">Confirms booking</text>
+<rect x="1098.0" y="193.0" width="122" height="58" rx="8" fill="#e6f4f4" stroke="#009494" stroke-width="1.5"/>
+<text x="1159.0" y="219.5" font-size="11" text-anchor="middle" fill="#1c1917">Sends secure payment</text>
+<text x="1159.0" y="232.5" font-size="11" text-anchor="middle" fill="#1c1917">link; records payment</text>
+<rect x="1098.0" y="81.0" width="122" height="58" rx="8" fill="#ffffff" stroke="#7e4fa8" stroke-width="1.5"/>
+<text x="1159.0" y="114.0" font-size="11" text-anchor="middle" fill="#1c1917">Pays online</text>
+<rect x="1256.0" y="193.0" width="122" height="58" rx="8" fill="#e6f4f4" stroke="#009494" stroke-width="1.5"/>
+<text x="1317.0" y="219.5" font-size="11" text-anchor="middle" fill="#1c1917">Issues confirmation</text>
+<text x="1317.0" y="232.5" font-size="11" text-anchor="middle" fill="#1c1917">and ATOL Certificate</text>
+<rect x="1256.0" y="417.0" width="122" height="58" rx="8" fill="#ffffff" stroke="#7e4fa8" stroke-width="1.5"/>
+<text x="1317.0" y="443.5" font-size="11" text-anchor="middle" fill="#1c1917">Reconciles payment to</text>
+<text x="1317.0" y="456.5" font-size="11" text-anchor="middle" fill="#1c1917">supplier invoice</text>
+<circle cx="1475.0" cy="110.0" r="20" fill="#4a3550" stroke="#4a3550" stroke-width="3"/>
+<text x="1475.0" y="82.0" font-size="10.5" text-anchor="middle" fill="#44403c">Receives documents</text>
+</svg>

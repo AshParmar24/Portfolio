@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Business Case: Repairs Scheduling and Tenant Self-Service, Asmita Parmar</title>
+  <meta name="description" content="A four-option appraisal with a live Excel model, where the honest answer is that the cheapest option wins on money and the system wins on compliance.">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">AP</span>
+        <div><div class="nav-name">Asmita Parmar</div><div class="nav-role">Business Analysis &amp; Data</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#projects">All Projects</a>
+        <a href="#case" onclick="showTab('case')">Business case</a><a href="#model" onclick="showTab('model')">Model and formulas</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <section class="project-hero">
+      <a class="back-link" href="../index.html#projects">Back to portfolio</a>
+      <div class="eyebrow">Social Housing · Business Case and Options Appraisal</div>
+      <h1>Business Case: Repairs Scheduling and Tenant Self-Service</h1>
+      <p class="hero-sub" style="max-width:760px;margin-bottom:8px;">A four-option appraisal with a live Excel model, where the honest answer is that the cheapest option wins on money and the system wins on compliance.</p>
+      <div class="project-meta"><span class="pill">Business Case</span><span class="pill">Options Appraisal</span><span class="pill">Excel Financial Modelling</span><span class="pill">NPV and Payback</span><span class="pill">Sensitivity Analysis</span><span class="pill">Benefits Realisation</span></div>
+      <div class="download-row"><a class="button primary" href="../assets/projects/BA_05_Repairs_Scheduling_Business_Case/Repairs_Scheduling_Business_Case_Model.xlsx">Download the Excel model</a><a class="button" href="../assets/projects/BA_05_Repairs_Scheduling_Business_Case/README.md">README</a></div>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-label">Business analysis 05/05</div>
+        <a href="../index.html#projects">← All projects</a>
+        <a href="#case" onclick="showTab('case')">Business case</a><a href="#model" onclick="showTab('model')">Model and formulas</a><a href="../assets/projects/BA_05_Repairs_Scheduling_Business_Case/Repairs_Scheduling_Business_Case_Model.xlsx">Download the Excel model ↓</a><a href="../assets/projects/BA_05_Repairs_Scheduling_Business_Case/README.md">README ↓</a>
+      </aside>
+      <div>
+        <div class="tabs"><button class="tab-btn active" data-tab="case" onclick="showTab('case')">Business case</button><button class="tab-btn" data-tab="model" onclick="showTab('model')">Model and formulas</button></div>
+        <section id="case" class="tab-content content-panel readme active"><div class="ba-note"><strong>About the data.</strong> Soar Valley Homes is a fictional organisation and the dataset is synthetic. I generated it with a seeded script so the work can be reproduced, and built realistic problems into it for the analysis to find. The method, SQL and documents are exactly what I would produce on live data.</div>
+<h1>Business Case: Repairs Scheduling and Tenant Self-Service</h1>
+<p><strong>Context.</strong> This follows directly from my repairs service review. That analysis found 3,166 no-access visits and 4,420 return visits in 12 months, and a damp and mould process that cannot evidence the legal investigation timescale. The board asked: should we buy a scheduling system, build one, or fix the process without new software?</p>
+<p><strong>My role.</strong> Business analyst. I defined the options, built the financial model in Excel with live formulas, scored the non-financial criteria with stakeholders' priorities, tested the sensitivity and wrote the recommendation.</p>
+<div class="kpi-row">
+<div class="kpi"><div class="kpi-label">Options appraised</div><div class="kpi-value">4</div><div class="kpi-sub">including do nothing</div></div>
+<div class="kpi"><div class="kpi-label">Appraisal period</div><div class="kpi-value">5 years</div><div class="kpi-sub">3.5% discount rate</div></div>
+<div class="kpi"><div class="kpi-label">Highest NPV</div><div class="kpi-value">£226k</div><div class="kpi-sub">process fixes only</div></div>
+<div class="kpi"><div class="kpi-label">Highest non-financial score</div><div class="kpi-value">4.2 / 5</div><div class="kpi-sub">off-the-shelf system</div></div>
+</div>
+<h2>The options</h2>
+<div class="table-scroll"><table class="data-table"><thead><tr><th></th><th>0. Do nothing</th><th>1. Process fixes only</th><th>2. Off-the-shelf system</th><th>3. Bespoke build</th></tr></thead><tbody><tr><td>What it is</td><td>Carry on as now. Phone-led booking, no reminders, manual contractor diaries.</td><td>Text reminders added to the existing phone system, a contractor improvement plan, and photo capture by email for damp and mould reports.</td><td>Hosted repairs scheduling product with tenant self-service booking, automatic reminders, photo upload and a contractor portal, integrated with the housing management system.</td><td>In-house development of the same functions on top of the existing housing management system.</td></tr><tr><td>One-off cost (with contingency)</td><td>£0</td><td>£19,800</td><td>£198,000</td><td>£476,000</td></tr><tr><td>Running cost per year</td><td>£0</td><td>£9,000</td><td>£58,000</td><td>£36,000</td></tr><tr><td>Annual benefit when embedded</td><td>£0</td><td>£67,007</td><td>£156,808</td><td>£156,808</td></tr><tr><td>Net present value (5 years)</td><td><strong>£0</strong></td><td><strong>£225,921</strong></td><td><strong>£150,412</strong></td><td><strong>(£155,243)</strong></td></tr><tr><td>Benefit cost ratio</td><td>n/a</td><td>4.74</td><td>1.33</td><td>0.76</td></tr><tr><td>Payback</td><td>n/a</td><td>Year 1</td><td>Year 4</td><td>Beyond year 5</td></tr><tr><td>Non-financial score (out of 5)</td><td>1.8</td><td>3.2</td><td>4.2</td><td>3.1</td></tr></tbody></table></div>
+<div class="chart-grid-2">
+  <div class="chart-area"><div class="chart-title">Net present value over five years (£)</div><canvas id="cNpv" height="170"></canvas></div>
+  <div class="chart-area"><div class="chart-title">Cumulative net cash flow by year (£)</div><canvas id="cCum" height="170"></canvas></div>
+</div>
+<h2>Recommendation</h2>
+<div class="callout"><p><strong>Do Option 1 now. Take Option 2 to procurement only if the board accepts that it is a compliance and service investment, not a savings one.</strong></p></div>
+<ul>
+<li><strong>Option 1 wins on money.</strong> Text reminders and a contractor improvement plan cost £19,800 to set up, pay back in year 1 and return 4.7 times their cost. They still pay back if only 21 percent of the planned benefits arrive.</li>
+<li><strong>Option 2 wins on everything else.</strong> It is the only option that gives date-stamped evidence for the damp and mould timescales and lets tenants choose their own slot. Its NPV is positive at £150,412, but it needs 75 percent of planned benefits to break even, and it is £75,509 worse than Option 1 over five years.</li>
+<li><strong>So the real question for the board is this:</strong> is compliance evidence and a better tenant experience worth about £15,102 a year more than the cheaper route? I set that out as the decision, and did not present Option 2 as the financial winner, because it is not.</li>
+<li><strong>Option 3 should be rejected.</strong> A bespoke build does not pay back within five years (NPV (£155,243)) and scores lowest on delivery risk.</li>
+</ul>
+<h2>Where the benefits come from</h2>
+<p>Each benefit pool is measured from the repairs data, and each option captures only a share of it.</p>
+<div class="table-scroll"><table class="data-table"><thead><tr><th>Benefit pool</th><th class=num>£ per year if the whole problem disappeared</th><th>Calculation</th></tr></thead><tbody><tr><td>B1  Missed appointments avoided</td><td class=num>£80,400</td><td>Avoidable no-access visits x (abortive charge + rebooking admin time)</td></tr><tr><td>B2  Return visits avoided</td><td class=num>£536,146</td><td>Return visits x average cost of a visit</td></tr><tr><td>B3  Call handling released</td><td class=num>£26,813</td><td>Phone-booked repairs x handling minutes x hourly cost. Non-cashable unless posts are reduced.</td></tr></tbody></table></div>
+<p>Call handling time is treated as non-cashable: it frees staff time and does not reduce the pay bill unless posts change. I flagged that in the risk register so the saving is not counted twice.</p>
+<h2>Sensitivity</h2>
+<p>Net present value if benefits fall short of plan. Option 2 turns negative below about 75 percent.</p>
+<div class="table-scroll"><table class="data-table"><thead><tr><th class=num>Benefits delivered</th><th class=num>1. Process fixes</th><th class=num>2. Off-the-shelf</th><th class=num>3. Bespoke</th></tr></thead><tbody><tr><td class=num>50%</td><td class=num>£82,743</td><td class=num>(£154,731)</td><td class=num>(£396,892)</td></tr><tr><td class=num>60%</td><td class=num>£111,378</td><td class=num>(£93,702)</td><td class=num>(£348,562)</td></tr><tr><td class=num>70%</td><td class=num>£140,014</td><td class=num>(£32,673)</td><td class=num>(£300,233)</td></tr><tr><td class=num>80%</td><td class=num>£168,649</td><td class=num>£28,355</td><td class=num>(£251,903)</td></tr><tr><td class=num>90%</td><td class=num>£197,285</td><td class=num>£89,384</td><td class=num>(£203,573)</td></tr><tr><td class=num>100%</td><td class=num>£225,921</td><td class=num>£150,412</td><td class=num>(£155,243)</td></tr><tr><td class=num>110%</td><td class=num>£254,556</td><td class=num>£211,441</td><td class=num>(£106,913)</td></tr><tr><td class=num>125%</td><td class=num>£297,510</td><td class=num>£302,983</td><td class=num>(£34,418)</td></tr></tbody></table></div>
+<h2>Non-financial scoring</h2>
+<div class="table-scroll"><table class="data-table"><thead><tr><th>Criterion</th><th class=num>Weight</th><th class=num>Do nothing</th><th class=num>Process fixes only</th><th class=num>Off-the-shelf system</th><th class=num>Bespoke build</th></tr></thead><tbody><tr><td>Tenant experience (choice of slot, reminders, fewer repeat visits)</td><td class=num>25%</td><td class=num>1</td><td class=num>3</td><td class=num>5</td><td class=num>4</td></tr><tr><td>Compliance with damp and mould timescales (Awaab's Law)</td><td class=num>25%</td><td class=num>1</td><td class=num>2</td><td class=num>5</td><td class=num>4</td></tr><tr><td>Speed to benefit</td><td class=num>15%</td><td class=num>1</td><td class=num>5</td><td class=num>3</td><td class=num>1</td></tr><tr><td>Delivery risk (5 = low risk)</td><td class=num>15%</td><td class=num>5</td><td class=num>4</td><td class=num>3</td><td class=num>1</td></tr><tr><td>Fit with existing systems and data</td><td class=num>10%</td><td class=num>3</td><td class=num>3</td><td class=num>4</td><td class=num>4</td></tr><tr><td>Contractor visibility and performance management</td><td class=num>10%</td><td class=num>1</td><td class=num>3</td><td class=num>4</td><td class=num>4</td></tr><tr><td><strong>Weighted score</strong></td><td class=num>100%</td><td class=num><strong>1.80</strong></td><td class=num><strong>3.20</strong></td><td class=num><strong>4.20</strong></td><td class=num><strong>3.10</strong></td></tr></tbody></table></div>
+<h2>Risks and benefits ownership</h2>
+<div class="table-scroll"><table class="data-table"><thead><tr><th>ID</th><th>Risk</th><th class=num>Score</th><th>Mitigation</th><th>Owner</th></tr></thead><tbody><tr><td>R1</td><td>Tenants without internet access are left behind by self-service</td><td class=num>12</td><td>Keep phone booking; text reminders work on any mobile; monitor take-up by age band and area</td><td>Head of Customer Service</td></tr><tr><td>R2</td><td>Integration with the housing management system takes longer than planned</td><td class=num>12</td><td>Supplier proof of concept before contract; fixed-price integration; 20 percent contingency</td><td>IT Manager</td></tr><tr><td>R3</td><td>Contractors do not keep diaries up to date in the new portal</td><td class=num>9</td><td>Make portal use a contract requirement; weekly scorecard reviewed at contract meetings</td><td>Repairs Contracts Manager</td></tr><tr><td>R4</td><td>Benefits are counted but not released (call handling time)</td><td class=num>8</td><td>Treat B3 as non-cashable; report hours released, not savings, unless posts change</td><td>Finance Business Partner</td></tr><tr><td>R5</td><td>Personal data (phone numbers, photos of homes) handled without a lawful basis or retention rule</td><td class=num>8</td><td>Data protection impact assessment before go-live; retention schedule for photos</td><td>Data Protection Officer</td></tr><tr><td>R6</td><td>Poor quality contact numbers undermine reminders</td><td class=num>9</td><td>Data cleanse of tenant mobile numbers during the first eight weeks; capture at every contact</td><td>Customer Service Team Leader</td></tr></tbody></table></div>
+<div class="table-scroll"><table class="data-table"><thead><tr><th>Benefit</th><th>Measure</th><th>Baseline</th><th>Target</th><th>Owner</th></tr></thead><tbody><tr><td>B1 Fewer missed appointments</td><td>No-access visits per non-emergency job</td><td>0.24 on phone bookings; 0.09 on portal bookings</td><td>0.12 or lower across all channels</td><td>Repairs Contracts Manager</td></tr><tr><td>B2 Fewer return visits</td><td>First-time fix rate</td><td>Kestrel 72 percent since January 2026; other contractors about 82 percent</td><td>85 percent across all contractors</td><td>Repairs Contracts Manager</td></tr><tr><td>B3 Call handling released</td><td>Share of repairs booked online</td><td>24 percent</td><td>50 percent</td><td>Head of Customer Service</td></tr><tr><td>B4 Faster damp and mould response (non-financial)</td><td>Share of damp and mould reports visited within 10 working days</td><td>66 percent within 14 calendar days (June to October 2026)</td><td>100 percent</td><td>Head of Property Services</td></tr><tr><td>B5 Tenant satisfaction (non-financial)</td><td>Average satisfaction with last repair (1 to 5)</td><td>3.74 for Kestrel jobs; about 4.0 for others</td><td>4.2 overall</td><td>Head of Customer Service</td></tr></tbody></table></div>
+<h2>Assumptions and limits</h2>
+<p>Volumes are measured from the repairs dataset. Supplier, build and staff costs are illustrative figures chosen for this case study and would be replaced by quotations in a live case. The discount rate is the 3.5 percent standard rate from the HM Treasury Green Book. Every input is a labelled blue cell in the workbook, so the model can be re-run with different figures in seconds.</p>
+</section><section id="model" class="tab-content content-panel readme">
+<h2>How the Excel model is built</h2>
+<table><thead><tr><th>Sheet</th><th>What it does</th><th>Technique</th></tr></thead><tbody>
+<tr><td>Assumptions</td><td>Discount rate and unit costs, each with its basis</td><td>One labelled input cell per assumption; nothing hard-coded in formulas</td></tr>
+<tr><td>Baseline</td><td>Annual volumes from the repairs analysis and the three benefit pools</td><td>Pools calculated from volumes and unit costs</td></tr>
+<tr><td>Options</td><td>Costs, contingency, benefit capture and ramp-up by option</td><td>Input grid; totals by formula</td></tr>
+<tr><td>Cash flows</td><td>Year 0 to 5 costs, benefits, net and discounted cash flow for each option</td><td>Discount factors, SUMPRODUCT for present values, payback marker row</td></tr>
+<tr><td>Sensitivity</td><td>NPV at 50 to 125 percent of planned benefits and 100 to 150 percent of costs; break-even share</td><td>Present values scaled by factor</td></tr>
+<tr><td>Scoring</td><td>Weighted non-financial criteria</td><td>SUMPRODUCT of weights and scores</td></tr>
+<tr><td>Risks, Benefits plan</td><td>Risk register and benefits realisation plan</td><td>Likelihood x impact scoring</td></tr>
+</tbody></table>
+<h2>Key formulas</h2>
+<section class="nb-cell code-cell"><div class="cell-label">Benefit pool B1 (Baseline sheet)</div><pre><code>=B7*(Assumptions!$B$6+Assumptions!$B$7/60*Assumptions!$B$9)
+
+avoidable no-access visits x (abortive charge + rebooking minutes / 60 x hourly cost)</code></pre></section><section class="nb-cell code-cell"><div class="cell-label">Annual benefit for an option (Options sheet)</div><pre><code>=Baseline!$B$13*D11+Baseline!$B$14*D12+Baseline!$B$15*D13
+
+each pool x the share that option captures</code></pre></section><section class="nb-cell code-cell"><div class="cell-label">Discount factor and net present value (Cash flows sheet)</div><pre><code>Discount factor, year t:   =1/(1+Assumptions!$B$5)^t
+Present value of costs:    =SUMPRODUCT(one_off_row+recurring_row, discount_factor_row)
+Present value of benefits: =SUMPRODUCT(benefits_row, discount_factor_row)
+Net present value:         =SUM(present_value_of_net_cash_flow_row)</code></pre></section><section class="nb-cell code-cell"><div class="cell-label">Payback year (Cash flows sheet)</div><pre><code>Marker for each year:  =IF(AND(cumulative_this_year&gt;=0, cumulative_last_year&lt;0), year, "")
+Payback:               =IF(COUNT(marker_row)=0, "Beyond year 5", MIN(marker_row))</code></pre></section><p>The workbook recalculates with zero formula errors. Blue cells on yellow are inputs; everything else is a formula.</p></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-name">Asmita Parmar</div>
+        <div class="footer-copy">Business Analysis, Data Analytics &amp; AI Portfolio</div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    var tabInit = {};
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+      document.querySelectorAll('.tab-content').forEach(function(s){s.classList.toggle('active',s.id===tab);});
+      if (window.onTab && !tabInit[tab]) { tabInit[tab] = true; window.onTab(tab); }
+    }
+    if (window.Chart) {
+      Chart.defaults.font.family = "DM Sans, sans-serif";
+      Chart.defaults.color = "#78716c";
+      Chart.defaults.plugins.legend.labels.boxWidth = 12;
+      Chart.defaults.plugins.legend.labels.boxHeight = 12;
+      Chart.defaults.elements.line.borderWidth = 2;
+      Chart.defaults.elements.point.radius = 0;
+      Chart.defaults.elements.point.hoverRadius = 5;
+      Chart.defaults.elements.bar.borderRadius = 4;
+      Chart.defaults.interaction.mode = 'index';
+      Chart.defaults.interaction.intersect = false;
+    }
+    var GRID = { color: '#efe9e0' }, NOGRID = { display: false };
+    var COL = { purple: '#7e4fa8', amber: '#c27a00', teal: '#009494', rose: '#d6456a', soft: '#c9b6d8', ink: '#57534e' };
+    function gbp(v) { return '£' + Math.round(v).toLocaleString('en-GB'); }
+    function gbpk(v) { return Math.abs(v) >= 1e6 ? '£' + (v/1e6).toFixed(2) + 'm' : '£' + Math.round(v/1000) + 'k'; }
+    function monthLabel(m) { var n = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; return n[+m.slice(5)-1] + ' ' + m.slice(2,4); }
+var M = {"npv": [0, 225921, 150412, -155243], "cum": [[0, 0, 0, 0, 0, 0], [-19800, 21455, 79463, 137470, 195477, 253485], [-198000, -177596, -102310, -3502, 95306, 194113], [-476000, -512000, -469596, -348789, -227981, -107173]]};
+
+    function drawCase() {
+      var names = ['0. Do nothing', '1. Process fixes', '2. Off-the-shelf', '3. Bespoke'];
+      new Chart(document.getElementById('cNpv'), { type: 'bar', data: { labels: names, datasets: [{ label: 'Net present value', data: M.npv, backgroundColor: M.npv.map(function(v) { return v < 0 ? COL.rose : COL.purple; }), maxBarThickness: 70 }] },
+        options: { plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return gbp(c.parsed.y); } } } }, scales: { x: { grid: NOGRID }, y: { grid: GRID, ticks: { callback: function(v) { return (v < 0 ? '-' : '') + gbpk(Math.abs(v)); } } } } } });
+      var st = [[COL.purple, []], [COL.amber, [6, 4]], [COL.teal, [2, 3]]];
+      new Chart(document.getElementById('cCum'), { type: 'line', data: { labels: ['Year 0', 'Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'], datasets: [1, 2, 3].map(function(j, i) { return { label: names[j], data: M.cum[j], borderColor: st[i][0], backgroundColor: st[i][0], borderDash: st[i][1], pointRadius: 3 }; }) },
+        options: { plugins: { tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': ' + (c.parsed.y < 0 ? '-' : '') + gbp(Math.abs(c.parsed.y)); } } } }, scales: { x: { grid: NOGRID }, y: { grid: GRID, ticks: { callback: function(v) { return (v < 0 ? '-' : '') + gbpk(Math.abs(v)); } } } } } });
+    }
+    window.onTab = function(tab) { if (tab === 'case') drawCase(); };
+    tabInit.case = true; drawCase();
+
+    if (location.hash) { var t = location.hash.slice(1); if (document.getElementById(t)) showTab(t); }
+  </script>
+</body>
+</html>
